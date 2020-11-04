@@ -1,0 +1,9 @@
+.content-area {
+  padding: 0;
+}
+
+@media screen and (min-width: 50em) {
+  #primary {
+    width: 100%;
+  }
+}
