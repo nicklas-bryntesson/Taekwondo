@@ -10,6 +10,7 @@
     <a href="<?php echo get_permalink() ?>">
         <figure class="instructor-thumbnail">
             <img class="card-image-large" src="<?php echo $instructor['image']['url']; ?>" alt="<?php echo $instructor['image']['alt']; ?>" />
+            <span class="read-more">Läs mer</span>
         </figure>
 
         <div class="instructor-meta">
@@ -19,7 +20,9 @@
                 <h2><?php the_title(); ?></h2>
             </div>
             </div class="meta-degree">
-                Degree
+                
+                <?php include( locate_template( 'components/instructors/instructor-degree.php', false, false ) ); ?>
+
             <div>
         </div>
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying instructor meta.
+ * Template part for displaying single instructor presentation card.
  *
  * @package Taekwondo
  */
@@ -17,7 +17,9 @@
             <h2><?php the_title(); ?></h2>
         </div>
         </div class="meta-degree">
-            Degree Component
+
+            <?php include( locate_template( 'components/instructors/instructor-degree.php', false, false ) ); ?>
+        
         <div>
     </div>
 </header><!-- .entry-header -->
