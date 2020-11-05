@@ -50,13 +50,19 @@ function tkd_pingback_header() {
 }
 add_action( 'wp_head', 'tkd_pingback_header' );
 
-
 /**
  * Remove the page template menu on frontpage.
  */
-function remove_page_attribute_support() {
-	if ( is_front_page() ) {
+add_action( 'add_meta_boxes', function( string $post_type, WP_Post $post ) {
 
-	}
-}
-add_action( 'init', 'remove_page_attribute_support' );
+    if( $post_type != 'page' )
+        return;
+
+    $frontpageID = intval( get_option('page_on_front') );
+    $currentID = intval( $post->ID );
+
+    if( $frontpageID === $currentID ) {
+        remove_meta_box( 'pageparentdiv', 'page', 'side' );
+    }
+
+}, 10, 2 );

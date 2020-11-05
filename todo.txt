@@ -1,10 +1,13 @@
 *** PHP
 
 ** Template Functions
-Remove metabox for choosing custom page-template when editing frontpage. 
+Remove metabox for choosing custom page-template when editing frontpage. ✅
 
 ** Header / Navigation
 Refactor better Accessible main navigation from "minda" Theme (uppload minda theme to github in the process)
+
+** Social menu
+Add footer Social menu with icons ✅
 
 ** Archive
 Import structure from original theme
