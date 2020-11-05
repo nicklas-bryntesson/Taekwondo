@@ -1,0 +1,28 @@
+*** PHP
+
+** Template Functions
+Remove metabox for choosing custom page-template when editing frontpage. 
+
+** Header / Navigation
+Refactor better Accessible main navigation from "minda" Theme (uppload minda theme to github in the process)
+
+** Archive
+Import structure from original theme
+
+** Single
+Import structure from original theme
+
+** Instructors
+Sorting on instructor page -> Belt degree -> Order
+Degree Component - Show belt degree and change cloror on circle depending on value
+
+*** SASS
+
+** Post & Pages
+Refactor and touch up original styles
+
+** Layout
+Fix issues with sidebar-content 
+
+** Instructors
+Refactor instructor card info styles
