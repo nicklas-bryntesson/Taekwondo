@@ -2548,7 +2548,7 @@ sticky {
 }
 
 /*--------------------------------------------------------------
-# Shame
+# Shame - Resolve before bundel
 --------------------------------------------------------------*/
 body {
 	background-color: #f1c7f7;
@@ -2569,6 +2569,10 @@ body {
 
 .site-footer {
 	background-color: tomato;
+}
+
+.site-info {
+	background-color: tan;
 }
 
 /*# sourceMappingURL=style.css.map */
