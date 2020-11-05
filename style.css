@@ -1025,25 +1025,24 @@ textarea {
 }
 
 @media screen and (min-width: 900px) {
-	.content-area {
-		width: 50rem;
+	.blog.has-sidebar .site-main,
+	.page.has-sidebar .site-main {
+		background-color: lightsalmon;
+	}
+	.blog.has-sidebar .hentry,
+	.page.has-sidebar .hentry {
+		background-color: mistyrose;
+	}
+	.home.no-sidebar .site-main,
+	.page.no-sidebar .site-main {
+		background-color: lightskyblue;
+	}
+	.home.no-sidebar .hentry,
+	.page.no-sidebar .hentry {
+		background-color: powderblue;
 	}
 	.wrap-full-width {
 		max-width: 1000px;
-	}
-	.blog.has-sidebar .site-content,
-	.page.has-sidebar .site-content {
-		display: grid;
-		grid-template-columns: 1fr 18em;
-		grid-template-areas: "site-main widget-area";
-	}
-	.blog.has-sidebar .site-main,
-	.page.has-sidebar .site-main {
-		grid-area: site-main;
-	}
-	.blog.has-sidebar .widget-area,
-	.page.has-sidebar .widget-area {
-		grid-area: widget-area;
 	}
 }
 

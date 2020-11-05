@@ -7,30 +7,34 @@
 }
 
 @media screen and (min-width: $query__medium) {
-  .content-area {
-    width: $content__normal;
+  .blog,
+  .page {
+    &.has-sidebar {
+      .site-main {
+        background-color: lightsalmon;
+      }
+
+      .hentry {
+        background-color: mistyrose;
+      }
+    }
+  }
+
+  .home,
+  .page {
+    &.no-sidebar {
+      .site-main {
+        background-color: lightskyblue;
+      }
+
+      .hentry {
+        background-color: powderblue;
+      }
+    }
   }
 
   .wrap-full-width {
     max-width: $wrap__full-width-normal;
-  }
-
-  .blog,
-  .page {
-    &.has-sidebar {
-      .site-content {
-        display: grid;
-        grid-template-columns: 1fr 18em;
-        grid-template-areas: "site-main widget-area";
-      }
-
-      .site-main {
-        grid-area: site-main;
-      }
-      .widget-area {
-        grid-area: widget-area;
-      }
-    }
   }
 }
 
