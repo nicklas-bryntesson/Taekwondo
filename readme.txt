@@ -1,37 +1,21 @@
-=== Taekwondo ===
+## Taekwondo Theme
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+- Flexbox and CSS Grid Wordpress Theme, chunks of functionality is broken down into smaller components.
+  Uses object-fit: cover and does not provide fall back for older browsers at this point.
 
-Requires at least: 4.5
-Tested up to: 5.4
-Requires PHP: 5.6
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
+## Live Demo
 
-A starter theme called Taekwondo.
+Avalible at: (https://taekwondo.nicklasbryntesson.se)
 
-== Description ==
+All live demo pictures captured by Nicklas Bryntesson.
 
-Code sample
+### Requirements
 
-== Installation ==
+- Requires mu-plugin - "Instructors" custom post types avalible at: (https://github.com/nicklas-bryntesson/Assets/blob/main/Taekwondo%20Theme%20Assets/mu-plugins/instructors.php) to fully function.
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
-
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-Taekwondo includes support for WooCommerce and for Infinite Scroll in Jetpack.
-
-== Changelog ==
-
-= 1.0 - May 12 2015 =
-* Initial release
+- Heavy use of Advanced Custom Fields Pro in page-templates: frontpage.php, page-instructors.php and single-instructor.php.
+  The files work without the plugin and defaults to page.php markup if ACF Pro is not installed
+  ACF JSON field data is avalible at: (https://github.com/nicklas-bryntesson/Assets/blob/main/Taekwondo%20Theme%20Assets/tkd-acf.json)
 
 == Credits ==
 

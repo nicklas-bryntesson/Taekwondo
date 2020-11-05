@@ -1,13 +1,13 @@
 ## Taekwondo Theme
 
-- Flexbox and CSS Grid Wordpress Theme, lots of functionality is broken down into smaller components.
-  Uses object-fit: cover and does not provide fall back for older browsers att this point.
+- Flexbox and CSS Grid Wordpress Theme, chunks of functionality is broken down into smaller components.
+  Uses object-fit: cover and does not provide fall back for older browsers at this point.
 
 ## Live Demo
 
 Avalible at: [nicklasbryntesson.se](https://taekwondo.nicklasbryntesson.se)
 
-All live demo pictures captured by Nicklas Bryntesson
+All live demo images captured and edited by Nicklas Bryntesson.
 
 ### Requirements
 
