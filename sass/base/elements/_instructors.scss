@@ -1,0 +1,101 @@
+/* Baseline behaviour for all Instructor cards.
+*
+* Individual styles for different views can be found in:
+*
+* /pages/instructors/_instructors.scss
+* /plugins/mu-plugins/instructors/_single-instructor.scss
+*
+*/
+
+.instructor * {
+  figure {
+    margin: 0;
+  }
+
+  p,
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+}
+
+.instructor {
+  .instructor-thumbnail {
+    position: relative;
+  }
+
+  .instructor-meta {
+    padding: 0.5em;
+  }
+}
+
+/* Instructor Belt Degree */
+
+.degree {
+  .circle {
+    position: relative;
+    display: block;
+    background-color: transparent;
+    text-align: center;
+  }
+
+  .circle:after {
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+    height: 0;
+    border-radius: 50%;
+    content: "";
+  }
+
+  .circle-red:after {
+    background-color: $color__branding--belt-red;
+  }
+
+  .circle-black:after {
+    background-color: $color__branding--belt-black;
+  }
+
+  .circle-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle-content {
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: bold;
+    color: $color__branding--belt-text-yellow;
+  }
+}
+
+// Card link hover
+
+.instructor > a {
+  &:hover,
+  &:focus {
+    .meta-titles {
+      color: white;
+    }
+
+    .circle-red:after,
+    .circle-black:after {
+      background-color: white;
+    }
+
+    .circle-content > p {
+      color: $color__branding-main;
+    }
+  }
+}
