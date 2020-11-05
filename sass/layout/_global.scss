@@ -1,0 +1,45 @@
+// Restructure - More modern CSS Grid soulutions available!
+
+.site-main,
+.site-content,
+.wrap-full-width {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: $query__medium) {
+  .content-area {
+    width: $content__normal;
+  }
+
+  .wrap-full-width {
+    max-width: $wrap__full-width-normal;
+  }
+
+  .blog,
+  .page {
+    &.has-sidebar {
+      .site-content {
+        display: grid;
+        grid-template-columns: 1fr 18em;
+        grid-template-areas: "site-main widget-area";
+      }
+
+      .site-main {
+        grid-area: site-main;
+      }
+      .widget-area {
+        grid-area: widget-area;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $query__large) {
+  .site-main {
+    width: $content__wide;
+  }
+
+  .wrap-full-width {
+    max-width: $wrap__full-width-wide;
+  }
+}

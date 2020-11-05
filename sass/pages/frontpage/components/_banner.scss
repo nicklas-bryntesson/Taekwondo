@@ -1,0 +1,47 @@
+// Default banner background
+.banner--default {
+  background: transparent;
+  color: $color__text-main;
+}
+
+.banner--blue-blue,
+.banner--yellow-orange,
+.banner--red-blue {
+  margin-top: 1.2rem;
+  padding: 1.2rem;
+
+  @media screen and (min-width: $query__medium) {
+    margin-top: 2rem;
+    padding: 2rem;
+  }
+}
+
+// Blue gradient banner background
+.banner--blue-blue {
+  background: $color__gradient-solid--blue-blue;
+  color: $color__text-white;
+
+  .card {
+    box-shadow: $boxshadow__gradient-solid--blue-blue;
+  }
+}
+
+// Yellow/Orange gradient banner background
+.banner--yellow-orange {
+  background: $color__gradient-solid--yellow-orange;
+  color: $color__text-white;
+
+  .card {
+    box-shadow: $boxshadow__gradient-solid--yellow-orange;
+  }
+}
+
+// Red/blue gradient banner background
+.banner--red-blue {
+  background: $color__gradient-solid--red-blue;
+  color: $color__text-white;
+
+  .card {
+    box-shadow: $boxshadow__gradient-solid--red-blue;
+  }
+}

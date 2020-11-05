@@ -1,0 +1,63 @@
+// Branding.
+$color__branding-main: #1b71b8;
+$color__branding-main-hover: #053d6b;
+$color__branding-main-focus: #ccc;
+$color__branding-secondary: #d14b4b;
+$color__branding-secondary-hover: #913434;
+$color__branding-secondary-focus: #ccc;
+
+$color__background-card: #ffffff;
+$color__typography-card: $color__text-main;
+
+$color__ui-alert: #d14b4b;
+$color__ui-disabled: #ccc;
+
+$color__gradient-card--belt-red: #cf222c;
+$color__gradient-card--belt-black: #1e2738;
+
+$color__branding--belt-red: #cf222c;
+$color__branding--belt-black: #1e2738;
+$color__branding--belt-text-yellow: #ceb45c;
+
+// Gradient - Solid backgrounds.
+$color__gradient-solid--branding: linear-gradient(
+  to bottom,
+  rgba(65, 157, 232, 1) 0%,
+  rgba(27, 113, 184, 1) 100%
+);
+$color__gradient-solid--blue-blue: linear-gradient(
+  to bottom,
+  rgba(65, 157, 232, 1) 0%,
+  rgba(27, 113, 184, 1) 100%
+);
+$color__gradient-solid--yellow-orange: linear-gradient(
+  135deg,
+  #5c2849 0%,
+  #a73e5c 24%,
+  #ec4863 49%,
+  #ff733f 78%,
+  #ffd285 100%
+);
+$color__gradient-solid--red-blue: linear-gradient(
+  135deg,
+  rgba(0, 39, 91, 1) 0%,
+  rgba(181, 5, 14, 1) 100%
+);
+
+// Gradients - Transparent backgrounds
+$color__gradient-transparent--default: rgba(0, 0, 0, 0.5);
+$color__gradient-transparent--blue-blue: linear-gradient(
+  135deg,
+  rgba(21, 67, 107, 0.75) 0%,
+  rgba(25, 96, 168, 0.75) 100%
+);
+$color__gradient-transparent--yellow-orange: linear-gradient(
+  135deg,
+  rgba(104, 23, 28, 0.55) 0%,
+  rgba(209, 139, 35, 0.55) 100%
+);
+$color__gradient-transparent--red-blue: linear-gradient(
+  135deg,
+  rgba(0, 39, 91, 0.45) 0%,
+  rgba(181, 5, 14, 0.45) 100%
+);

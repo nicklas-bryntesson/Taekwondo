@@ -1,0 +1,88 @@
+/* Frontpage - Newsfeed Section */
+
+#fp-newsfeed {
+    margin-bottom: 1.2rem;
+  
+    @media screen and (min-width: $query__medium) {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  .fp-newsbox {
+    margin-bottom: 1.2rem;
+  
+    @media screen and (min-width: $query__medium) {
+      margin-bottom: 2rem;
+    }
+  
+    &:last-child {
+      margin-bottom: 0;
+    }
+  
+    .card-info {
+      position: relative;
+  
+      .fp-newsbox-title {
+        margin: 0;
+        @include font-size(1.55);
+      }
+  
+      .fp-newsbox-posted {
+        @include font-size(0.9);
+        font-weight: 600;
+  
+        .fp-newsbox-date {
+          color: $color__branding-main;
+        }
+      }
+  
+      .fp-newsbox-arrow {
+        color: $color__branding-main;
+        @include font-size(1.7);
+        position: absolute;
+        bottom: .8rem;
+        right: 1.2rem;
+      }
+    }
+  }
+  
+  .card-link {
+    a {
+  
+          &:hover,
+          &:focus {
+  
+      .card-info {
+        .fp-newsbox-arrow,
+        .fp-newsbox-date {
+            transition: $transition__card-hover;
+                    color: $color__text-white;
+          }
+        }
+      }
+    }
+  }
+  
+  // Link to Archive
+  
+  #newsfeed-link {
+    @include font-size(1);
+    background-color: transparent;
+    color: $color__branding-main;
+    padding: 1rem;
+    width: 100%;
+    border: 3px solid $color__branding-main;
+  
+    &:hover ,
+    &:active,
+    &:focus {
+        background: $color__branding-main-hover;
+        color: $color__text-white;
+      border: 3px solid $color__branding-main-hover;
+    }
+  
+    @media screen and (min-width: $query__medium) {
+      @include font-size(1.3);
+      padding: 1.3rem;
+    }
+  }

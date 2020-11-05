@@ -2548,4 +2548,28 @@ sticky {
 	margin-bottom: 1.5em;
 }
 
+/*--------------------------------------------------------------
+# Shame
+--------------------------------------------------------------*/
+body {
+	background-color: #f1c7f7;
+}
+
+.page {
+	background-color: lightpink;
+}
+
+.site-main {
+	background-color: plum;
+}
+
+.widget-area {
+	background-color: hotpink;
+	padding: 1em;
+}
+
+.site-footer {
+	background-color: tomato;
+}
+
 /*# sourceMappingURL=style.css.map */

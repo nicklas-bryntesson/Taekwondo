@@ -1,0 +1,292 @@
+.card {
+  background: $color__background-card;
+  font-family: $font__sans;
+  line-height: $font__line-height-body;
+  box-shadow: $boxshadow__card;
+  overflow: auto;
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: 0;
+  }
+
+  i {
+    font-family: $font__serif;
+    color: $color__text-grey;
+  }
+
+  img {
+    position: relative;
+    display: block;
+    margin: 0;
+  }
+
+  .read-more {
+    color: $color__text-white;
+    font-size: 1.65em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: $transition__card-hover;
+  }
+}
+
+// Card containing an anchor-tag as the first child element
+
+.card-link {
+  display: flex;
+
+  &:hover,
+  &:active,
+  &:focus {
+    transition: $transition__card-hover;
+    box-shadow: $boxshadow__card-hover;
+    background-color: $color__branding-main;
+  }
+
+  a {
+    flex: 1;
+
+    &:hover,
+    &:active,
+    &:focus {
+      .card-info {
+        transition: $transition__card-hover;
+        color: white;
+
+        i {
+          transition: $transition__card-hover;
+          color: white;
+        }
+      }
+
+      .read-more {
+        opacity: 1;
+      }
+
+      img {
+        transition: $transition__card-hover;
+        filter: $filter__card-images-hover;
+        opacity: 0.45;
+      }
+    }
+  }
+}
+
+// Card title area with background.
+
+.card-title {
+  width: 100%;
+  background-color: $color__branding-main-hover;
+
+  h1 {
+    @include font-size(1);
+    padding: 0.65rem 1.2rem;
+    margin: 0;
+    color: $color__text-white;
+  }
+}
+
+@media screen and (min-width: $query__medium) {
+  .card-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-image-wrapper {
+    width: 50%;
+    flex: 1;
+  }
+
+  .card-info-wrapper {
+    width: 50%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  // Fallback styles for browsers that do not support object-fit.
+
+  .image-container.compat-object-fit {
+    background-size: cover;
+    background-position: center center;
+
+    .card-image-micro,
+    .card-image-small,
+    .card-image-medium,
+    .card-image-large {
+      opacity: 0;
+    }
+  }
+
+  .card-image-micro {
+    height: 175px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .card-image-small {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .card-image-medium {
+    height: 370px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .card-image-large {
+    height: 440px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
+
+// Card - Info area Basic styles
+
+.card-info-buttons,
+.card-info {
+  color: $color__typography-card;
+
+  p {
+    @include font-size(0.9);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @include font-size(1.2);
+  }
+
+  i {
+    font-weight: 400;
+  }
+
+  @media screen and (min-width: $query__medium) {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: auto;
+  }
+}
+
+// Card info area
+
+.card-info-small {
+  padding: 1rem;
+
+  @media screen and (min-width: $query__medium) {
+    padding: 1.1rem;
+  }
+}
+
+.card-info-medium {
+  padding: 1.1rem;
+
+  @media screen and (min-width: $query__medium) {
+    padding: 1.3rem;
+  }
+}
+
+.card-info-large {
+  padding: 1.5rem;
+
+  @media screen and (min-width: $query__medium) {
+    padding: 2rem;
+  }
+}
+
+// Card with no padding-bottom - for combining with button div
+
+.card-info-buttons {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+
+  @media screen and (min-width: $query__medium) {
+    padding: 2rem 2rem 0 2rem;
+  }
+}
+
+// Button Area - Medium padding
+
+.card-buttons-medium {
+  padding: 0 0.55rem 0.55rem 0.55rem;
+
+  @media screen and (min-width: $query__medium) {
+    padding: 0 0.65rem 0.65rem 0.65rem;
+  }
+
+  .card-buttons-wide {
+    display: flex;
+    flex: 1;
+
+    .cta-btn {
+      width: 100%;
+      margin: 0 0.55rem 0.55rem 0.55rem;
+
+      @media screen and (min-width: $query__medium) {
+        margin: 0 0.65rem 0.65rem 0.65rem;
+      }
+    }
+  }
+}
+
+// Button Area - Large padding
+
+.card-buttons {
+  padding: 0 0.75rem 0.75rem 0.75rem;
+
+  @media screen and (min-width: $query__medium) {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .card-buttons-wide {
+    display: flex;
+    flex: 1;
+
+    .cta-btn {
+      width: 100%;
+      margin: 0 0.75rem 0.75rem 0.75rem;
+
+      @media screen and (min-width: $query__medium) {
+        margin: 0 1rem 1rem 1rem;
+      }
+    }
+  }
+
+  .card-buttons-split {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .cta-btn {
+      margin: 0 0.75rem 0.75rem 0.75rem;
+      min-width: 11rem;
+
+      @media screen and (min-width: $query__medium) {
+        margin: 0 1rem 1rem 1rem;
+      }
+
+      @media screen and (max-width: $query__medium) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// End card styles.

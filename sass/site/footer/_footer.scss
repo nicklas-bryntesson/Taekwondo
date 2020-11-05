@@ -1,0 +1,25 @@
+.site-footer {
+	position: relative;
+	padding: 2em;
+	color: $color__text-white;
+    background-color: $color__background-colophon;
+	font-family: $font__sans;
+
+	a {
+		font-weight: bold;
+		text-decoration: none;
+		color: inherit;
+		transition: $transition__card-hover;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+			color: $color__branding-main;
+		}
+	}
+}
+
+.site-info {
+	margin: 1em 0 1em auto;
+	align-self: center;
+}

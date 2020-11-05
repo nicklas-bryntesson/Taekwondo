@@ -1,0 +1,45 @@
+.instructor-cards {
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.instructor-meta {
+  padding: 0.75em;
+
+  .meta-titles {
+    h1 {
+      @include font-size(1.1);
+    }
+    h2 {
+      @include font-size(1);
+    }
+    span {
+      @include font-size(0.95);
+    }
+  }
+  .degree {
+  }
+}
+
+@media screen and (min-width: $query__medium) {
+  .instructor-cards {
+    padding: 0.75em 1.5em;
+  }
+
+  .instructor {
+    width: 48%;
+  }
+}
+@media screen and (min-width: $query__large) {
+  .instructor-cards {
+    padding: 1em 2em;
+  }
+
+  .instructor {
+    width: 31%;
+  }
+}

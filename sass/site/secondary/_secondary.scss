@@ -1,0 +1,10 @@
+.widget-area {
+  background-color: $color__background-secondary;
+  padding: 2rem 0;
+
+  @media screen and (min-width: $query__large) {
+    padding: 2.5rem 0;
+  }
+}
+
+@import "widgets";
