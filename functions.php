@@ -50,7 +50,8 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'tkd' ),
+				'menu-1'	=> esc_html__( 'Primary', 'tkd' ),
+				'social'	=> esc_html__( 'Social Media Menu', 'tkd' ),
 			)
 		);
 
@@ -270,3 +271,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load SVG icon functions.
+ */
+require get_template_directory() . '/inc/icon-functions.php';

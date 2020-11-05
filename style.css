@@ -1148,6 +1148,54 @@ textarea {
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+.social-menu {
+	padding: 1em;
+}
+
+.social-menu ul {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	list-style-type: none;
+	margin: 0 1.5px;
+	padding: 0;
+}
+
+.social-menu ul a {
+	display: block;
+	padding: 0.5em;
+	color: transparent;
+	text-decoration: none;
+}
+
+.social-menu ul a .icon {
+	fill: rgba(255, 255, 255, 0.7);
+	transition: fill 0.2s;
+}
+
+.social-menu ul a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.social-menu ul a:hover .icon {
+	fill: white;
+}
+
+.social-menu ul a:focus {
+	/*
+        box-shadow: $focus__boxshadow;*/
+	border-radius: 50px;
+}
+
+.social-menu ul a:focus .icon {
+	/* fill: $color__focus; // Color of icon on hover */
+	fill: blue;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -1495,6 +1543,54 @@ sticky {
 
 .jquery-background-video-pauseplay.pause:after {
 	left: 10px;
+}
+
+/* Icons
+--------------------------------------------- */
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 2em;
+	width: 2em;
+	position: relative;
+	/* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+}
+
+/*--------------------------------------------------------------
+SVG Fallbacks
+--------------------------------------------------------------*/
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+.no-svg .nav-links .svg-fallback {
+	padding: 0 .5em;
+	color: inherit;
+	background: inherit;
+}
+
+/* Social Menu fallbacks */
+.no-svg .social-menu a {
+	height: auto;
+	width: auto;
+}
+
+.no-svg .social-menu li a .screen-reader-text {
+	clip: auto;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
+	height: auto;
+	position: relative !important;
+	/* overrides previous !important styles */
+	width: auto;
 }
 
 /*--------------------------------------------------------------

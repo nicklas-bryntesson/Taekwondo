@@ -24,6 +24,18 @@ function tkd_body_classes( $classes ) {
 		$classes[] = 'has-sidebar';
 	}
 
+	// Add class telling us if social menu is in use.
+	if ( has_nav_menu( 'social' ) ) {
+		$classes[] = 'has-social';
+	} else {
+		$classes[] = 'no-social';
+	}
+
+	// Add class for frontpage header image
+	if ( is_front_page() && has_header_image() ) {
+		$classes[] = 'has-header-image';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'tkd_body_classes' );
