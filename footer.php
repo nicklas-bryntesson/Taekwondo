@@ -12,6 +12,9 @@
 ?>
 	
 	<footer id="colophon" class="site-footer">
+		
+		<?php get_sidebar( 'footer' ); ?>
+		
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tkd' ) ); ?>">
 				<?php
