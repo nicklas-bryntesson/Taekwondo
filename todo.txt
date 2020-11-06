@@ -22,10 +22,10 @@ Degree Component - Show belt degree and change cloror on circle depending on val
 *** SASS
 
 ** Post & Pages
-Refactor and touch up original styles
+Refactor and touch up original styles ✅
 
 ** Layout
-Fix issues with sidebar-content 
+Fix issues with sidebar-content ✅
 
 ** Instructors
 Refactor instructor card info styles
