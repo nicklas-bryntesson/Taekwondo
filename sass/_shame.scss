@@ -1,3 +1,4 @@
+/*
 body {
   background-color: rgb(241, 199, 247);
 }
@@ -17,8 +18,37 @@ body {
 
 .site-footer {
   background-color: tomato;
+
+  .widget-area {
+    background-color: coral;
+    padding: 1em;
+  }
 }
 
 .site-info {
   background-color: tan;
+}
+*/
+.instructor-meta {
+  padding: 1.5em 1.2em 2em 1.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .meta-titles {
+    color: $color__text-main;
+
+    h1 {
+      font-size: 1em;
+    }
+    span {
+      font-size: 1em;
+    }
+    h2 {
+      font-size: 1em;
+    }
+  }
+  .meta-degree {
+    width: 5em;
+  }
 }

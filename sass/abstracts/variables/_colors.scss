@@ -11,6 +11,8 @@ $color__text-input-focus: #111;
 $color__text-main: #404040;
 $color__text-white: #fff;
 $color__text-grey: #777;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
 // Links
 $color__link: #4169e1; //royalblue
 $color__link-visited: #32756c; //purple
@@ -18,13 +20,21 @@ $color__link-hover: #191970; //midnightblue
 // Buttons
 $color__button: #1b71b8;
 $color__background-button: #1b71b8;
-$color__background-button-hover: #053D6B;
+$color__background-button-hover: #053d6b;
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 // Layout
-$color__background-header: #F0F0F0;
+$color__background-header: #f0f0f0;
 $color__background-secondary: #ffffff;
-$color__background-colophon: #252B33;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$color__background-colophon: #252b33;
+$color__background-site-info: #1f2022;
+
+// Layout - Updated!
+$backgroundcolor__masthead: #f0f0f0;
+$backgroundcolor__primary: #f4f4f4;
+$backgroundcolor__secondary: #ffffff;
+$backgroundcolor__colophon: #252b33;
+
+$backgroundcolor__site-info: #1f2022;
+$backgroundcolor__social-menu: #383f48;

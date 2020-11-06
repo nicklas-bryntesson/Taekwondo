@@ -1,49 +1,41 @@
-// Restructure - More modern CSS Grid soulutions available!
+// Baseline
 
-.site-main,
-.site-content,
-.wrap-full-width {
+.site {
   margin: 0 auto;
+  max-width: 100%;
+  height: 100vh;
 }
+
+// Fallback for legacy browsers not supporting CSS Grid:
 
 @media screen and (min-width: $query__medium) {
-  .blog,
-  .page {
-    &.has-sidebar {
-      .site-main {
-        background-color: lightsalmon;
-      }
-
-      .hentry {
-        background-color: mistyrose;
-      }
-    }
-  }
-
-  .home,
-  .page {
-    &.no-sidebar {
-      .site-main {
-        background-color: lightskyblue;
-      }
-
-      .hentry {
-        background-color: powderblue;
-      }
-    }
-  }
-
-  .wrap-full-width {
-    max-width: $wrap__full-width-normal;
+  .site-main {
+    max-width: 60em;
+    margin: 0 auto;
   }
 }
 
-@media screen and (min-width: $query__large) {
-  .site-main {
-    width: $content__wide;
-  }
+// If Browser support CSS Grid:
 
-  .wrap-full-width {
-    max-width: $wrap__full-width-wide;
+.blog,
+.page {
+  &.has-sidebar {
+    @supports (grid-area: auto) {
+      @media screen and (min-width: $query__medium) {
+        .site {
+          display: grid;
+          grid-template-areas:
+            "header header header header"
+            "main main main sidebar"
+            "footer footer footer footer";
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        .site-main {
+          max-width: none;
+        }
+      }
+    }
   }
 }

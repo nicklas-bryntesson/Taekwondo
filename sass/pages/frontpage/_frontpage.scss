@@ -1,7 +1,26 @@
 /* Frontpage - Base styles */
 
+// Since we have wrapper for content on all sections, override max-width fallback
+.frontpage {
+  .site-main {
+    max-width: none;
+  }
+}
+
 .site-main {
   margin-bottom: 0;
+}
+
+.wrap-full-width {
+  margin: 0 auto;
+
+  @media screen and (min-width: $query__medium) {
+    max-width: $wrap__full-width-normal;
+  }
+
+  @media screen and (min-width: $query__large) {
+    max-width: $wrap__full-width-wide;
+  }
 }
 
 .fp-section {

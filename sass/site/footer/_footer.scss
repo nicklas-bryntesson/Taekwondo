@@ -1,25 +1,72 @@
+/* Baseline */
+
+// If browser supports CSS Grid
+
 .site-footer {
-	position: relative;
-	padding: 2em;
-	color: $color__text-white;
-    background-color: $color__background-colophon;
-	font-family: $font__sans;
+  grid-area: footer;
+}
 
-	a {
-		font-weight: bold;
-		text-decoration: none;
-		color: inherit;
-		transition: $transition__card-hover;
+.site-footer {
+  font-family: $font__sans;
+  color: $color__text-white;
+  background-color: $backgroundcolor__colophon;
 
-		&:hover,
-		&:focus {
-			text-decoration: underline;
-			color: $color__branding-main;
-		}
-	}
+  .footer-widgets {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .widget {
+    flex: 1;
+  }
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    transition: $transition__card-hover;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: $color__branding-main;
+    }
+  }
 }
 
 .site-info {
-	margin: 1em 0 1em auto;
-	align-self: center;
+  background-color: $backgroundcolor__site-info;
+  padding: 1.5em 3em;
+}
+
+.blog,
+.page {
+  &.has-sidebar {
+    &.has-social {
+      @supports (grid-area: auto) {
+        @media screen and (min-width: $query__medium) {
+          .site-footer {
+            display: grid;
+            grid-template-areas:
+              "widget widget widget social"
+              "info info info info";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+
+          .site-footer .widget-area {
+            grid-area: widget;
+          }
+
+          .site-footer .social-menu {
+            grid-area: social;
+            background-color: $backgroundcolor__social-menu;
+          }
+
+          .site-footer .site-info {
+            grid-area: info;
+          }
+        }
+      }
+    }
+  }
 }

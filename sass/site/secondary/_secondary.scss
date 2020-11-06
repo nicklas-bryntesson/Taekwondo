@@ -1,5 +1,9 @@
 .widget-area {
-  background-color: $color__background-secondary;
+  grid-area: sidebar;
+}
+
+.widget-area {
+  background-color: $backgroundcolor__secondary;
   padding: 2rem 0;
 
   @media screen and (min-width: $query__large) {

@@ -19,11 +19,11 @@
                 <span><?php echo $instructor['title-kor']; ?></span>
                 <h2><?php the_title(); ?></h2>
             </div>
-            </div class="meta-degree">
+            <div class="meta-degree">
                 
                 <?php include( locate_template( 'components/instructors/instructor-degree.php', false, false ) ); ?>
 
-            <div>
+            </div>
         </div>
 
     </a>

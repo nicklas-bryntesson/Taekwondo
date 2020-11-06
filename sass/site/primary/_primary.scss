@@ -1,3 +1,12 @@
+/* Baseline */
+/* Baseline */
+
+.site-main {
+  grid-area: main;
+}
+
+/* THE REST */
+
 .site-content {
   word-wrap: break-word;
 }
@@ -10,7 +19,7 @@
 @media screen and (min-width: $query__medium) {
   .hentry {
     width: $content__normal;
-    padding: 0.75em 1.5em;
+    padding: 0.75em 1.25em;
   }
 }
 

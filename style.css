@@ -1040,10 +1040,6 @@ textarea {
 	position: relative;
 }
 
-.instructor .instructor-meta {
-	padding: 0.5em;
-}
-
 /* Instructor Belt Degree */
 .degree .circle {
 	position: relative;
@@ -1108,40 +1104,32 @@ textarea {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-.site-main,
-.site-content,
-.wrap-full-width {
+.site {
 	margin: 0 auto;
+	max-width: 100%;
+	height: 100vh;
 }
 
 @media screen and (min-width: 900px) {
-	.blog.has-sidebar .site-main,
-	.page.has-sidebar .site-main {
-		background-color: lightsalmon;
-	}
-	.blog.has-sidebar .hentry,
-	.page.has-sidebar .hentry {
-		background-color: mistyrose;
-	}
-	.home.no-sidebar .site-main,
-	.page.no-sidebar .site-main {
-		background-color: lightskyblue;
-	}
-	.home.no-sidebar .hentry,
-	.page.no-sidebar .hentry {
-		background-color: powderblue;
-	}
-	.wrap-full-width {
-		max-width: 1000px;
+	.site-main {
+		max-width: 60em;
+		margin: 0 auto;
 	}
 }
 
-@media screen and (min-width: 1300px) {
-	.site-main {
-		width: 60rem;
-	}
-	.wrap-full-width {
-		max-width: 1250px;
+@supports (grid-area: auto) {
+	@media screen and (min-width: 900px) {
+		.blog.has-sidebar .site,
+		.page.has-sidebar .site {
+			display: grid;
+			grid-template-areas: "header header header header" "main main main sidebar" "footer footer footer footer";
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+		}
+		.blog.has-sidebar .site-main,
+		.page.has-sidebar .site-main {
+			max-width: none;
+		}
 	}
 }
 
@@ -1596,11 +1584,16 @@ SVG Fallbacks
 /*--------------------------------------------------------------
 # Site
 --------------------------------------------------------------*/
+/* Baseline */
 .site-header {
-	background-color: #F0F0F0;
+	grid-area: header;
+	z-index: 999;
+}
+
+.site-header {
+	background-color: #f0f0f0;
 	box-shadow: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
 	padding: 3em 2em;
-	z-index: 999;
 }
 
 .main-navigation {
@@ -1690,6 +1683,13 @@ SVG Fallbacks
 	flex: 1 0 50%;
 }
 
+/* Baseline */
+/* Baseline */
+.site-main {
+	grid-area: main;
+}
+
+/* THE REST */
 .site-content {
 	word-wrap: break-word;
 }
@@ -1702,7 +1702,7 @@ SVG Fallbacks
 @media screen and (min-width: 900px) {
 	.hentry {
 		width: 50rem;
-		padding: 0.75em 1.5em;
+		padding: 0.75em 1.25em;
 	}
 }
 
@@ -1711,6 +1711,10 @@ SVG Fallbacks
 		width: 60rem;
 		padding: 1em 2em;
 	}
+}
+
+.widget-area {
+	grid-area: sidebar;
 }
 
 .widget-area {
@@ -1925,7 +1929,7 @@ SVG Fallbacks
 .footer-widgets {
 	margin: 0;
 	padding: 1.5rem 0;
-	background-color: #252B33;
+	background-color: #252b33;
 }
 
 @media screen and (min-width: 600px) {
@@ -1999,12 +2003,24 @@ SVG Fallbacks
 	}
 }
 
+/* Baseline */
 .site-footer {
-	position: relative;
-	padding: 2em;
-	color: #fff;
-	background-color: #252B33;
+	grid-area: footer;
+}
+
+.site-footer {
 	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	color: #fff;
+	background-color: #252b33;
+}
+
+.site-footer .footer-widgets {
+	display: flex;
+	flex-direction: row;
+}
+
+.site-footer .widget {
+	flex: 1;
 }
 
 .site-footer a {
@@ -2020,16 +2036,60 @@ SVG Fallbacks
 }
 
 .site-info {
-	margin: 1em 0 1em auto;
-	align-self: center;
+	background-color: #1f2022;
+	padding: 1.5em 3em;
+}
+
+@supports (grid-area: auto) {
+	@media screen and (min-width: 900px) {
+		.blog.has-sidebar.has-social .site-footer,
+		.page.has-sidebar.has-social .site-footer {
+			display: grid;
+			grid-template-areas: "widget widget widget social" "info info info info";
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+		.blog.has-sidebar.has-social .site-footer .widget-area,
+		.page.has-sidebar.has-social .site-footer .widget-area {
+			grid-area: widget;
+		}
+		.blog.has-sidebar.has-social .site-footer .social-menu,
+		.page.has-sidebar.has-social .site-footer .social-menu {
+			grid-area: social;
+			background-color: #383f48;
+		}
+		.blog.has-sidebar.has-social .site-footer .site-info,
+		.page.has-sidebar.has-social .site-footer .site-info {
+			grid-area: info;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
 /* Frontpage - Base styles */
+.frontpage .site-main {
+	max-width: none;
+}
+
 .site-main {
 	margin-bottom: 0;
+}
+
+.wrap-full-width {
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 900px) {
+	.wrap-full-width {
+		max-width: 1000px;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.wrap-full-width {
+		max-width: 1250px;
+	}
 }
 
 .fp-section {
@@ -2601,6 +2661,7 @@ SVG Fallbacks
 	background: #053d6b;
 }
 
+/* Style for layout instructors lists */
 .instructor-cards {
 	margin: 0 auto;
 	padding: 1em;
@@ -2717,29 +2778,62 @@ SVG Fallbacks
 /*--------------------------------------------------------------
 # Shame - Resolve before bundel
 --------------------------------------------------------------*/
+/*
 body {
-	background-color: #f1c7f7;
+  background-color: rgb(241, 199, 247);
 }
 
 .page {
-	background-color: lightpink;
+  background-color: lightpink;
 }
 
 .site-main {
-	background-color: plum;
+  background-color: plum;
 }
 
 .widget-area {
-	background-color: hotpink;
-	padding: 1em;
+  background-color: hotpink;
+  padding: 1em;
 }
 
 .site-footer {
-	background-color: tomato;
+  background-color: tomato;
+
+  .widget-area {
+    background-color: coral;
+    padding: 1em;
+  }
 }
 
 .site-info {
-	background-color: tan;
+  background-color: tan;
+}
+*/
+.instructor-meta {
+	padding: 1.5em 1.2em 2em 1.2em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.instructor-meta .meta-titles {
+	color: #404040;
+}
+
+.instructor-meta .meta-titles h1 {
+	font-size: 1em;
+}
+
+.instructor-meta .meta-titles span {
+	font-size: 1em;
+}
+
+.instructor-meta .meta-titles h2 {
+	font-size: 1em;
+}
+
+.instructor-meta .meta-degree {
+	width: 5em;
 }
 
 /*# sourceMappingURL=style.css.map */

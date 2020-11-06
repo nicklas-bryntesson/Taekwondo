@@ -1,8 +1,14 @@
+/* Baseline */
+
 .site-header {
-  background-color: $color__background-header;
+  grid-area: header;
+  z-index: 999;
+}
+
+.site-header {
+  background-color: $backgroundcolor__masthead;
   box-shadow: $boxshadow__card;
   padding: 3em 2em;
-  z-index: 999;
 }
 
 @import "navigation/navigation";

@@ -17,6 +17,11 @@ function tkd_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Adds a class of frontpage to the frontpage.
+	if ( is_front_page()  ) {
+		$classes[] = 'frontpage';
+	}
+
 	// Adds a class of no-sidebar when there is no sidebar present.
 	if ( is_front_page() || ! is_active_sidebar( 'sidebar-1' ) ) {
 		$classes[] = 'no-sidebar';
