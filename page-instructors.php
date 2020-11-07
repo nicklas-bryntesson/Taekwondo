@@ -49,10 +49,16 @@ get_header();
 							// Variables
 							$instructor = get_field( 'instructor' );
 
-							include( locate_template( 'components/instructors/instructor-card-list.php', false, false ) );
+							if( have_rows('instructor') ): ?>
+								<?php while( have_rows('instructor') ): the_row(); ?>
+								
+									<?php include( locate_template( 'components/instructors/instructor-card-list.php', false, false ) ); ?>
 						
-							endwhile; 
-						?>
+
+								<?php endwhile; ?>
+							<?php endif; ?>
+
+							<?php endwhile; ?>
 					</section>
 
 				<?php endif ?>

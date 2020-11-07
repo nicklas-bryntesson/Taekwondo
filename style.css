@@ -1065,6 +1065,10 @@ textarea {
 	background-color: #1e2738;
 }
 
+.degree .circle-blue:after {
+	background-color: #053d6b;
+}
+
 .degree .circle-inner {
 	position: absolute;
 	top: 0;
@@ -1091,8 +1095,10 @@ textarea {
 	color: white;
 }
 
+.instructor > a:hover .circle-blue:after,
 .instructor > a:hover .circle-red:after,
-.instructor > a:hover .circle-black:after, .instructor > a:focus .circle-red:after,
+.instructor > a:hover .circle-black:after, .instructor > a:focus .circle-blue:after,
+.instructor > a:focus .circle-red:after,
 .instructor > a:focus .circle-black:after {
 	background-color: white;
 }
@@ -2834,6 +2840,10 @@ body {
 
 .instructor-meta .meta-degree {
 	width: 5em;
+}
+
+.circle-blue {
+	background-color: #1b71b8;
 }
 
 /*# sourceMappingURL=style.css.map */

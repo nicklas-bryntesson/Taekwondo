@@ -56,6 +56,10 @@
     background-color: $color__branding--belt-black;
   }
 
+  .circle-blue:after {
+    background-color: $color__branding--belt-blue;
+  }
+
   .circle-inner {
     position: absolute;
     top: 0;
@@ -88,6 +92,7 @@
       color: white;
     }
 
+    .circle-blue:after,
     .circle-red:after,
     .circle-black:after {
       background-color: white;
