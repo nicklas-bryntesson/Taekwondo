@@ -27,41 +27,44 @@ get_header();
 
 		<?php endwhile; ?>
 	
-		<!-- List of all instructors -->
-
-		<?php if( function_exists('get_field')) { 
+		<?php if( function_exists('get_field')) { // Check for ACF support ?>
 			
-			$args = array(
+			<?php // Check for instructors 
+
+				$args = array(
 				'post_type'         => 'instructor',
 				'post_status'       => 'publish',
 				'posts_per_page'    => -1,
 				'perm'              => 'readable',
 				'orderby'           =>  array('meta_value_num' => 'ASC', 'menu_order' => 'ASC'),
+				'meta_key'          => 'instructor_degree',
 				'order'             => 'ASC'
 			);
 
-			$loop = new WP_Query( $args );
+			$loop = new WP_Query( $args ); ?>
 
-			if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : // If posts -> Instructor section ?>
 				
-					<section id="instructors" class="instructor-cards">
+				<section id="instructors">
+					<ul class="instructor-cards">
+					
 						<?php while ( $loop->have_posts() ) : $loop->the_post();
+							
 							// Variables
 							$instructor = get_field( 'instructor' );
-
-							if( have_rows('instructor') ): ?>
-								<?php while( have_rows('instructor') ): the_row(); ?>
-								
-									<?php include( locate_template( 'components/instructors/instructor-card-list.php', false, false ) ); ?>
-						
-
-								<?php endwhile; ?>
-							<?php endif; ?>
-
-							<?php endwhile; ?>
-					</section>
-
-				<?php endif ?>
+							$degree = get_field_object( 'instructor_degree' );
+							$value = $degree['value'];
+							$label = $degree['choices'][ $value ];
+							$color = ["circle-red", "circle-black", "circle-blue"];
+							
+							include( locate_template( 'components/instructors/instructor-card-list.php', false, false ) ); ?>
+							
+						<?php endwhile; ?>
+					
+					</ul>
+				</section>
+			
+			<?php endif // End check for posts?>
 
 		<?php } // End check for ACF support ?>
 		

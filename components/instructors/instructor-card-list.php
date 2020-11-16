@@ -6,11 +6,11 @@
  */
 ?>
 
-<article class="instructor card card-link">
+<li class="instructor card card-link">
     <a href="<?php echo get_permalink() ?>">
         <figure class="instructor-thumbnail">
             <img class="card-image-large" src="<?php echo $instructor['image']['url']; ?>" alt="<?php echo $instructor['image']['alt']; ?>" />
-            <span class="read-more"><?php esc_html_e( 'Read more', 'tkd' ); ?></span>
+            <span class="read-more" aria-hidden="true"><?php esc_html_e( 'Read more', 'tkd' ); ?></span>
         </figure>
 
         <div class="instructor-meta">
@@ -21,9 +21,19 @@
             </div>
 
             <div class="meta-degree"> 
-                <?php include( locate_template( 'components/instructors/instructor-degree.php', false, false ) );?>
+                <div class="degree">
+                    <div class="circle <?php echo $color[2] ?>">
+                        <div class="circle-inner">
+                            <div class="circle-wrapper">
+                                <div class="circle-content">
+                                    <p><?php echo $label; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
     </a>
-</article>
+</li>

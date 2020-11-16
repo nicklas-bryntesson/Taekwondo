@@ -53,4 +53,4 @@ $label = $degree['choices'][ $value ];
 
     <?php } ?>
 
-</div> <!-- .degree -->
+</div>

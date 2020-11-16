@@ -2669,29 +2669,23 @@ SVG Fallbacks
 
 /* Style for layout instructors lists */
 .instructor-cards {
+	display: grid;
 	margin: 0 auto;
 	padding: 1em;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
 }
 
 @media screen and (min-width: 900px) {
 	.instructor-cards {
 		padding: 0.75em 1.5em;
-	}
-	.instructor {
-		width: 48%;
+		grid-gap: 2em 1em;
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
 @media screen and (min-width: 1300px) {
 	.instructor-cards {
 		padding: 1em 2em;
-	}
-	.instructor {
-		width: 31%;
+		grid-gap: 2.5em 1.5em;
 	}
 }
 
