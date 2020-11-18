@@ -2,112 +2,112 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	font-family: $font__sans;
-  	line-height: 1;
-	font-weight: 400;
-	padding: 8px 12px;
-	padding: .8rem 1.2rem;
-	background: transparent;
-	color: $color__branding-main;
-	border: 2px solid;
-	border-color: $color__branding-main;
+  font-family: $font__sans;
+  line-height: 1;
+  font-weight: 400;
+  padding: 8px 12px;
+  padding: 0.8rem 1.2rem;
+  background: transparent;
+  color: $color__branding-main;
+  border: 2px solid;
+  border-color: $color__branding-main;
 
-	&:visited {
-		color: $color__branding-main;
-	}
+  &:visited {
+    color: $color__branding-main;
+  }
 
-	&:hover ,
-	&:active,
-	&:focus {
-		transition: $transition__button-hover;
-		background: white;
-		color: $color__branding-main;
-	}
+  &:hover,
+  &:active,
+  &:focus {
+    transition: $transition__button-hover;
+    background: white;
+    color: $color__branding-main;
+  }
 
- 	@media screen and (min-width: $query__medium) {
-		padding: 1rem 1.6rem;
-		font-weight: 700;
-	}
+  @media screen and (min-width: $query__tablet) {
+    padding: 1rem 1.6rem;
+    font-weight: 700;
+  }
 
-	@media screen and (min-width: $query__large) {
-		padding: 1.2rem 3rem;
-		font-weight: 700;
-	}
+  @media screen and (min-width: $query__desktop) {
+    padding: 1.2rem 3rem;
+    font-weight: 700;
+  }
 }
 
 // Main branding buttons.
 
 .cta-btn {
-	font-family: $font__sans;
-	display: inline-block;
-	line-height: 1;
-	font-weight: 400;
-	padding: 8px 12px;
-	padding: .8rem 1.2rem;
-	background: transparent;
-	color: $color__branding-main;
-	border: 2px solid;
-	border-color: $color__branding-main;
-	text-align: center;
-	transition: $transition__button-hover;
+  font-family: $font__sans;
+  display: inline-block;
+  line-height: 1;
+  font-weight: 400;
+  padding: 8px 12px;
+  padding: 0.8rem 1.2rem;
+  background: transparent;
+  color: $color__branding-main;
+  border: 2px solid;
+  border-color: $color__branding-main;
+  text-align: center;
+  transition: $transition__button-hover;
 
-	&:visited {
-		color: $color__branding-main;
-	}
+  &:visited {
+    color: $color__branding-main;
+  }
 
-	@media screen and (min-width: $query__medium) {
-		padding: .9rem 1.4rem;
-		font-weight: 600;
-	}
+  @media screen and (min-width: $query__tablet) {
+    padding: 0.9rem 1.4rem;
+    font-weight: 600;
+  }
 
-	@media screen and (min-width: $query__large) {
-		padding: 1.1rem 2rem;
-		font-weight: 700;
-	}
+  @media screen and (min-width: $query__desktop) {
+    padding: 1.1rem 2rem;
+    font-weight: 700;
+  }
 }
 
 #btn-solid {
-  	background-color: $color__branding-main;
-	color: $color__text-white;
-  	border: 2px solid $color__branding-main;
+  background-color: $color__branding-main;
+  color: $color__text-white;
+  border: 2px solid $color__branding-main;
 
-	&:hover ,
-	&:active,
-	&:focus {
-		background-color: $color__branding-main-hover;
-		border: 2px solid $color__branding-main-hover;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color__branding-main-hover;
+    border: 2px solid $color__branding-main-hover;
   }
 }
 
 #btn-outline {
-	background-color: transparent;
-	color: $color__branding-main;
-  	border: 2px solid $color__branding-main;
+  background-color: transparent;
+  color: $color__branding-main;
+  border: 2px solid $color__branding-main;
 
-	&:hover ,
-	&:active,
-	&:focus {
-		background: $color__branding-main-hover;
-		color: $color__text-white;
-    	border: 2px solid $color__branding-main-hover;
-	}
+  &:hover,
+  &:active,
+  &:focus {
+    background: $color__branding-main-hover;
+    color: $color__text-white;
+    border: 2px solid $color__branding-main-hover;
+  }
 }
 
 // Shortlinks between pages.
 
 .interlink {
-	display: inline-block;
-	text-decoration: none;
-	padding: 0.4rem 1.3rem;
-	background-color: $color__branding-main;
-	color: $color__text-white;
-	border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.4rem 1.3rem;
+  background-color: $color__branding-main;
+  color: $color__text-white;
+  border-radius: 5px;
 
-	&:hover,
-	&:active,
-	&:focus {
-		text-decoration: none;
-		background-color: $color__branding-main-hover;
-		color: $color__text-white;
-	}
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    background-color: $color__branding-main-hover;
+    color: $color__text-white;
+  }
 }

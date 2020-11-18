@@ -17,7 +17,7 @@
       ol {
         margin-left: 0.5rem;
 
-        @media screen and (min-width: 30rem) {
+        @media screen and (min-width: $query__phone-wide) {
           margin-left: 1rem;
         }
       }
@@ -197,7 +197,7 @@
   padding: 1.5rem 0;
   background-color: $color__background-colophon;
 
-  @media screen and (min-width: $query__small) {
+  @media screen and (min-width: $query__phablet) {
     padding: 2rem 1rem;
   }
 
@@ -206,7 +206,7 @@
     margin: 0;
     padding-top: 1rem;
 
-    @media screen and (min-width: $query__small) {
+    @media screen and (min-width: $query__phablet) {
       margin: 0 2rem 2rem;
     }
 
@@ -241,7 +241,7 @@
 .footer-widget-area__wrap {
   margin: 0 auto;
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet-small) {
     /* Use flex to create a responsive layout */
     display: flex;
     flex-wrap: wrap;

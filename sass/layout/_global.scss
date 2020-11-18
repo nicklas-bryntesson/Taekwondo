@@ -8,22 +8,25 @@
 
 // Fallback for legacy browsers not supporting CSS Grid:
 
-@media screen and (min-width: $query__medium) {
+@media screen and (min-width: $query__tablet-wide) {
+  .site {
+    justify-content: center;
+  }
+
   .site-main {
-    max-width: 60em;
+    max-width: 640px;
     margin: 0 auto;
   }
 }
 
 // If Browser support CSS Grid:
-
 .blog,
+.single,
 .page {
   &.has-sidebar {
     @supports (grid-area: auto) {
-      @media screen and (min-width: $query__medium) {
+      @media screen and (min-width: $query__tablet-wide) {
         .site {
-          margin: 0;
           display: grid;
           grid-template-areas:
             "header header header header"
@@ -33,6 +36,23 @@
           grid-template-rows: 1fr 1fr 1fr;
         }
 
+        .site-main {
+          max-width: none;
+          min-width: 0;
+        }
+      }
+    }
+  }
+}
+
+// Supports grid but have no active Sidebar or a page templete without sidebar
+
+.blog,
+.single,
+.page {
+  &.no-sidebar {
+    @supports (grid-area: auto) {
+      @media screen and (min-width: $query__tablet-wide) {
         .site-main {
           max-width: none;
           min-width: 0;

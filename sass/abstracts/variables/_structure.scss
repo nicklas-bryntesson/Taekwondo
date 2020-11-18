@@ -1,12 +1,19 @@
 // Media Queries
-$query__small: 600px;
-$query__medium: 900px;
-$query__large: 1300px;
-$query__x-large: 1500px;
+
+$query__phone: 320px; // 20em
+$query__phone-wide: 480px; // 30em
+$query__phablet: 560px; // 35em
+$query__tablet-small: 640px; // 40em
+$query__tablet: 768px; // 48em
+$query__tablet-wide: 1024px; // 64em
+$query__desktop: 1248px; // 78em
+$query__desktop-wide: 1440px; // 90em
 
 // Wraps
 $content__normal: 50rem;
 $content__wide: 60rem;
+$content-width: 50rem;
+// Kill this shit above!
 
 $wrap__full-width-normal: 1000px;
 $wrap__full-width-wide: 1250px;
@@ -14,3 +21,5 @@ $wrap__full-width-wide: 1250px;
 // Paddings
 $padding__section: 1.25rem;
 $padding__section-wide: 2rem;
+
+$content-width: 50rem;

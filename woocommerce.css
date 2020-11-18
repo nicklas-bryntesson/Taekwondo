@@ -42,7 +42,7 @@ table.shop_table_responsive tr td.download-actions .button {
 	text-align: center;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 768px) {
 	table.shop_table_responsive thead {
 		display: table-header-group;
 	}
@@ -83,7 +83,7 @@ ul.products li.product .button {
 	display: block;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 768px) {
 	ul.products li.product {
 		width: 30.79667%;
 		float: left;
@@ -457,7 +457,7 @@ p.no-comments {
 	z-index: 9999;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 768px) {
 	/**
 	 * Header cart
 	 */

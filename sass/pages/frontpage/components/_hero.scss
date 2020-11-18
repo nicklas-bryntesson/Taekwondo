@@ -44,7 +44,7 @@
     }
   }
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     .hero-entry-header {
       margin-bottom: 1.2rem;
 
@@ -83,7 +83,7 @@
     margin: 1rem;
     min-width: 15rem;
 
-    @media screen and (max-width: $query__medium) {
+    @media screen and (max-width: $query__tablet) {
       margin: 0.5rem 0;
       width: 100%;
     }

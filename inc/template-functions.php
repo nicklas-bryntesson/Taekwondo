@@ -23,7 +23,7 @@ function tkd_body_classes( $classes ) {
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( is_front_page() || ! is_active_sidebar( 'sidebar-1' ) ) {
+	if ( is_front_page() || is_page_template( 'page-templates/full-width.php' ) || ! is_active_sidebar( 'sidebar-1' ) ) {
 		$classes[] = 'no-sidebar';
 	} else {
 		$classes[] = 'has-sidebar';

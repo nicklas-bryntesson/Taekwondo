@@ -56,7 +56,7 @@
   max-width: 60em;
 }
 
-@media screen and (min-width: $query__medium) {
+@media screen and (min-width: $query__tablet) {
   .page-content > *,
   .entry-content > *,
   .entry-summary > *,
@@ -105,7 +105,7 @@
   border-bottom: 1px solid #111;
 }
 
-@media screen and (min-width: $query__medium) {
+@media screen and (min-width: $query__tablet) {
   .entry-footer {
     padding-right: 0;
     padding-left: 0;

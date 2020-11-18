@@ -507,7 +507,7 @@ body {
 	margin-left: 1.5rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.entry-content > .wp-block-quote,
 	.entry-content > .wp-block-quote.is-style-large {
 		margin-left: auto;
@@ -577,7 +577,7 @@ ul.wp-block-latest-posts.is-grid.alignfull {
 	padding-left: 1.5em;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 768px) {
 	.entry-content .wp-block-gallery {
 		padding-right: 0;
 		padding-left: 0;
@@ -601,7 +601,7 @@ ul.wp-block-latest-posts.is-grid.alignfull {
 	grid-column: span 2;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 640px) {
 	.wp-block-gallery.columns-2 {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -742,14 +742,14 @@ dd {
 }
 
 .card-title h1 {
-	font-size: 18px;
+	font-size: 16px;
 	font-size: 1, 125rem;
 	padding: 0.65rem 1.2rem;
 	margin: 0;
 	color: #fff;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -808,7 +808,7 @@ dd {
 
 .card-info-buttons p,
 .card-info p {
-	font-size: 16.2px;
+	font-size: 14.4px;
 	font-size: 0.9, 125rem;
 	font-weight: 300;
 	margin-bottom: 2rem;
@@ -820,7 +820,7 @@ dd {
 .card-info h1,
 .card-info h2,
 .card-info h3 {
-	font-size: 21.6px;
+	font-size: 19.2px;
 	font-size: 1.2, 125rem;
 }
 
@@ -829,7 +829,7 @@ dd {
 	font-weight: 400;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-info-buttons,
 	.card-info {
 		display: flex;
@@ -843,7 +843,7 @@ dd {
 	padding: 1rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-info-small {
 		padding: 1.1rem;
 	}
@@ -853,7 +853,7 @@ dd {
 	padding: 1.1rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-info-medium {
 		padding: 1.3rem;
 	}
@@ -863,7 +863,7 @@ dd {
 	padding: 1.5rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-info-large {
 		padding: 2rem;
 	}
@@ -873,7 +873,7 @@ dd {
 	padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-info-buttons {
 		padding: 2rem 2rem 0 2rem;
 	}
@@ -883,7 +883,7 @@ dd {
 	padding: 0 0.55rem 0.55rem 0.55rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-buttons-medium {
 		padding: 0 0.65rem 0.65rem 0.65rem;
 	}
@@ -899,7 +899,7 @@ dd {
 	margin: 0 0.55rem 0.55rem 0.55rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-buttons-medium .card-buttons-wide .cta-btn {
 		margin: 0 0.65rem 0.65rem 0.65rem;
 	}
@@ -909,7 +909,7 @@ dd {
 	padding: 0 0.75rem 0.75rem 0.75rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-buttons {
 		padding: 0 1rem 1rem 1rem;
 	}
@@ -925,7 +925,7 @@ dd {
 	margin: 0 0.75rem 0.75rem 0.75rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-buttons .card-buttons-wide .cta-btn {
 		margin: 0 1rem 1rem 1rem;
 	}
@@ -942,14 +942,9 @@ dd {
 	min-width: 11rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.card-buttons .card-buttons-split .cta-btn {
 		margin: 0 1rem 1rem 1rem;
-	}
-}
-
-@media screen and (max-width: 900px) {
-	.card-buttons .card-buttons-split .cta-btn {
 		width: 100%;
 	}
 }
@@ -1008,7 +1003,7 @@ input[type="submit"] {
 	line-height: 1;
 	font-weight: 400;
 	padding: 8px 12px;
-	padding: .8rem 1.2rem;
+	padding: 0.8rem 1.2rem;
 	background: transparent;
 	color: #1b71b8;
 	border: 2px solid;
@@ -1037,7 +1032,7 @@ input[type="submit"]:focus {
 	color: #1b71b8;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	button,
 	input[type="button"],
 	input[type="reset"],
@@ -1047,7 +1042,7 @@ input[type="submit"]:focus {
 	}
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1248px) {
 	button,
 	input[type="button"],
 	input[type="reset"],
@@ -1063,7 +1058,7 @@ input[type="submit"]:focus {
 	line-height: 1;
 	font-weight: 400;
 	padding: 8px 12px;
-	padding: .8rem 1.2rem;
+	padding: 0.8rem 1.2rem;
 	background: transparent;
 	color: #1b71b8;
 	border: 2px solid;
@@ -1076,14 +1071,14 @@ input[type="submit"]:focus {
 	color: #1b71b8;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.cta-btn {
-		padding: .9rem 1.4rem;
+		padding: 0.9rem 1.4rem;
 		font-weight: 600;
 	}
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1248px) {
 	.cta-btn {
 		padding: 1.1rem 2rem;
 		font-weight: 700;
@@ -1278,25 +1273,40 @@ textarea {
 	height: 100vh;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1024px) {
+	.site {
+		justify-content: center;
+	}
 	.site-main {
-		max-width: 60em;
+		max-width: 640px;
 		margin: 0 auto;
 	}
 }
 
 @supports (grid-area: auto) {
-	@media screen and (min-width: 900px) {
+	@media screen and (min-width: 1024px) {
 		.blog.has-sidebar .site,
+		.single.has-sidebar .site,
 		.page.has-sidebar .site {
-			margin: 0;
 			display: grid;
 			grid-template-areas: "header header header header" "main main main sidebar" "footer footer footer footer";
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			grid-template-rows: 1fr 1fr 1fr;
 		}
 		.blog.has-sidebar .site-main,
+		.single.has-sidebar .site-main,
 		.page.has-sidebar .site-main {
+			max-width: none;
+			min-width: 0;
+		}
+	}
+}
+
+@supports (grid-area: auto) {
+	@media screen and (min-width: 1024px) {
+		.blog.no-sidebar .site-main,
+		.single.no-sidebar .site-main,
+		.page.no-sidebar .site-main {
 			max-width: none;
 			min-width: 0;
 		}
@@ -1382,6 +1392,10 @@ sticky {
 	display: inline;
 }
 
+.entry {
+	margin-bottom: 1rem;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -1404,7 +1418,7 @@ sticky {
 	line-height: 1.2em;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.entry-title {
 		font-size: 2rem;
 	}
@@ -1443,13 +1457,13 @@ sticky {
 	overflow: hidden;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 560px) {
 	.full-bleed {
 		margin-left: -2em;
 	}
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.full-bleed {
 		margin-top: 1.5em;
 		margin-right: -2em;
@@ -1577,7 +1591,7 @@ object {
 	grid-gap: 0.5em;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 640px) {
 	.gallery-columns-2 {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -1806,9 +1820,9 @@ SVG Fallbacks
 	display: block;
 	text-decoration: none;
 	font-weight: bold;
-	padding: .5em 1em;
+	padding: 0.5em 1em;
 	transition: all 0.3s ease;
-	border-radius: .5em;
+	border-radius: 0.5em;
 	color: inherit;
 }
 
@@ -1826,7 +1840,7 @@ SVG Fallbacks
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 560px) {
 	.menu-toggle {
 		display: none;
 	}
@@ -1917,7 +1931,7 @@ SVG Fallbacks
 	max-width: 60em;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.page-content > *,
 	.entry-content > *,
 	.entry-summary > *,
@@ -1966,7 +1980,7 @@ SVG Fallbacks
 	border-bottom: 1px solid #111;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.entry-footer {
 		padding-right: 0;
 		padding-left: 0;
@@ -2004,14 +2018,33 @@ SVG Fallbacks
 
 .widget-area {
 	grid-area: sidebar;
-}
-
-.widget-area {
-	background-color: #ffffff;
+	/*background-color: $backgroundcolor__secondary;*/
 	padding: 2rem 0;
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 560px) and (max-width: 1024px) {
+	.widget-area {
+		background-color: hotpink;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.widget-area .widget {
+		flex: 1;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.widget-area {
+		background-color: plum;
+	}
+}
+
+.widget-area {
+	padding: 2rem 0;
+}
+
+@media screen and (min-width: 1024px) {
 	.widget-area {
 		padding: 2.5rem 0;
 	}
@@ -2044,7 +2077,7 @@ SVG Fallbacks
 	margin-left: 0.5rem;
 }
 
-@media screen and (min-width: 30rem) {
+@media screen and (min-width: 480px) {
 	.widget ul li ul,
 	.widget ul li ol,
 	.widget ol li ul,
@@ -2221,7 +2254,7 @@ SVG Fallbacks
 	background-color: #252b33;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 560px) {
 	.footer-widgets {
 		padding: 2rem 1rem;
 	}
@@ -2233,7 +2266,7 @@ SVG Fallbacks
 	padding-top: 1rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 560px) {
 	.footer-widgets .widget {
 		margin: 0 2rem 2rem;
 	}
@@ -2268,7 +2301,7 @@ SVG Fallbacks
 	margin: 0 auto;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 640px) {
 	.footer-widget-area__wrap {
 		/* Use flex to create a responsive layout */
 		display: flex;
@@ -2330,23 +2363,27 @@ SVG Fallbacks
 }
 
 @supports (grid-area: auto) {
-	@media screen and (min-width: 900px) {
+	@media screen and (min-width: 1024px) {
 		.blog.has-sidebar.has-social .site-footer,
+		.single.has-sidebar.has-social .site-footer,
 		.page.has-sidebar.has-social .site-footer {
 			display: grid;
 			grid-template-areas: "widget widget widget social" "info info info info";
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 		}
 		.blog.has-sidebar.has-social .site-footer .widget-area,
+		.single.has-sidebar.has-social .site-footer .widget-area,
 		.page.has-sidebar.has-social .site-footer .widget-area {
 			grid-area: widget;
 		}
 		.blog.has-sidebar.has-social .site-footer .social-menu,
+		.single.has-sidebar.has-social .site-footer .social-menu,
 		.page.has-sidebar.has-social .site-footer .social-menu {
 			grid-area: social;
 			background-color: #383f48;
 		}
 		.blog.has-sidebar.has-social .site-footer .site-info,
+		.single.has-sidebar.has-social .site-footer .site-info,
 		.page.has-sidebar.has-social .site-footer .site-info {
 			grid-area: info;
 		}
@@ -2369,13 +2406,13 @@ SVG Fallbacks
 	margin: 0 auto;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.wrap-full-width {
 		max-width: 1000px;
 	}
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1248px) {
 	.wrap-full-width {
 		max-width: 1250px;
 	}
@@ -2386,7 +2423,7 @@ SVG Fallbacks
 	padding: 1.2rem 1.2rem 0 1.2rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.fp-section {
 		padding: 2rem 2rem 0 2rem;
 	}
@@ -2404,7 +2441,7 @@ SVG Fallbacks
 }
 
 .hero--content {
-	font-size: 18px;
+	font-size: 16px;
 	font-size: 1, 125rem;
 	position: relative;
 	text-align: center;
@@ -2424,7 +2461,7 @@ SVG Fallbacks
 }
 
 .hero--content .hero-entry-header i {
-	font-size: 14.4px;
+	font-size: 12.8px;
 	font-size: 0.8, 125rem;
 	font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
 	font-weight: 400;
@@ -2442,7 +2479,7 @@ SVG Fallbacks
 	font-size: 1.1rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.hero--content .hero-entry-header {
 		margin-bottom: 1.2rem;
 	}
@@ -2473,7 +2510,7 @@ SVG Fallbacks
 	min-width: 15rem;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
 	.hero-buttons-wide #hero-btn,
 	.hero-buttons-split #hero-btn {
 		margin: 0.5rem 0;
@@ -2709,7 +2746,7 @@ SVG Fallbacks
 	box-shadow: 0px 10px 25px 7px rgba(11, 41, 66, 0.5);
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.fp-groups {
 		display: flex;
 		flex-wrap: wrap;
@@ -2734,7 +2771,7 @@ SVG Fallbacks
 	padding: 1.2rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.banner--blue-blue,
 	.banner--yellow-orange,
 	.banner--red-blue {
@@ -2775,7 +2812,7 @@ SVG Fallbacks
 	margin-bottom: 1.2rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	#fp-newsfeed {
 		margin-bottom: 2rem;
 	}
@@ -2785,7 +2822,7 @@ SVG Fallbacks
 	margin-bottom: 1.2rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.fp-newsbox {
 		margin-bottom: 2rem;
 	}
@@ -2801,12 +2838,12 @@ SVG Fallbacks
 
 .fp-newsbox .card-info .fp-newsbox-title {
 	margin: 0;
-	font-size: 27.9px;
+	font-size: 24.8px;
 	font-size: 1.55, 125rem;
 }
 
 .fp-newsbox .card-info .fp-newsbox-posted {
-	font-size: 16.2px;
+	font-size: 14.4px;
 	font-size: 0.9, 125rem;
 	font-weight: 600;
 }
@@ -2817,10 +2854,10 @@ SVG Fallbacks
 
 .fp-newsbox .card-info .fp-newsbox-arrow {
 	color: #1b71b8;
-	font-size: 30.6px;
+	font-size: 27.2px;
 	font-size: 1.7, 125rem;
 	position: absolute;
-	bottom: .8rem;
+	bottom: 0.8rem;
 	right: 1.2rem;
 }
 
@@ -2832,7 +2869,7 @@ SVG Fallbacks
 }
 
 #newsfeed-link {
-	font-size: 18px;
+	font-size: 16px;
 	font-size: 1, 125rem;
 	background-color: transparent;
 	color: #1b71b8;
@@ -2847,9 +2884,9 @@ SVG Fallbacks
 	border: 3px solid #053d6b;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	#newsfeed-link {
-		font-size: 23.4px;
+		font-size: 20.8px;
 		font-size: 1.3, 125rem;
 		padding: 1.3rem;
 	}
@@ -2957,7 +2994,7 @@ SVG Fallbacks
 	padding: 1em;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
 	.instructor-cards {
 		padding: 0.75em 1.5em;
 		grid-gap: 2em 1em;
@@ -2965,7 +3002,7 @@ SVG Fallbacks
 	}
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1248px) {
 	.instructor-cards {
 		padding: 1em 2em;
 		grid-gap: 2.5em 1.5em;
