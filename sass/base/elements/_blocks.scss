@@ -41,7 +41,7 @@
   margin-left: 1.5rem;
 }
 
-@media (--content-query) {
+@media screen and (min-width: $query__medium) {
   .entry-content > .wp-block-quote,
   .entry-content > .wp-block-quote.is-style-large {
     margin-left: auto;
@@ -49,13 +49,11 @@
 }
 
 .wp-block-quote:not(.is-large):not(.is-style-large) {
-  border-left-color: var(--color-quote-border);
 }
 
 .wp-block-quote__citation,
 .wp-block-quote cite,
 .wp-block-quote footer {
-  border-left-color: var(--color-quote-citation);
 }
 
 .wp-block-cover {
@@ -64,7 +62,7 @@
 }
 
 .wp-block-cover__inner-container > * {
-  max-width: var(--content-width);
+  max-width: $content__normal;
   margin-left: auto;
   margin-right: auto;
 }

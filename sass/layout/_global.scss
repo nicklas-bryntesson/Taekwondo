@@ -23,6 +23,7 @@
     @supports (grid-area: auto) {
       @media screen and (min-width: $query__medium) {
         .site {
+          margin: 0;
           display: grid;
           grid-template-areas:
             "header header header header"
@@ -34,6 +35,7 @@
 
         .site-main {
           max-width: none;
+          min-width: 0;
         }
       }
     }

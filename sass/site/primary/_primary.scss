@@ -1,38 +1,10 @@
-/* Baseline */
-/* Baseline */
+/*--------------------------------------------------------------
+# Post and page content
+--------------------------------------------------------------*/
 
 .site-main {
   grid-area: main;
 }
-
-/* THE REST */
-
-.site-content {
-  word-wrap: break-word;
-}
-
-.hentry {
-  margin: 0 auto;
-  padding: 1em;
-}
-
-@media screen and (min-width: $query__medium) {
-  .hentry {
-    width: $content__normal;
-    padding: 0.75em 1.25em;
-  }
-}
-
-@media screen and (min-width: $query__large) {
-  .hentry {
-    width: $content__wide;
-    padding: 1em 2em;
-  }
-}
-
-/*--------------------------------------------------------------
-# Post and page content
---------------------------------------------------------------*/
 
 .entry {
   margin-bottom: 3rem;
@@ -40,8 +12,6 @@
 
 .entry-meta,
 .entry-footer {
-  font-family: var(--highlight-font-family);
-  font-stretch: condensed;
   font-size: 80%;
 }
 
@@ -160,6 +130,10 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.alignwide {
+  max-width: calc(50% + $content__normal / 2);
 }
 
 .alignfull {

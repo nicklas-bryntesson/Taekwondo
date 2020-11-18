@@ -463,7 +463,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #f4f4f4;
+	background: #e8eaf7;
 }
 
 /*--------------------------------------------------------------
@@ -507,21 +507,11 @@ body {
 	margin-left: 1.5rem;
 }
 
-@media (--content-query) {
+@media screen and (min-width: 900px) {
 	.entry-content > .wp-block-quote,
 	.entry-content > .wp-block-quote.is-style-large {
 		margin-left: auto;
 	}
-}
-
-.wp-block-quote:not(.is-large):not(.is-style-large) {
-	border-left-color: var(--color-quote-border);
-}
-
-.wp-block-quote__citation,
-.wp-block-quote cite,
-.wp-block-quote footer {
-	border-left-color: var(--color-quote-citation);
 }
 
 .wp-block-cover {
@@ -530,7 +520,7 @@ body {
 }
 
 .wp-block-cover__inner-container > * {
-	max-width: var(--content-width);
+	max-width: 50rem;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -1299,6 +1289,7 @@ textarea {
 	@media screen and (min-width: 900px) {
 		.blog.has-sidebar .site,
 		.page.has-sidebar .site {
+			margin: 0;
 			display: grid;
 			grid-template-areas: "header header header header" "main main main sidebar" "footer footer footer footer";
 			grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1307,6 +1298,7 @@ textarea {
 		.blog.has-sidebar .site-main,
 		.page.has-sidebar .site-main {
 			max-width: none;
+			min-width: 0;
 		}
 	}
 }
@@ -1543,6 +1535,13 @@ sticky {
 	padding: 0;
 }
 
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
@@ -1574,49 +1573,49 @@ sticky {
 .gallery {
 	margin-bottom: 1.5em;
 	display: grid;
-	grid-gap: 1.5em;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	grid-gap: 0.5em;
+}
+
+@media screen and (min-width: 900px) {
+	.gallery-columns-2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.gallery-columns-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.gallery-columns-4 {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.gallery-columns-5 {
+		grid-template-columns: repeat(5, 1fr);
+	}
+	.gallery-columns-6 {
+		grid-template-columns: repeat(6, 1fr);
+	}
+	.gallery-columns-7 {
+		grid-template-columns: repeat(7, 1fr);
+	}
+	.gallery-columns-8 {
+		grid-template-columns: repeat(8, 1fr);
+	}
+	.gallery-columns-9 {
+		grid-template-columns: repeat(9, 1fr);
+	}
 }
 
 .gallery-item {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
+	padding: 0.5em;
+	border: 1px solid #dedede;
 }
 
-.gallery-columns-2 {
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery-columns-3 {
-	grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery-columns-4 {
-	grid-template-columns: repeat(4, 1fr);
-}
-
-.gallery-columns-5 {
-	grid-template-columns: repeat(5, 1fr);
-}
-
-.gallery-columns-6 {
-	grid-template-columns: repeat(6, 1fr);
-}
-
-.gallery-columns-7 {
-	grid-template-columns: repeat(7, 1fr);
-}
-
-.gallery-columns-8 {
-	grid-template-columns: repeat(8, 1fr);
-}
-
-.gallery-columns-9 {
-	grid-template-columns: repeat(9, 1fr);
+.gallery-icon {
+	display: flex;
+	justify-content: center;
 }
 
 .gallery-caption {
-	display: block;
+	font-size: 80%;
 }
 
 /* Video
@@ -1861,47 +1860,19 @@ SVG Fallbacks
 	flex: 1 0 50%;
 }
 
-/* Baseline */
-/* Baseline */
+/*--------------------------------------------------------------
+# Post and page content
+--------------------------------------------------------------*/
 .site-main {
 	grid-area: main;
 }
 
-/* THE REST */
-.site-content {
-	word-wrap: break-word;
-}
-
-.hentry {
-	margin: 0 auto;
-	padding: 1em;
-}
-
-@media screen and (min-width: 900px) {
-	.hentry {
-		width: 50rem;
-		padding: 0.75em 1.25em;
-	}
-}
-
-@media screen and (min-width: 1300px) {
-	.hentry {
-		width: 60rem;
-		padding: 1em 2em;
-	}
-}
-
-/*--------------------------------------------------------------
-# Post and page content
---------------------------------------------------------------*/
 .entry {
 	margin-bottom: 3rem;
 }
 
 .entry-meta,
 .entry-footer {
-	font-family: var(--highlight-font-family);
-	font-stretch: condensed;
 	font-size: 80%;
 }
 
@@ -2020,6 +1991,10 @@ SVG Fallbacks
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.alignwide {
+	max-width: calc(50% + $content__normal / 2);
 }
 
 .alignfull {
@@ -2488,7 +2463,7 @@ SVG Fallbacks
 }
 
 #hero-btn:hover, #hero-btn:active, #hero-btn:focus {
-	color: #f4f4f4;
+	color: #e8eaf7;
 	background-color: #404040;
 }
 
@@ -3145,7 +3120,7 @@ body {
 }
 
 .circle-blue {
-	background-color: #1b71b8;
+	background-color: blue;
 }
 
 /*# sourceMappingURL=style.css.map */

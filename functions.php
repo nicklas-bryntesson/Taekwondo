@@ -40,11 +40,16 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+		
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
+		add_theme_support( 'post-thumbnails' );
+
+		add_theme_support( 'post-thumbnails' );
+
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
@@ -72,35 +77,9 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'tkd_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
 	}
 endif;
 add_action( 'after_setup_theme', 'tkd_setup' );
@@ -239,11 +218,6 @@ function tkd_scripts() {
 add_action( 'wp_enqueue_scripts', 'tkd_scripts' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -271,6 +245,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Disbable Block editor on specific pages and templates.
+ */
+require get_template_directory() . '/inc/disable-block-editor.php';
 
 /**
  * Load SVG icon functions.
