@@ -15,11 +15,7 @@
   margin: 0 auto;
 
   @media screen and (min-width: $query__tablet) {
-    max-width: $wrap__full-width-normal;
-  }
-
-  @media screen and (min-width: $query__desktop) {
-    max-width: $wrap__full-width-wide;
+    max-width: $content-width;
   }
 }
 

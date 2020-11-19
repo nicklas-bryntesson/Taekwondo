@@ -40,7 +40,6 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
-		
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
@@ -48,11 +47,16 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		add_theme_support( 'post-thumbnails' );
+		/*
+		 * Opt in features to extend block editor.
+		 *
+		 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/
+		 */
+		add_theme_support( 'wp-block-styles' );
 
-		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'align-wide' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
 				'menu-1'	=> esc_html__( 'Primary', 'tkd' ),
@@ -204,6 +208,15 @@ function tkd_scripts() {
 	}
 
 	wp_style_add_data( 'tkd-style', 'rtl', 'replace' );
+
+	/**
+	 * Based on the proposed CSS :focus-visible pseudo-selector, 
+	 * this prototype adds a focus-visible class to the focused element, 
+	 * in situations in which the :focus-visible pseudo-selector should match.
+	 * 
+	 * @link https://github.com/WICG/focus-visible
+	 */
+	wp_enqueue_script( 'focus-visible', get_template_directory_uri() . '/js/focus-visible.min.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'tkd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

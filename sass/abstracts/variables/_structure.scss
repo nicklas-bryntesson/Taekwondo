@@ -9,17 +9,6 @@ $query__tablet-wide: 1024px; // 64em
 $query__desktop: 1248px; // 78em
 $query__desktop-wide: 1440px; // 90em
 
-// Wraps
-$content__normal: 50rem;
-$content__wide: 60rem;
-$content-width: 50rem;
-// Kill this shit above!
+// Content max width wrapper
 
-$wrap__full-width-normal: 1000px;
-$wrap__full-width-wide: 1250px;
-
-// Paddings
-$padding__section: 1.25rem;
-$padding__section-wide: 2rem;
-
-$content-width: 50rem;
+$content-width: 48rem;
