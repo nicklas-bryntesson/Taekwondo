@@ -40,11 +40,12 @@
 }
 
 .blog,
+.single,
 .page {
   &.has-sidebar {
     &.has-social {
       @supports (grid-area: auto) {
-        @media screen and (min-width: $query__medium) {
+        @media screen and (min-width: $query__tablet-wide) {
           .site-footer {
             display: grid;
             grid-template-areas:

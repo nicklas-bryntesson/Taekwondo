@@ -1,13 +1,13 @@
 /* SVG Icons base styles */
 
 .icon {
-	display: inline-block;
-	fill: currentColor;
-	height: 2em;
-	width: 2em;
-	position: relative; /* Align more nicely with capital letters */
-	top: -0.0625em;
-	vertical-align: middle;
+  display: inline-block;
+  fill: currentColor;
+  height: 2em;
+  width: 2em;
+  position: relative; /* Align more nicely with capital letters */
+  top: -0.0625em;
+  vertical-align: middle;
 }
 
 /*--------------------------------------------------------------
@@ -15,33 +15,32 @@ SVG Fallbacks
 --------------------------------------------------------------*/
 
 .svg-fallback {
-	display: none;
+  display: none;
 }
 
 .no-svg .svg-fallback {
-	display: inline-block;
+  display: inline-block;
 }
 
 .no-svg .nav-links .svg-fallback {
-	padding: 0 .5em;
-	color: inherit;
-	background: inherit;
+  padding: 0 0.5em;
+  color: inherit;
+  background: inherit;
 }
-
 
 /* Social Menu fallbacks */
 
 .no-svg .social-menu a {
-	height: auto;
-	width: auto;
+  height: auto;
+  width: auto;
 }
 
 .no-svg .social-menu li a .screen-reader-text {
-	clip: auto;
-	font-size: 16px;
-	font-size: 1rem;
-	font-weight: 400;
-	height: auto;
-	position: relative !important; /* overrides previous !important styles */
-	width: auto;
+  clip: auto;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  height: auto;
+  position: relative !important; /* overrides previous !important styles */
+  width: auto;
 }

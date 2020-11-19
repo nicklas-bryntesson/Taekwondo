@@ -1,86 +1,83 @@
 .main-navigation {
-	display: block;
-	width: 100%;
-	color: $color__branding-main;
-	font-family: $font__sans;
+  display: block;
+  width: 100%;
+  color: $color__branding-main;
+  font-family: $font__sans;
 
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
+    li:hover > ul,
+    li.focus > ul {
+      left: auto;
+    }
+  }
 
-	li {
-		position: relative;
+  li {
+    position: relative;
 
-		&:hover > a,
-		&.focus > a {
-			color: $color__branding-main-hover;
-			background-color: $color__branding-main-focus;
-		}
-	}
+    &:hover > a,
+    &.focus > a {
+      color: $color__branding-main-hover;
+      background-color: $color__branding-main-focus;
+    }
+  }
 
-	a {
-		display: block;
-		text-decoration: none;
-		font-weight: bold;
-		padding: .5em 1em;
-		transition: $transition__card-hover;
-		border-radius: .5em;
-		color: inherit;
+  a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    transition: $transition__card-hover;
+    border-radius: 0.5em;
+    color: inherit;
+  }
 
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-		color: $color__branding-main-hover;
-		font-weight: bolder;
-	}
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a,
+  .current-menu-ancestor > a {
+    color: $color__branding-main-hover;
+    font-weight: bolder;
+  }
 }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
+  display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: $query__phablet) {
+  .menu-toggle {
+    display: none;
+  }
 
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
-	}
+  .main-navigation ul {
+    display: flex;
+  }
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+  .site-main & {
+    margin: 0 0 1.5em;
+  }
 
-	.site-main & {
-		margin: 0 0 1.5em;
-	}
+  .nav-links {
+    display: flex;
+  }
 
-	.nav-links {
-		display: flex;
-	}
+  .nav-previous {
+    flex: 1 0 50%;
+  }
 
-	.nav-previous {
-		flex: 1 0 50%;
-	}
-
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
-	}
+  .nav-next {
+    text-align: end;
+    flex: 1 0 50%;
+  }
 }

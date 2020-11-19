@@ -10,6 +10,7 @@ sticky {
   display: block;
 }
 
+// Move to archive template
 .archive-view .post {
   margin-bottom: 2rem;
 }
@@ -22,6 +23,10 @@ sticky {
 .single .byline,
 .group-blog .byline {
   display: inline;
+}
+
+.entry {
+  margin-bottom: 1rem;
 }
 
 .page-content,
@@ -44,7 +49,7 @@ sticky {
   font-size: 2rem;
   line-height: 1.2em;
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     font-size: 2rem;
   }
 
@@ -85,11 +90,11 @@ sticky {
   border-bottom: 1px solid hsl(0, 0%, 90%);
   overflow: hidden;
 
-  @media screen and (min-width: $query__small) {
+  @media screen and (min-width: $query__phablet) {
     margin-left: -2em;
   }
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     margin-top: 1.5em;
     margin-right: -2em;
   }

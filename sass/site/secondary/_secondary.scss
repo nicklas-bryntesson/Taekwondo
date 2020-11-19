@@ -1,12 +1,36 @@
 .widget-area {
   grid-area: sidebar;
+  /*background-color: $backgroundcolor__secondary;*/
+  padding: 2rem 0;
+}
+
+// Display sidebar widgets as Grid/Flex/Masonry when sidebar is collapsed at bottom and wide enough
+
+@media screen and (min-width: $query__phablet) and (max-width: $query__tablet-wide) {
+  .widget-area {
+    background-color: hotpink;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .widget {
+      flex: 1;
+    }
+  }
+}
+
+// Back to column when displayed as a sidebar next to entry content.
+
+@media screen and (min-width: $query__tablet-wide) {
+  .widget-area {
+    background-color: plum;
+  }
 }
 
 .widget-area {
-  background-color: $backgroundcolor__secondary;
   padding: 2rem 0;
 
-  @media screen and (min-width: $query__large) {
+  @media screen and (min-width: $query__tablet-wide) {
     padding: 2.5rem 0;
   }
 }

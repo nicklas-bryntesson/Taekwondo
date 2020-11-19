@@ -14,12 +14,8 @@
 .wrap-full-width {
   margin: 0 auto;
 
-  @media screen and (min-width: $query__medium) {
-    max-width: $wrap__full-width-normal;
-  }
-
-  @media screen and (min-width: $query__large) {
-    max-width: $wrap__full-width-wide;
+  @media screen and (min-width: $query__tablet) {
+    max-width: $content-width;
   }
 }
 
@@ -27,7 +23,7 @@
   margin: 0 auto;
   padding: 1.2rem 1.2rem 0 1.2rem;
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     padding: 2rem 2rem 0 2rem;
   }
 }

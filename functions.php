@@ -47,7 +47,16 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
+		/*
+		 * Opt in features to extend block editor.
+		 *
+		 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/
+		 */
+		add_theme_support( 'wp-block-styles' );
+
+		add_theme_support( 'align-wide' );
+
+		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
 				'menu-1'	=> esc_html__( 'Primary', 'tkd' ),
@@ -72,35 +81,9 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'tkd_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
 	}
 endif;
 add_action( 'after_setup_theme', 'tkd_setup' );
@@ -226,6 +209,15 @@ function tkd_scripts() {
 
 	wp_style_add_data( 'tkd-style', 'rtl', 'replace' );
 
+	/**
+	 * Based on the proposed CSS :focus-visible pseudo-selector, 
+	 * this prototype adds a focus-visible class to the focused element, 
+	 * in situations in which the :focus-visible pseudo-selector should match.
+	 * 
+	 * @link https://github.com/WICG/focus-visible
+	 */
+	wp_enqueue_script( 'focus-visible', get_template_directory_uri() . '/js/focus-visible.min.js', array(), _S_VERSION, true );
+
 	wp_enqueue_script( 'tkd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	// Load Background Video script
@@ -237,11 +229,6 @@ function tkd_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'tkd_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -271,6 +258,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Disbable Block editor on specific pages and templates.
+ */
+require get_template_directory() . '/inc/disable-block-editor.php';
 
 /**
  * Load SVG icon functions.

@@ -94,7 +94,7 @@
   }
 }
 
-@media screen and (min-width: $query__medium) {
+@media screen and (min-width: $query__tablet) {
   .card-wrapper {
     display: flex;
     justify-content: space-between;
@@ -178,7 +178,7 @@
     font-weight: 400;
   }
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -191,7 +191,7 @@
 .card-info-small {
   padding: 1rem;
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     padding: 1.1rem;
   }
 }
@@ -199,7 +199,7 @@
 .card-info-medium {
   padding: 1.1rem;
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     padding: 1.3rem;
   }
 }
@@ -207,7 +207,7 @@
 .card-info-large {
   padding: 1.5rem;
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     padding: 2rem;
   }
 }
@@ -217,7 +217,7 @@
 .card-info-buttons {
   padding: 1.5rem 1.5rem 0 1.5rem;
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     padding: 2rem 2rem 0 2rem;
   }
 }
@@ -227,7 +227,7 @@
 .card-buttons-medium {
   padding: 0 0.55rem 0.55rem 0.55rem;
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     padding: 0 0.65rem 0.65rem 0.65rem;
   }
 
@@ -239,7 +239,7 @@
       width: 100%;
       margin: 0 0.55rem 0.55rem 0.55rem;
 
-      @media screen and (min-width: $query__medium) {
+      @media screen and (min-width: $query__tablet) {
         margin: 0 0.65rem 0.65rem 0.65rem;
       }
     }
@@ -251,7 +251,7 @@
 .card-buttons {
   padding: 0 0.75rem 0.75rem 0.75rem;
 
-  @media screen and (min-width: $query__medium) {
+  @media screen and (min-width: $query__tablet) {
     padding: 0 1rem 1rem 1rem;
   }
 
@@ -263,7 +263,7 @@
       width: 100%;
       margin: 0 0.75rem 0.75rem 0.75rem;
 
-      @media screen and (min-width: $query__medium) {
+      @media screen and (min-width: $query__tablet) {
         margin: 0 1rem 1rem 1rem;
       }
     }
@@ -278,11 +278,8 @@
       margin: 0 0.75rem 0.75rem 0.75rem;
       min-width: 11rem;
 
-      @media screen and (min-width: $query__medium) {
+      @media screen and (min-width: $query__tablet) {
         margin: 0 1rem 1rem 1rem;
-      }
-
-      @media screen and (max-width: $query__medium) {
         width: 100%;
       }
     }
