@@ -2,12 +2,8 @@
 # Post and page content
 --------------------------------------------------------------*/
 
-.site-main {
-  grid-area: main;
-}
-
 .entry {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .entry-meta,
@@ -41,7 +37,7 @@
   margin-left: auto;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
-  max-width: 60em;
+  max-width: $content-width;
 }
 
 .page-header,
@@ -53,10 +49,11 @@
   margin: 1.5em auto;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
-  max-width: 60em;
+  max-width: $content-width;
 }
 
 @media screen and (min-width: $query__tablet) {
+  /*
   .page-content > *,
   .entry-content > *,
   .entry-summary > *,
@@ -66,9 +63,11 @@
   .post-navigation,
   .page-navigation,
   .comments-area {
+
     padding-left: 0;
     padding-right: 0;
   }
+  */
 }
 
 .entry-content ul,

@@ -49,11 +49,13 @@
 }
 
 .wp-block-quote:not(.is-large):not(.is-style-large) {
+  border-left-color: red; // Change
 }
 
 .wp-block-quote__citation,
 .wp-block-quote cite,
 .wp-block-quote footer {
+  border-left-color: blue; // Change
 }
 
 .wp-block-cover {

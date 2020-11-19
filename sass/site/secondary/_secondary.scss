@@ -1,6 +1,6 @@
 .widget-area {
   grid-area: sidebar;
-  /*background-color: $backgroundcolor__secondary;*/
+  background-color: $backgroundcolor__secondary;
   padding: 2rem 0;
 }
 
@@ -8,7 +8,6 @@
 
 @media screen and (min-width: $query__phablet) and (max-width: $query__tablet-wide) {
   .widget-area {
-    background-color: hotpink;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -23,7 +22,6 @@
 
 @media screen and (min-width: $query__tablet-wide) {
   .widget-area {
-    background-color: plum;
   }
 }
 

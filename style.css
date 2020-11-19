@@ -463,7 +463,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #e8eaf7;
+	background: #d3dbe8;
 }
 
 /*--------------------------------------------------------------
@@ -512,6 +512,16 @@ body {
 	.entry-content > .wp-block-quote.is-style-large {
 		margin-left: auto;
 	}
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+	border-left-color: red;
+}
+
+.wp-block-quote__citation,
+.wp-block-quote cite,
+.wp-block-quote footer {
+	border-left-color: blue;
 }
 
 .wp-block-cover {
@@ -1296,6 +1306,7 @@ textarea {
 		.blog.has-sidebar .site-main,
 		.single.has-sidebar .site-main,
 		.page.has-sidebar .site-main {
+			grid-area: main;
 			max-width: none;
 			min-width: 0;
 		}
@@ -1366,158 +1377,156 @@ textarea {
 --------------------------------------------------------------*/
 /* Posts and pages
 --------------------------------------------- */
+/*
 .sticky {
-	display: block;
+  display: block;
 }
 
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
 sticky {
-	display: block;
+  display: block;
 }
 
+// Move to archive template
 .archive-view .post {
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .byline,
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
 .single .byline,
 .group-blog .byline {
-	display: inline;
+  display: inline;
 }
 
 .entry {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+  margin: 1.5em 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
 }
 
 .entry-header {
-	margin-top: 2rem;
-	margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
-
 .entry-title {
-	margin: 0.125em 0 0.25em;
-	font-size: 2rem;
-	line-height: 1.2em;
-}
+  margin: 0.125em 0 0.25em;
+  font-size: 2rem;
+  line-height: 1.2em;
 
-@media screen and (min-width: 768px) {
-	.entry-title {
-		font-size: 2rem;
-	}
-}
+  @media screen and (min-width: $query__tablet) {
+    font-size: 2rem;
+  }
 
-.entry-title a {
-	text-decoration: none;
-	color: black;
-}
+  a {
+    text-decoration: none;
+    color: black;
 
-.entry-title a:focus, .entry-title a:hover {
-	color: #191970;
+    &:focus,
+    &:hover {
+      color: $color__link-hover;
+    }
+  }
 }
+.entry-meta {
+  .posted-on {
+    font-weight: 700;
 
-.entry-meta .posted-on {
-	font-weight: 700;
-}
+    a {
+      font-weight: 400;
+      color: $color__text-grey;
 
-.entry-meta .posted-on a {
-	font-weight: 400;
-	color: #777;
-}
-
-.entry-meta .posted-on a:focus, .entry-meta .posted-on a:hover {
-	color: #191970;
+      &:focus,
+      &:hover {
+        color: $color__link-hover;
+      }
+    }
+  }
 }
 
 /* Single Post Featured Images */
+/*
 .full-bleed {
-	width: 100vw;
-	max-height: 1200px;
-	margin-top: 1em;
-	margin-left: -1em;
-	border-top: 1px solid #e6e6e6;
-	border-bottom: 1px solid #e6e6e6;
-	overflow: hidden;
-}
+  width: 100vw;
+  max-height: 1200px;
+  margin-top: 1em;
+  margin-left: -1em;
+  border-top: 1px solid hsl(0, 0%, 90%);
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+  overflow: hidden;
 
-@media screen and (min-width: 560px) {
-	.full-bleed {
-		margin-left: -2em;
-	}
-}
+  @media screen and (min-width: $query__phablet) {
+    margin-left: -2em;
+  }
 
-@media screen and (min-width: 768px) {
-	.full-bleed {
-		margin-top: 1.5em;
-		margin-right: -2em;
-	}
-}
+  @media screen and (min-width: $query__tablet) {
+    margin-top: 1.5em;
+    margin-right: -2em;
+  }
 
-.full-bleed img {
-	display: block;
-	margin: 0 auto;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+  margin: 1.5em 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
 }
 
 .entry-footer {
-	margin: 1.5rem 0 2rem 0;
-	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
-}
+  margin: 1.5rem 0 2rem 0;
+  font-family: $font__sans;
 
-.entry-footer a {
-	font-weight: 400;
-	color: #777;
-}
+  a {
+    font-weight: 400;
+    color: $color__text-grey;
 
-.entry-footer a:focus, .entry-footer a:hover {
-	color: #191970;
-}
+    &:focus,
+    &:hover {
+      color: $color__link-hover;
+    }
+  }
 
-.entry-footer .cat-links,
-.entry-footer .tags-links {
-	display: block;
-	font-weight: 700;
-}
+  .cat-links,
+  .tags-links {
+    display: block;
+    font-weight: 700;
 
-.entry-footer .cat-links a,
-.entry-footer .tags-links a {
-	font-weight: 400;
-	color: #777;
-}
+    a {
+      font-weight: 400;
+      color: $color__text-grey;
 
-.entry-footer .cat-links a:focus, .entry-footer .cat-links a:hover,
-.entry-footer .tags-links a:focus,
-.entry-footer .tags-links a:hover {
-	color: #191970;
+      &:focus,
+      &:hover {
+        color: $color__link-hover;
+      }
+    }
+  }
 }
-
+*/
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1877,12 +1886,8 @@ SVG Fallbacks
 /*--------------------------------------------------------------
 # Post and page content
 --------------------------------------------------------------*/
-.site-main {
-	grid-area: main;
-}
-
 .entry {
-	margin-bottom: 3rem;
+	margin-bottom: 1rem;
 }
 
 .entry-meta,
@@ -1916,7 +1921,7 @@ SVG Fallbacks
 	margin-left: auto;
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
-	max-width: 60em;
+	max-width: 48rem;
 }
 
 .page-header,
@@ -1928,22 +1933,25 @@ SVG Fallbacks
 	margin: 1.5em auto;
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
-	max-width: 60em;
+	max-width: 48rem;
 }
 
 @media screen and (min-width: 768px) {
-	.page-content > *,
-	.entry-content > *,
-	.entry-summary > *,
-	.page-header,
-	.entry-header,
-	.entry-footer,
-	.post-navigation,
-	.page-navigation,
-	.comments-area {
-		padding-left: 0;
-		padding-right: 0;
-	}
+	/*
+  .page-content > *,
+  .entry-content > *,
+  .entry-summary > *,
+  .page-header,
+  .entry-header,
+  .entry-footer,
+  .post-navigation,
+  .page-navigation,
+  .comments-area {
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+  */
 }
 
 .entry-content ul,
@@ -2018,25 +2026,18 @@ SVG Fallbacks
 
 .widget-area {
 	grid-area: sidebar;
-	/*background-color: $backgroundcolor__secondary;*/
+	background-color: #ffffff;
 	padding: 2rem 0;
 }
 
 @media screen and (min-width: 560px) and (max-width: 1024px) {
 	.widget-area {
-		background-color: hotpink;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
 	.widget-area .widget {
 		flex: 1;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.widget-area {
-		background-color: plum;
 	}
 }
 
@@ -2412,6 +2413,12 @@ SVG Fallbacks
 	}
 }
 
+@media screen and (min-width: 1024px) {
+	.wrap-full-width {
+		max-width: 60em;
+	}
+}
+
 .fp-section {
 	margin: 0 auto;
 	padding: 1.2rem 1.2rem 0 1.2rem;
@@ -2494,7 +2501,7 @@ SVG Fallbacks
 }
 
 #hero-btn:hover, #hero-btn:active, #hero-btn:focus {
-	color: #e8eaf7;
+	color: #d3dbe8;
 	background-color: #404040;
 }
 

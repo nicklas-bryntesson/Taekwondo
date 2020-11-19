@@ -17,6 +17,10 @@
   @media screen and (min-width: $query__tablet) {
     max-width: $content-width;
   }
+
+  @media screen and (min-width: $query__tablet-wide) {
+    max-width: $content-width-wide;
+  }
 }
 
 .fp-section {
