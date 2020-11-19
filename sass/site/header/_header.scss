@@ -1,12 +1,11 @@
 /* Baseline */
 
 .site-header {
-  grid-area: header;
   z-index: 999;
 }
 
 .site-header {
-  background-color: $backgroundcolor__masthead;
+  background-color: $color__background-header;
   box-shadow: $boxshadow__card;
   padding: 3em 2em;
 }

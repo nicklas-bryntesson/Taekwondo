@@ -1,15 +1,9 @@
 /* Baseline */
 
-// If browser supports CSS Grid
-
 .site-footer {
-  grid-area: footer;
-}
-
-.site-footer {
-  font-family: $font__sans;
+  font-family: $font__main;
   color: $color__text-white;
-  background-color: $backgroundcolor__colophon;
+  background-color: $color__background-colophon;
 
   .footer-widgets {
     display: flex;
@@ -35,7 +29,7 @@
 }
 
 .site-info {
-  background-color: $backgroundcolor__site-info;
+  background-color: $color__background-site-info;
   padding: 1.5em 3em;
 }
 
@@ -60,7 +54,7 @@
 
           .site-footer .social-menu {
             grid-area: social;
-            background-color: $backgroundcolor__social-menu;
+            background-color: $color__background-social-menu;
           }
 
           .site-footer .site-info {

@@ -1,40 +1,58 @@
+// Branding - Main colors
+$color__branding-main: #0460d9;
+$color__branding-main-hover: #022873;
+$color__branding-secondary: #d51c2f;
+$color__branding-secondary-hover: #8a282b;
+
+// Theme Colors
+$color__theme-white: #fff;
+$color__theme-medium-blue: #28496d;
+$color__theme-dark-blue: #011140;
+$color__theme-dark-yellow: #d3b834;
+$color__theme-beige: #a67360;
+$color__theme-medium-grey: #666e78;
+
+// Base Colors
+$color__background-body: #eaecfa;
+$color__text-main: #101926;
+
 // Elements
-$color__background-body: #d3dbe8;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$color__background-hr: $color__branding-main;
+$color__background-pre: #fff;
+$color__background-ins: #022873;
+
+$color__text-white: #fff;
+
 // Text
-$color__text-screen: #21759b;
+$color__text-screen: $color__branding-main;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__text-main: #404040;
-$color__text-white: #fff;
 $color__text-grey: #777;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
 // Links
-$color__link: #4169e1; //royalblue
-$color__link-visited: #32756c; //purple
-$color__link-hover: #191970; //midnightblue
-// Buttons
-$color__button: #1b71b8;
-$color__background-button: #1b71b8;
-$color__background-button-hover: #053d6b;
+$color__link: $color__branding-main;
+$color__link-visited: $color__branding-main;
+$color__link-hover: $color__branding-main-hover;
+$color__link-focus: magenta; // Change to brand blue when finished !!!!
+
+//Links on dark backgrounds
+$color__link-dark: $color__branding-main;
+$color__link-dark-visited: $color__branding-main-hover;
+$color__link-dark-hover: #191970;
+
+// Buttons -> Rewrite completly
+$color__button: $color__branding-main;
+$color__background-button: $color__branding-main;
+$color__background-button-hover: $color__branding-main-hover;
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
+
 // Layout
 $color__background-header: #f0f0f0;
 $color__background-secondary: #ffffff;
 $color__background-colophon: #252b33;
 $color__background-site-info: #1f2022;
-
-// Layout - Updated!
-$backgroundcolor__masthead: #f0f0f0;
-$backgroundcolor__primary: #f4f4f4;
-$backgroundcolor__secondary: #ffffff;
-$backgroundcolor__colophon: #252b33;
-
-$backgroundcolor__site-info: #1f2022;
-$backgroundcolor__social-menu: #383f48;
+$color__background-social-menu: #383f48;

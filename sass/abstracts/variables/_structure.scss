@@ -1,5 +1,4 @@
 // Media Queries
-
 $query__phone: 320px; // 20em
 $query__phone-wide: 480px; // 30em
 $query__phablet: 560px; // 35em
@@ -10,6 +9,20 @@ $query__desktop: 1248px; // 78em
 $query__desktop-wide: 1440px; // 90em
 
 // Content max width wrapper
-
 $content-width: 48rem;
 $content-width-wide: 60em;
+
+// Woocommerce columns
+$columns: (
+  1: 100%,
+  2: 50%,
+  3: 33.33%,
+  4: 25%,
+  5: 20%,
+  6: 16.66%,
+  7: 14.28%,
+  8: 12.5%,
+  9: 11.11%,
+);
+
+$columns__margin: 3.8%;

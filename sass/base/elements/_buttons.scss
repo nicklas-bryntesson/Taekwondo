@@ -2,7 +2,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  font-family: $font__sans;
+  font-family: $font__main;
   line-height: 1;
   font-weight: 400;
   padding: 8px 12px;
@@ -38,7 +38,7 @@ input[type="submit"] {
 // Main branding buttons.
 
 .cta-btn {
-  font-family: $font__sans;
+  font-family: $font__main;
   display: inline-block;
   line-height: 1;
   font-weight: 400;

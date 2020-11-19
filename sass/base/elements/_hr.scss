@@ -1,6 +1,15 @@
+// Make shure it is ALWAYS 87,5 % of the content width abowe phone
+
 hr {
-	background-color: $color__background-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
+  background: $color__background-hr;
+  bottom: 0;
+  border: 0;
+  content: "";
+  display: block;
+  height: 5px;
+  width: 85%;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -50,12 +50,14 @@
 
 .wp-block-quote:not(.is-large):not(.is-style-large) {
   border-left-color: red; // Change
+  background-color: maroon;
 }
 
 .wp-block-quote__citation,
 .wp-block-quote cite,
 .wp-block-quote footer {
   border-left-color: blue; // Change
+  background-color: mediumorchid;
 }
 
 .wp-block-cover {
@@ -92,7 +94,7 @@
 .wp-block-latest-comments {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
-  border: 1px solid hsl(0, 0%, 80%);
+  border: 1px solid tomato; // Change this
 }
 
 ul.wp-block-latest-posts.alignwide,

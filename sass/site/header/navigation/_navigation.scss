@@ -2,7 +2,7 @@
   display: block;
   width: 100%;
   color: $color__branding-main;
-  font-family: $font__sans;
+  font-family: $font__main;
 
   ul {
     display: none;
@@ -22,7 +22,7 @@
     &:hover > a,
     &.focus > a {
       color: $color__branding-main-hover;
-      background-color: $color__branding-main-focus;
+      background-color: #eee;
     }
   }
 

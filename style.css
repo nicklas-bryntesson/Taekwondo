@@ -393,8 +393,8 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	color: #101926;
+	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -405,7 +405,16 @@ h3,
 h4,
 h5,
 h6 {
+	font-stretch: condensed;
 	clear: both;
+}
+
+.entry-header h1.entry-title,
+.page-header .page-title {
+	font-size: 2.5rem;
+	line-height: 1.4;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 p {
@@ -420,7 +429,18 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0;
+}
+
+.entry-content > blockquote {
+	padding-left: 1em;
+	margin-left: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+	.entry-content > blockquote {
+		margin-left: auto;
+	}
 }
 
 address {
@@ -428,8 +448,8 @@ address {
 }
 
 pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", courier, monospace;
+	background: #fff;
+	font-family: "Courier 10 Pitch", Courier, monospace;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -441,7 +461,7 @@ code,
 kbd,
 tt,
 var {
-	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: "Fira Code", monospace;
 }
 
 abbr,
@@ -452,8 +472,10 @@ acronym {
 
 mark,
 ins {
-	background: #fff9c0;
+	background: #022873;
+	color: #fff;
 	text-decoration: none;
+	padding: 0 0.2em;
 }
 
 big {
@@ -463,7 +485,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #d3dbe8;
+	background: #eaecfa;
 }
 
 /*--------------------------------------------------------------
@@ -516,12 +538,14 @@ body {
 
 .wp-block-quote:not(.is-large):not(.is-style-large) {
 	border-left-color: red;
+	background-color: maroon;
 }
 
 .wp-block-quote__citation,
 .wp-block-quote cite,
 .wp-block-quote footer {
 	border-left-color: blue;
+	background-color: mediumorchid;
 }
 
 .wp-block-cover {
@@ -558,7 +582,7 @@ body {
 .wp-block-latest-comments {
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
-	border: 1px solid #cccccc;
+	border: 1px solid tomato;
 }
 
 ul.wp-block-latest-posts.alignwide,
@@ -639,10 +663,17 @@ ul.wp-block-latest-posts.is-grid.alignfull {
 }
 
 hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
 	margin-bottom: 1.5em;
+	background: #0460d9;
+	bottom: 0;
+	border: 0;
+	content: "";
+	display: block;
+	height: 5px;
+	width: 85%;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 ul,
@@ -661,7 +692,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 1em;
 }
 
 dt {
@@ -673,7 +704,7 @@ dd {
 }
 
 .card {
-	background: #ffffff;
+	background: #fff;
 	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	line-height: 1.5;
 	box-shadow: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
@@ -689,7 +720,7 @@ dd {
 }
 
 .card i {
-	font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+	font-family: "Merriweather", Georgia, Cambria, "Times New Roman" Times, serif;
 	color: #777;
 }
 
@@ -719,7 +750,7 @@ dd {
 .card-link:hover, .card-link:active, .card-link:focus {
 	transition: all 0.3s ease;
 	box-shadow: 0px 11px 16px 1px rgba(116, 132, 148, 0.75);
-	background-color: #1b71b8;
+	background-color: #0460d9;
 }
 
 .card-link a {
@@ -748,7 +779,7 @@ dd {
 
 .card-title {
 	width: 100%;
-	background-color: #053d6b;
+	background-color: #022873;
 }
 
 .card-title h1 {
@@ -813,7 +844,7 @@ dd {
 
 .card-info-buttons,
 .card-info {
-	color: #404040;
+	color: #101926;
 }
 
 .card-info-buttons p,
@@ -978,29 +1009,27 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+	background-color: #fff;
 }
 
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #0460d9;
 	text-decoration: none;
 }
 
 a:visited {
-	color: #32756c;
+	color: #0460d9;
 }
 
-a:hover, a:focus, a:active {
-	color: #191970;
+a:hover {
+	color: #022873;
 }
 
 a:focus {
-	outline: thin dotted;
-}
-
-a:hover, a:active {
-	outline: 0;
+	outline: 2px solid magenta;
+	color: magenta;
 }
 
 /* Forms
@@ -1015,16 +1044,16 @@ input[type="submit"] {
 	padding: 8px 12px;
 	padding: 0.8rem 1.2rem;
 	background: transparent;
-	color: #1b71b8;
+	color: #0460d9;
 	border: 2px solid;
-	border-color: #1b71b8;
+	border-color: #0460d9;
 }
 
 button:visited,
 input[type="button"]:visited,
 input[type="reset"]:visited,
 input[type="submit"]:visited {
-	color: #1b71b8;
+	color: #0460d9;
 }
 
 button:hover, button:active, button:focus,
@@ -1039,7 +1068,7 @@ input[type="submit"]:active,
 input[type="submit"]:focus {
 	transition: all 0.3s ease;
 	background: white;
-	color: #1b71b8;
+	color: #0460d9;
 }
 
 @media screen and (min-width: 768px) {
@@ -1070,15 +1099,15 @@ input[type="submit"]:focus {
 	padding: 8px 12px;
 	padding: 0.8rem 1.2rem;
 	background: transparent;
-	color: #1b71b8;
+	color: #0460d9;
 	border: 2px solid;
-	border-color: #1b71b8;
+	border-color: #0460d9;
 	text-align: center;
 	transition: all 0.3s ease;
 }
 
 .cta-btn:visited {
-	color: #1b71b8;
+	color: #0460d9;
 }
 
 @media screen and (min-width: 768px) {
@@ -1096,40 +1125,40 @@ input[type="submit"]:focus {
 }
 
 #btn-solid {
-	background-color: #1b71b8;
+	background-color: #0460d9;
 	color: #fff;
-	border: 2px solid #1b71b8;
+	border: 2px solid #0460d9;
 }
 
 #btn-solid:hover, #btn-solid:active, #btn-solid:focus {
-	background-color: #053d6b;
-	border: 2px solid #053d6b;
+	background-color: #022873;
+	border: 2px solid #022873;
 }
 
 #btn-outline {
 	background-color: transparent;
-	color: #1b71b8;
-	border: 2px solid #1b71b8;
+	color: #0460d9;
+	border: 2px solid #0460d9;
 }
 
 #btn-outline:hover, #btn-outline:active, #btn-outline:focus {
-	background: #053d6b;
+	background: #022873;
 	color: #fff;
-	border: 2px solid #053d6b;
+	border: 2px solid #022873;
 }
 
 .interlink {
 	display: inline-block;
 	text-decoration: none;
 	padding: 0.4rem 1.3rem;
-	background-color: #1b71b8;
+	background-color: #0460d9;
 	color: #fff;
 	border-radius: 5px;
 }
 
 .interlink:hover, .interlink:active, .interlink:focus {
 	text-decoration: none;
-	background-color: #053d6b;
+	background-color: #022873;
 	color: #fff;
 }
 
@@ -1233,7 +1262,7 @@ textarea {
 }
 
 .degree .circle-blue:after {
-	background-color: #053d6b;
+	background-color: #022873;
 }
 
 .degree .circle-inner {
@@ -1271,7 +1300,7 @@ textarea {
 }
 
 .instructor > a:hover .circle-content > p, .instructor > a:focus .circle-content > p {
-	color: #1b71b8;
+	color: #0460d9;
 }
 
 /*--------------------------------------------------------------
@@ -1290,6 +1319,7 @@ textarea {
 	.site-main {
 		max-width: 640px;
 		margin: 0 auto;
+		min-width: 0;
 	}
 }
 
@@ -1303,12 +1333,26 @@ textarea {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			grid-template-rows: 1fr 1fr 1fr;
 		}
+		.blog.has-sidebar .site-header,
+		.single.has-sidebar .site-header,
+		.page.has-sidebar .site-header {
+			grid-area: header;
+		}
 		.blog.has-sidebar .site-main,
 		.single.has-sidebar .site-main,
 		.page.has-sidebar .site-main {
 			grid-area: main;
 			max-width: none;
-			min-width: 0;
+		}
+		.blog.has-sidebar .widget-area,
+		.single.has-sidebar .widget-area,
+		.page.has-sidebar .widget-area {
+			grid-area: sidebar;
+		}
+		.blog.has-sidebar .site-footer,
+		.single.has-sidebar .site-footer,
+		.page.has-sidebar .site-footer {
+			grid-area: footer;
 		}
 	}
 }
@@ -1319,7 +1363,6 @@ textarea {
 		.single.no-sidebar .site-main,
 		.page.no-sidebar .site-main {
 			max-width: none;
-			min-width: 0;
 		}
 	}
 }
@@ -1498,7 +1541,7 @@ sticky {
 
 .entry-footer {
   margin: 1.5rem 0 2rem 0;
-  font-family: $font__sans;
+  font-family: $font__main;
 
   a {
     font-weight: 400;
@@ -1786,7 +1829,6 @@ SVG Fallbacks
 --------------------------------------------------------------*/
 /* Baseline */
 .site-header {
-	grid-area: header;
 	z-index: 999;
 }
 
@@ -1799,7 +1841,7 @@ SVG Fallbacks
 .main-navigation {
 	display: block;
 	width: 100%;
-	color: #1b71b8;
+	color: #0460d9;
 	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 }
 
@@ -1821,8 +1863,8 @@ SVG Fallbacks
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-	color: #053d6b;
-	background-color: #ccc;
+	color: #022873;
+	background-color: #eee;
 }
 
 .main-navigation a {
@@ -1839,7 +1881,7 @@ SVG Fallbacks
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
-	color: #053d6b;
+	color: #022873;
 	font-weight: bolder;
 }
 
@@ -2025,7 +2067,6 @@ SVG Fallbacks
 }
 
 .widget-area {
-	grid-area: sidebar;
 	background-color: #ffffff;
 	padding: 2rem 0;
 }
@@ -2096,11 +2137,11 @@ SVG Fallbacks
 }
 
 .widget a {
-	color: #404040;
+	color: #101926;
 }
 
 .widget a:hover, .widget a:focus {
-	color: #191970;
+	color: #022873;
 }
 
 .widget-title {
@@ -2185,7 +2226,7 @@ SVG Fallbacks
 
 .rssSummary {
 	padding: 0.5rem 0;
-	font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+	font-family: "Merriweather", Georgia, Cambria, "Times New Roman" Times, serif;
 	font-size: 0.8rem;
 	line-height: 1.4rem;
 }
@@ -2290,7 +2331,7 @@ SVG Fallbacks
 }
 
 .footer-widgets .widget a:hover, .footer-widgets .widget a:focus {
-	color: #191970;
+	color: #022873;
 }
 
 .footer-widgets .widget_calendar td,
@@ -2328,10 +2369,6 @@ SVG Fallbacks
 
 /* Baseline */
 .site-footer {
-	grid-area: footer;
-}
-
-.site-footer {
 	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	color: #fff;
 	background-color: #252b33;
@@ -2355,7 +2392,7 @@ SVG Fallbacks
 
 .site-footer a:hover, .site-footer a:focus {
 	text-decoration: underline;
-	color: #1b71b8;
+	color: #0460d9;
 }
 
 .site-info {
@@ -2446,7 +2483,7 @@ SVG Fallbacks
 	font-size: 1rem;
 	position: relative;
 	text-align: center;
-	color: #404040;
+	color: #101926;
 	margin: 3rem 0;
 	width: 100%;
 	height: 100%;
@@ -2464,7 +2501,7 @@ SVG Fallbacks
 .hero--content .hero-entry-header i {
 	font-size: 12.8px;
 	font-size: 0.8rem;
-	font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+	font-family: "Merriweather", Georgia, Cambria, "Times New Roman" Times, serif;
 	font-weight: 400;
 	font-style: italic;
 	display: block;
@@ -2496,13 +2533,13 @@ SVG Fallbacks
 }
 
 #hero-btn {
-	color: #404040;
-	border-color: #404040;
+	color: #101926;
+	border-color: #101926;
 }
 
 #hero-btn:hover, #hero-btn:active, #hero-btn:focus {
-	color: #d3dbe8;
-	background-color: #404040;
+	color: #eaecfa;
+	background-color: #101926;
 }
 
 .hero-buttons-wide #hero-btn,
@@ -2548,7 +2585,7 @@ SVG Fallbacks
 }
 
 .hero--blue-blue .default-hero-container #hero-btn:hover, .hero--blue-blue .default-hero-container #hero-btn:active, .hero--blue-blue .default-hero-container #hero-btn:focus {
-	color: #1b71b8;
+	color: #0460d9;
 }
 
 .hero--yellow-orange {
@@ -2611,7 +2648,7 @@ SVG Fallbacks
 }
 
 .hero--blue-blue .video-hero-container #hero-btn:hover, .hero--blue-blue .video-hero-container #hero-btn:active, .hero--blue-blue .video-hero-container #hero-btn:focus {
-	color: #1b71b8;
+	color: #0460d9;
 }
 
 .hero--red-blue .video-hero-container .hero-overlay {
@@ -2689,7 +2726,7 @@ SVG Fallbacks
 }
 
 .hero--blue-blue .image-hero-container #hero-btn:hover, .hero--blue-blue .image-hero-container #hero-btn:active, .hero--blue-blue .image-hero-container #hero-btn:focus {
-	color: #1b71b8;
+	color: #0460d9;
 }
 
 .hero--yellow-orange .image-hero-container .hero-overlay {
@@ -2743,7 +2780,7 @@ SVG Fallbacks
 
 .card-link a:hover .fp-group-age, .card-link a:focus .fp-group-age {
 	background: #fff;
-	color: #1b71b8;
+	color: #0460d9;
 	box-shadow: 0px 10px 25px 7px rgba(11, 41, 66, 0.5);
 }
 
@@ -2762,7 +2799,7 @@ SVG Fallbacks
 
 .banner--default {
 	background: transparent;
-	color: #404040;
+	color: #101926;
 }
 
 .banner--blue-blue,
@@ -2850,11 +2887,11 @@ SVG Fallbacks
 }
 
 .fp-newsbox .card-info .fp-newsbox-posted .fp-newsbox-date {
-	color: #1b71b8;
+	color: #0460d9;
 }
 
 .fp-newsbox .card-info .fp-newsbox-arrow {
-	color: #1b71b8;
+	color: #0460d9;
 	font-size: 27.2px;
 	font-size: 1.7rem;
 	position: absolute;
@@ -2873,16 +2910,16 @@ SVG Fallbacks
 	font-size: 16px;
 	font-size: 1rem;
 	background-color: transparent;
-	color: #1b71b8;
+	color: #0460d9;
 	padding: 1rem;
 	width: 100%;
-	border: 3px solid #1b71b8;
+	border: 3px solid #0460d9;
 }
 
 #newsfeed-link:hover, #newsfeed-link:active, #newsfeed-link:focus {
-	background: #053d6b;
+	background: #022873;
 	color: #fff;
-	border: 3px solid #053d6b;
+	border: 3px solid #022873;
 }
 
 @media screen and (min-width: 768px) {
@@ -2980,12 +3017,12 @@ SVG Fallbacks
 	font-size: 90%;
 	text-decoration: none;
 	background: #d9d9d9;
-	color: #404040;
+	color: #101926;
 }
 
 .continue-reading a:focus, .continue-reading a:hover {
 	color: white;
-	background: #053d6b;
+	background: #022873;
 }
 
 /* Style for layout instructors lists */
@@ -3046,12 +3083,12 @@ SVG Fallbacks
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
+	background-color: #eaecfa;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #21759b;
+	color: #0460d9;
 	display: block;
 	font-size: 0.875rem;
 	font-weight: 700;
@@ -3085,6 +3122,7 @@ SVG Fallbacks
 */
 .js-focus-visible :focus:not(.focus-visible) {
 	outline: none;
+	color: inherit;
 }
 
 /* Alignments
@@ -3155,7 +3193,7 @@ body {
 }
 
 .instructor-meta .meta-titles {
-	color: #404040;
+	color: #101926;
 }
 
 .instructor-meta .meta-titles h1 {

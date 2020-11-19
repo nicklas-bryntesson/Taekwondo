@@ -201,6 +201,10 @@ function add_defer_attribute( $tag, $handle ) {
  * Enqueue scripts and styles.
  */
 function tkd_scripts() {
+	// Google Fonts -> Updatde + Code
+	wp_enqueue_style( 'tkd-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:400,700|Nunito+Sans:300,400,700,900|Fira+Code:500');
+
+
 	wp_enqueue_style( 'tkd-style', get_stylesheet_uri(), array(), _S_VERSION );
 
 	if ( is_front_page() ) {

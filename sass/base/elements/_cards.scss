@@ -1,6 +1,6 @@
 .card {
-  background: $color__background-card;
-  font-family: $font__sans;
+  background: $color__theme-white;
+  font-family: $font__main;
   line-height: $font__line-height-body;
   box-shadow: $boxshadow__card;
   overflow: auto;
@@ -14,7 +14,7 @@
   }
 
   i {
-    font-family: $font__serif;
+    font-family: $font__meta;
     color: $color__text-grey;
   }
 
@@ -160,7 +160,7 @@
 
 .card-info-buttons,
 .card-info {
-  color: $color__typography-card;
+  color: $color__text-main;
 
   p {
     @include font-size(0.9);

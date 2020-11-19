@@ -16,6 +16,7 @@
   .site-main {
     max-width: 640px;
     margin: 0 auto;
+    min-width: 0;
   }
 }
 
@@ -35,11 +36,18 @@
           grid-template-columns: 1fr 1fr 1fr 1fr;
           grid-template-rows: 1fr 1fr 1fr;
         }
-
+        .site-header {
+          grid-area: header;
+        }
         .site-main {
           grid-area: main;
           max-width: none;
-          min-width: 0;
+        }
+        .widget-area {
+          grid-area: sidebar;
+        }
+        .site-footer {
+          grid-area: footer;
         }
       }
     }
@@ -56,7 +64,6 @@
       @media screen and (min-width: $query__tablet-wide) {
         .site-main {
           max-width: none;
-          min-width: 0;
         }
       }
     }

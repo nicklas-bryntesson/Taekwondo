@@ -4,5 +4,14 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
+  font-stretch: condensed;
+  clear: both;
+}
+
+.entry-header h1.entry-title,
+.page-header .page-title {
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
