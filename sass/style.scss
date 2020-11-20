@@ -79,17 +79,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-@import "navigation/social-navigation";
-
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
 @import "components/components";
-
-/*--------------------------------------------------------------
-# Site
---------------------------------------------------------------*/
-@import "site/site";
 
 /*--------------------------------------------------------------
 # Pages
@@ -117,7 +107,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "utilities/alignments";
 
 /*--------------------------------------------------------------
-# Shame - Resolve before bundel
+# Shame - Resolve before bundle
 --------------------------------------------------------------*/
 
 @import "shame";

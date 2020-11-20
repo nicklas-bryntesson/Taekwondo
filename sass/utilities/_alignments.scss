@@ -1,27 +1,27 @@
+/*--------------------------------------------------------------
+## Alignments
+--------------------------------------------------------------*/
 .alignleft {
-
-	/*rtl:ignore*/
-	float: left;
-
-	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+  float: left;
+  margin-right: 1.5rem;
 }
 
 .alignright {
-
-	/*rtl:ignore*/
-	float: right;
-
-	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+  float: right;
+  margin-left: 1.5rem;
 }
 
 .aligncenter {
-	clear: both;
+  clear: both;
+  @include center-block;
+  margin-bottom: 1.5em;
+}
 
-	@include center-block;
+.alignwide {
+  max-width: calc(50% + $content-width / 2);
+}
 
-	margin-bottom: 1.5em;
+.alignfull {
+  max-width: 100%;
+  padding: 0;
 }

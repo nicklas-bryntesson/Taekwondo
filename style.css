@@ -485,7 +485,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #eaecfa;
+	background: #eef0f9;
 }
 
 /*--------------------------------------------------------------
@@ -678,7 +678,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 1.5em;
 }
 
 ul {
@@ -1367,466 +1367,6 @@ textarea {
 	}
 }
 
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-.social-menu {
-	padding: 1em;
-}
-
-.social-menu ul {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	list-style-type: none;
-	margin: 0 1.5px;
-	padding: 0;
-}
-
-.social-menu ul a {
-	display: block;
-	padding: 0.5em;
-	color: transparent;
-	text-decoration: none;
-}
-
-.social-menu ul a .icon {
-	fill: rgba(255, 255, 255, 0.7);
-	transition: fill 0.2s;
-}
-
-.social-menu ul a:hover {
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-.social-menu ul a:hover .icon {
-	fill: white;
-}
-
-.social-menu ul a:focus {
-	/*
-        box-shadow: $focus__boxshadow;*/
-	border-radius: 50px;
-}
-
-.social-menu ul a:focus .icon {
-	/* fill: $color__focus; // Color of icon on hover */
-	fill: blue;
-}
-
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-/* Posts and pages
---------------------------------------------- */
-/*
-.sticky {
-  display: block;
-}
-
-.updated:not(.published) {
-  display: none;
-}
-
-sticky {
-  display: block;
-}
-
-// Move to archive template
-.archive-view .post {
-  margin-bottom: 2rem;
-}
-
-.byline,
-.updated:not(.published) {
-  display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-  display: inline;
-}
-
-.entry {
-  margin-bottom: 1rem;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
-}
-
-.entry-header {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-.entry-title {
-  margin: 0.125em 0 0.25em;
-  font-size: 2rem;
-  line-height: 1.2em;
-
-  @media screen and (min-width: $query__tablet) {
-    font-size: 2rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-
-    &:focus,
-    &:hover {
-      color: $color__link-hover;
-    }
-  }
-}
-.entry-meta {
-  .posted-on {
-    font-weight: 700;
-
-    a {
-      font-weight: 400;
-      color: $color__text-grey;
-
-      &:focus,
-      &:hover {
-        color: $color__link-hover;
-      }
-    }
-  }
-}
-
-/* Single Post Featured Images */
-/*
-.full-bleed {
-  width: 100vw;
-  max-height: 1200px;
-  margin-top: 1em;
-  margin-left: -1em;
-  border-top: 1px solid hsl(0, 0%, 90%);
-  border-bottom: 1px solid hsl(0, 0%, 90%);
-  overflow: hidden;
-
-  @media screen and (min-width: $query__phablet) {
-    margin-left: -2em;
-  }
-
-  @media screen and (min-width: $query__tablet) {
-    margin-top: 1.5em;
-    margin-right: -2em;
-  }
-
-  img {
-    display: block;
-    margin: 0 auto;
-  }
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
-}
-
-.entry-footer {
-  margin: 1.5rem 0 2rem 0;
-  font-family: $font__main;
-
-  a {
-    font-weight: 400;
-    color: $color__text-grey;
-
-    &:focus,
-    &:hover {
-      color: $color__link-hover;
-    }
-  }
-
-  .cat-links,
-  .tags-links {
-    display: block;
-    font-weight: 700;
-
-    a {
-      font-weight: 400;
-      color: $color__text-grey;
-
-      &:focus,
-      &:hover {
-        color: $color__link-hover;
-      }
-    }
-  }
-}
-*/
-/* Comments
---------------------------------------------- */
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
-}
-
-/* Widgets
---------------------------------------------- */
-.widget {
-	margin: 0 0 1.5em;
-}
-
-.widget select {
-	max-width: 100%;
-}
-
-/* Media
---------------------------------------------- */
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
-}
-
-/* Captions
---------------------------------------------- */
-.wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-
-.wp-caption-text {
-	text-align: center;
-}
-
-/* Galleries
---------------------------------------------- */
-.gallery {
-	margin-bottom: 1.5em;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-	grid-gap: 0.5em;
-}
-
-@media screen and (min-width: 640px) {
-	.gallery-columns-2 {
-		grid-template-columns: repeat(2, 1fr);
-	}
-	.gallery-columns-3 {
-		grid-template-columns: repeat(3, 1fr);
-	}
-	.gallery-columns-4 {
-		grid-template-columns: repeat(4, 1fr);
-	}
-	.gallery-columns-5 {
-		grid-template-columns: repeat(5, 1fr);
-	}
-	.gallery-columns-6 {
-		grid-template-columns: repeat(6, 1fr);
-	}
-	.gallery-columns-7 {
-		grid-template-columns: repeat(7, 1fr);
-	}
-	.gallery-columns-8 {
-		grid-template-columns: repeat(8, 1fr);
-	}
-	.gallery-columns-9 {
-		grid-template-columns: repeat(9, 1fr);
-	}
-}
-
-.gallery-item {
-	padding: 0.5em;
-	border: 1px solid #dedede;
-}
-
-.gallery-icon {
-	display: flex;
-	justify-content: center;
-}
-
-.gallery-caption {
-	font-size: 80%;
-}
-
-/* Video
---------------------------------------------- */
-/**
-* The MIT License (MIT)
-*
-* Copyright (c) 2015 BG Stock - html5backgroundvideos.com
-*
-*/
-/**
-* Set default positioning as a fallback for if the plugin fails
-*/
-.jquery-background-video-wrapper {
-	position: relative;
-	overflow: hidden;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.jquery-background-video {
-	position: absolute;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	top: 50%;
-	left: 50%;
-	object-fit: cover;
-	transform: translate(-50%, -50%);
-}
-
-/**
- * Fade in videos
- * Note the .js class - so non js users still
- * see the video
- */
-.js .jquery-background-video {
-	opacity: 0;
-	transition: opacity 300ms linear;
-}
-
-.js .jquery-background-video.is-visible {
-	opacity: 1;
-}
-
-/**
- * Pause/play button
- */
-.jquery-background-video-pauseplay {
-	position: absolute;
-	background: transparent !important;
-	border: none !important;
-	box-shadow: none !important;
-	width: 20px;
-	height: 20px;
-	top: 20px;
-	right: 20px;
-	padding: 0 !important;
-	cursor: pointer;
-	outline: none !important;
-}
-
-.jquery-background-video-pauseplay span {
-	display: none;
-}
-
-.jquery-background-video-pauseplay:after,
-.jquery-background-video-pauseplay:before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	transition: all 0.3s ease;
-}
-
-.jquery-background-video-pauseplay.play:before {
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 15px solid #fff;
-}
-
-.jquery-background-video-pauseplay.pause:before,
-.jquery-background-video-pauseplay.pause:after {
-	border-top: 10px solid #fff;
-	border-bottom: 10px solid #fff;
-	border-left: 5px solid #fff;
-}
-
-.jquery-background-video-pauseplay.pause:after {
-	left: 10px;
-}
-
-/* Icons
---------------------------------------------- */
-/* SVG Icons base styles */
-.icon {
-	display: inline-block;
-	fill: currentColor;
-	height: 2em;
-	width: 2em;
-	position: relative;
-	/* Align more nicely with capital letters */
-	top: -0.0625em;
-	vertical-align: middle;
-}
-
-/*--------------------------------------------------------------
-SVG Fallbacks
---------------------------------------------------------------*/
-.svg-fallback {
-	display: none;
-}
-
-.no-svg .svg-fallback {
-	display: inline-block;
-}
-
-.no-svg .nav-links .svg-fallback {
-	padding: 0 0.5em;
-	color: inherit;
-	background: inherit;
-}
-
-/* Social Menu fallbacks */
-.no-svg .social-menu a {
-	height: auto;
-	width: auto;
-}
-
-.no-svg .social-menu li a .screen-reader-text {
-	clip: auto;
-	font-size: 16px;
-	font-size: 1rem;
-	font-weight: 400;
-	height: auto;
-	position: relative !important;
-	/* overrides previous !important styles */
-	width: auto;
-}
-
-/*--------------------------------------------------------------
-# Site
---------------------------------------------------------------*/
 /* Baseline */
 .site-header {
 	z-index: 999;
@@ -1838,6 +1378,98 @@ SVG Fallbacks
 	padding: 3em 2em;
 }
 
+.widget-area {
+	background-color: #ffffff;
+	padding: 2rem 0;
+}
+
+@media screen and (min-width: 560px) and (max-width: 1024px) {
+	.widget-area {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.widget-area .widget {
+		flex: 1;
+	}
+}
+
+.widget-area {
+	padding: 2rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+	.widget-area {
+		padding: 2.5rem 0;
+	}
+}
+
+/* Baseline */
+.site-footer {
+	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	color: #fff;
+	background-color: #252b33;
+}
+
+.site-footer .footer-widgets {
+	display: flex;
+	flex-direction: row;
+}
+
+.site-footer .widget {
+	flex: 1;
+}
+
+.site-footer a {
+	font-weight: bold;
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.3s ease;
+}
+
+.site-footer a:hover, .site-footer a:focus {
+	text-decoration: underline;
+	color: #0460d9;
+}
+
+.site-info {
+	background-color: #1f2022;
+	padding: 1.5em 3em;
+}
+
+@supports (grid-area: auto) {
+	@media screen and (min-width: 1024px) {
+		.blog.has-sidebar.has-social .site-footer,
+		.single.has-sidebar.has-social .site-footer,
+		.page.has-sidebar.has-social .site-footer {
+			display: grid;
+			grid-template-areas: "widget widget widget social" "info info info info";
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+		.blog.has-sidebar.has-social .site-footer .widget-area,
+		.single.has-sidebar.has-social .site-footer .widget-area,
+		.page.has-sidebar.has-social .site-footer .widget-area {
+			grid-area: widget;
+		}
+		.blog.has-sidebar.has-social .site-footer .social-menu,
+		.single.has-sidebar.has-social .site-footer .social-menu,
+		.page.has-sidebar.has-social .site-footer .social-menu {
+			grid-area: social;
+			background-color: #383f48;
+		}
+		.blog.has-sidebar.has-social .site-footer .site-info,
+		.single.has-sidebar.has-social .site-footer .site-info,
+		.page.has-sidebar.has-social .site-footer .site-info {
+			grid-area: info;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+/* Navigation
+--------------------------------------------- */
 .main-navigation {
 	display: block;
 	width: 100%;
@@ -1925,6 +1557,53 @@ SVG Fallbacks
 	flex: 1 0 50%;
 }
 
+.social-menu {
+	padding: 1em;
+}
+
+.social-menu ul {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	list-style-type: none;
+	margin: 0 1.5px;
+	padding: 0;
+}
+
+.social-menu ul a {
+	display: block;
+	padding: 0.5em;
+	color: transparent;
+	text-decoration: none;
+}
+
+.social-menu ul a .icon {
+	fill: rgba(255, 255, 255, 0.7);
+	transition: fill 0.2s;
+}
+
+.social-menu ul a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.social-menu ul a:hover .icon {
+	fill: white;
+}
+
+.social-menu ul a:focus {
+	/*
+        box-shadow: $focus__boxshadow;*/
+	border-radius: 50px;
+}
+
+.social-menu ul a:focus .icon {
+	/* fill: $color__focus; // Color of icon on hover */
+	fill: blue;
+}
+
+/* Posts and pages
+--------------------------------------------- */
 /*--------------------------------------------------------------
 # Post and page content
 --------------------------------------------------------------*/
@@ -2037,61 +1716,18 @@ SVG Fallbacks
 	}
 }
 
-/*--------------------------------------------------------------
-## Alignments
---------------------------------------------------------------*/
-.alignleft {
-	float: left;
-	margin-right: 1.5rem;
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+	word-wrap: break-word;
 }
 
-.alignright {
-	float: right;
-	margin-left: 1.5rem;
-}
-
-.aligncenter {
-	clear: both;
+.bypostauthor {
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
 
-.alignwide {
-	max-width: calc(50% + $content-width / 2);
-}
-
-.alignfull {
-	max-width: 100%;
-	padding: 0;
-}
-
-.widget-area {
-	background-color: #ffffff;
-	padding: 2rem 0;
-}
-
-@media screen and (min-width: 560px) and (max-width: 1024px) {
-	.widget-area {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-	.widget-area .widget {
-		flex: 1;
-	}
-}
-
-.widget-area {
-	padding: 2rem 0;
-}
-
-@media screen and (min-width: 1024px) {
-	.widget-area {
-		padding: 2.5rem 0;
-	}
-}
-
+/* Widgets
+--------------------------------------------- */
 .widget {
 	margin: 0 0 2.5rem;
 	padding: 0 1.2rem 2.5rem;
@@ -2367,65 +2003,238 @@ SVG Fallbacks
 	}
 }
 
-/* Baseline */
-.site-footer {
-	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
-	color: #fff;
-	background-color: #252b33;
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
 }
 
-.site-footer .footer-widgets {
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+	margin-bottom: 1.5em;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	grid-gap: 0.5em;
+}
+
+@media screen and (min-width: 640px) {
+	.gallery-columns-2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.gallery-columns-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.gallery-columns-4 {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.gallery-columns-5 {
+		grid-template-columns: repeat(5, 1fr);
+	}
+	.gallery-columns-6 {
+		grid-template-columns: repeat(6, 1fr);
+	}
+	.gallery-columns-7 {
+		grid-template-columns: repeat(7, 1fr);
+	}
+	.gallery-columns-8 {
+		grid-template-columns: repeat(8, 1fr);
+	}
+	.gallery-columns-9 {
+		grid-template-columns: repeat(9, 1fr);
+	}
+}
+
+.gallery-item {
+	padding: 0.5em;
+	border: 1px solid #dedede;
+}
+
+.gallery-icon {
 	display: flex;
-	flex-direction: row;
+	justify-content: center;
 }
 
-.site-footer .widget {
-	flex: 1;
+.gallery-caption {
+	font-size: 80%;
 }
 
-.site-footer a {
-	font-weight: bold;
-	text-decoration: none;
-	color: inherit;
+/* Video
+--------------------------------------------- */
+/**
+* The MIT License (MIT)
+*
+* Copyright (c) 2015 BG Stock - html5backgroundvideos.com
+*
+*/
+/**
+* Set default positioning as a fallback for if the plugin fails
+*/
+.jquery-background-video-wrapper {
+	position: relative;
+	overflow: hidden;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.jquery-background-video {
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	object-fit: cover;
+	transform: translate(-50%, -50%);
+}
+
+/**
+ * Fade in videos
+ * Note the .js class - so non js users still
+ * see the video
+ */
+.js .jquery-background-video {
+	opacity: 0;
+	transition: opacity 300ms linear;
+}
+
+.js .jquery-background-video.is-visible {
+	opacity: 1;
+}
+
+/**
+ * Pause/play button
+ */
+.jquery-background-video-pauseplay {
+	position: absolute;
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	width: 20px;
+	height: 20px;
+	top: 20px;
+	right: 20px;
+	padding: 0 !important;
+	cursor: pointer;
+	outline: none !important;
+}
+
+.jquery-background-video-pauseplay span {
+	display: none;
+}
+
+.jquery-background-video-pauseplay:after,
+.jquery-background-video-pauseplay:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
 	transition: all 0.3s ease;
 }
 
-.site-footer a:hover, .site-footer a:focus {
-	text-decoration: underline;
-	color: #0460d9;
+.jquery-background-video-pauseplay.play:before {
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 15px solid #fff;
 }
 
-.site-info {
-	background-color: #1f2022;
-	padding: 1.5em 3em;
+.jquery-background-video-pauseplay.pause:before,
+.jquery-background-video-pauseplay.pause:after {
+	border-top: 10px solid #fff;
+	border-bottom: 10px solid #fff;
+	border-left: 5px solid #fff;
 }
 
-@supports (grid-area: auto) {
-	@media screen and (min-width: 1024px) {
-		.blog.has-sidebar.has-social .site-footer,
-		.single.has-sidebar.has-social .site-footer,
-		.page.has-sidebar.has-social .site-footer {
-			display: grid;
-			grid-template-areas: "widget widget widget social" "info info info info";
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-		.blog.has-sidebar.has-social .site-footer .widget-area,
-		.single.has-sidebar.has-social .site-footer .widget-area,
-		.page.has-sidebar.has-social .site-footer .widget-area {
-			grid-area: widget;
-		}
-		.blog.has-sidebar.has-social .site-footer .social-menu,
-		.single.has-sidebar.has-social .site-footer .social-menu,
-		.page.has-sidebar.has-social .site-footer .social-menu {
-			grid-area: social;
-			background-color: #383f48;
-		}
-		.blog.has-sidebar.has-social .site-footer .site-info,
-		.single.has-sidebar.has-social .site-footer .site-info,
-		.page.has-sidebar.has-social .site-footer .site-info {
-			grid-area: info;
-		}
-	}
+.jquery-background-video-pauseplay.pause:after {
+	left: 10px;
+}
+
+/* Icons
+--------------------------------------------- */
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 2em;
+	width: 2em;
+	position: relative;
+	/* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+}
+
+/*--------------------------------------------------------------
+SVG Fallbacks
+--------------------------------------------------------------*/
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+.no-svg .nav-links .svg-fallback {
+	padding: 0 0.5em;
+	color: inherit;
+	background: inherit;
+}
+
+/* Social Menu fallbacks */
+.no-svg .social-menu a {
+	height: auto;
+	width: auto;
+}
+
+.no-svg .social-menu li a .screen-reader-text {
+	clip: auto;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
+	height: auto;
+	position: relative !important;
+	/* overrides previous !important styles */
+	width: auto;
 }
 
 /*--------------------------------------------------------------
@@ -2538,7 +2347,7 @@ SVG Fallbacks
 }
 
 #hero-btn:hover, #hero-btn:active, #hero-btn:focus {
-	color: #eaecfa;
+	color: #eef0f9;
 	background-color: #101926;
 }
 
@@ -3083,7 +2892,7 @@ SVG Fallbacks
 }
 
 .screen-reader-text:focus {
-	background-color: #eaecfa;
+	background-color: #eef0f9;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
@@ -3127,20 +2936,17 @@ SVG Fallbacks
 
 /* Alignments
 --------------------------------------------- */
+/*--------------------------------------------------------------
+## Alignments
+--------------------------------------------------------------*/
 .alignleft {
-	/*rtl:ignore*/
 	float: left;
-	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+	margin-right: 1.5rem;
 }
 
 .alignright {
-	/*rtl:ignore*/
 	float: right;
-	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+	margin-left: 1.5rem;
 }
 
 .aligncenter {
@@ -3151,8 +2957,17 @@ SVG Fallbacks
 	margin-bottom: 1.5em;
 }
 
+.alignwide {
+	max-width: calc(50% + $content-width / 2);
+}
+
+.alignfull {
+	max-width: 100%;
+	padding: 0;
+}
+
 /*--------------------------------------------------------------
-# Shame - Resolve before bundel
+# Shame - Resolve before bundle
 --------------------------------------------------------------*/
 /*
 body {
