@@ -59,7 +59,8 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1'	=> esc_html__( 'Primary', 'tkd' ),
+				'main'	=> esc_html__( 'Primary', 'tkd' ),
+				'admin' 	=> esc_html__( 'Administration Menu', 'tkd' ),
 				'social'	=> esc_html__( 'Social Media Menu', 'tkd' ),
 			)
 		);
@@ -167,7 +168,6 @@ function tkd_resource_hints( $urls, $relation_type ) {
 			'crossorigin',
 		);
 	}
-
 	return $urls;
 }
 add_filter( 'wp_resource_hints', 'tkd_resource_hints', 10, 2 );
@@ -222,7 +222,25 @@ function tkd_scripts() {
 	 */
 	wp_enqueue_script( 'focus-visible', get_template_directory_uri() . '/js/focus-visible.min.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( 'tkd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+
+	/**
+	 * Default Navigation
+	 */
+	// wp_enqueue_script( 'tkd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+
+	
+	/**
+	 * Minda Navigation -> Refractor
+	 */
+	wp_enqueue_script( 'tkd-navigation', get_template_directory_uri() . '/js/navigation-minda.js', array('jquery'), _S_VERSION, true );
+	wp_localize_script( 'tkd-navigation', 'tkdScreenReaderText', array(
+		'expand' => __( 'Expand child menu', 'tkd'),
+		'collapse' => __( 'Collapse child menu', 'tkd'),
+	));
+
+
 
 	// Load Background Video script
 	wp_enqueue_script( 'tkd-background-video', get_template_directory_uri() . '/js/background-video.js', array( 'jquery' ), '20201103', true );
@@ -272,3 +290,9 @@ require get_template_directory() . '/inc/disable-block-editor.php';
  * Load SVG icon functions.
  */
 require get_template_directory() . '/inc/icon-functions.php';
+
+
+/**
+ * Navigation Description Component.
+ */
+// require get_template_directory() . '/inc/navigation-description.php';

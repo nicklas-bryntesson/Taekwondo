@@ -785,7 +785,7 @@ dd {
 	margin-right: -50%;
 	transform: translate(-50%, -50%);
 	opacity: 0;
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 }
 
 .card-link {
@@ -793,7 +793,7 @@ dd {
 }
 
 .card-link:hover, .card-link:active, .card-link:focus {
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 	box-shadow: 0px 11px 16px 1px rgba(116, 132, 148, 0.75);
 	background-color: #0460d9;
 }
@@ -803,12 +803,12 @@ dd {
 }
 
 .card-link a:hover .card-info, .card-link a:active .card-info, .card-link a:focus .card-info {
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 	color: white;
 }
 
 .card-link a:hover .card-info i, .card-link a:active .card-info i, .card-link a:focus .card-info i {
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 	color: white;
 }
 
@@ -817,7 +817,7 @@ dd {
 }
 
 .card-link a:hover img, .card-link a:active img, .card-link a:focus img {
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 	filter: brightness(75%);
 	opacity: 0.45;
 }
@@ -1111,7 +1111,7 @@ input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 	background: white;
 	color: #0460d9;
 }
@@ -1148,7 +1148,7 @@ input[type="submit"]:focus {
 	border: 2px solid;
 	border-color: #0460d9;
 	text-align: center;
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 }
 
 .cta-btn:visited {
@@ -1414,13 +1414,151 @@ textarea {
 
 /* Baseline */
 .site-header {
+	position: relative;
+	background-color: #f0f0f0;
+	box-shadow: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
+	color: #101926;
 	z-index: 999;
 }
 
+.site-branding {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.custom-logo-link {
+	display: block;
+	padding: 1em;
+}
+
+.custom-logo-link:focus {
+	box-shadow: 0 0 0 3px hotpink;
+	outline: 0;
+	border-radius: 5px;
+}
+
+.custom-logo-link:focus img {
+	opacity: 0.5;
+}
+
+.custom-logo-link img {
+	display: block;
+	height: 95px;
+	width: auto;
+}
+
+.site-branding__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 65px;
+}
+
+.site-title {
+	margin: 0 0 0.25em;
+	padding: 0;
+	font-size: 1.6em;
+	font-weight: 900;
+	line-height: 1em;
+}
+
+.site-title a {
+	color: #101926;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.site-title a:hover {
+	color: darkblue;
+}
+
+.site-title a:focus {
+	box-shadow: 0 0 0 3px hotpink;
+	outline: 0;
+	border-radius: 5px;
+}
+
+.site-description {
+	margin: 0 0 0.25em;
+	font-size: 0.9em;
+	font-style: italic;
+	font-weight: 100;
+}
+
+/*
 .site-header {
-	background-color: #f0f0f0;
-	box-shadow: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
-	padding: 3em 2em;
+	position: relative;
+	font-family: $font__main;
+	background-color:transparent;
+}
+
+.site-branding {
+	display: flex;
+	min-height: 65px;
+}
+
+.custom-logo-link {
+	margin-right: 1em;
+
+  img {
+		display: block;
+		height: 65px;
+		width: auto;
+	}
+
+}
+
+.site-branding__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 65px;
+}
+
+.site-title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.6em;
+	font-weight: 900;
+	line-height: 1em;
+
+	a {
+		color: white;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+.site-description {
+	margin: 0;
+	font-size: .9em;
+	font-style: italic;
+	font-weight: 100;
+}
+
+*/
+@supports (grid-area: auto) {
+	@media screen and (min-width: 768px) {
+		.site-header {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+			grid-template-areas: "admin-navigation admin-navigation admin-navigation admin-navigation admin-navigation" "site-branding main-navigation main-navigation main-navigation main-navigation";
+		}
+		.admin-navigation {
+			grid-area: admin-navigation;
+		}
+		.site-branding {
+			grid-area: site-branding;
+		}
+		.main-navigation {
+			grid-area: main-navigation;
+		}
+	}
 }
 
 .widget-area {
@@ -1469,7 +1607,7 @@ textarea {
 	font-weight: bold;
 	text-decoration: none;
 	color: inherit;
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 }
 
 .site-footer a:hover, .site-footer a:focus {
@@ -1515,93 +1653,6 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-.main-navigation {
-	display: block;
-	width: 100%;
-	color: #0460d9;
-	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
-}
-
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation li {
-	position: relative;
-}
-
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-	color: #022873;
-	background-color: #eee;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-	font-weight: bold;
-	padding: 0.5em 1em;
-	transition: all 0.3s ease;
-	border-radius: 0.5em;
-	color: inherit;
-}
-
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-	color: #022873;
-	font-weight: bolder;
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 560px) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: flex;
-	}
-}
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-}
-
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-	display: flex;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	flex: 1 0 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
-}
-
 .social-menu {
 	padding: 1em;
 }
@@ -2621,7 +2672,7 @@ SVG Fallbacks
 	margin-right: -50%;
 	transform: translate(-50%, -50%);
 	opacity: 0;
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 }
 
 .card-link a {
@@ -2756,7 +2807,7 @@ SVG Fallbacks
 .card-link a:hover .card-info .fp-newsbox-arrow,
 .card-link a:hover .card-info .fp-newsbox-date, .card-link a:focus .card-info .fp-newsbox-arrow,
 .card-link a:focus .card-info .fp-newsbox-date {
-	transition: all 0.3s ease;
+	transition: all 0.4s ease;
 	color: #fff;
 }
 

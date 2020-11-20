@@ -26,15 +26,84 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'tkd' ); ?></a>
 
 	<header id="masthead" class="site-header">		
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tkd' ); ?></button>
+
+		<?php if ( has_nav_menu( 'admin' ) ) { ?>
+			<nav id="top-navigation" class="admin-navigation menu">
+				<?php
+				wp_nav_menu( array(
+					'theme_location'	=> 'admin',
+					'menu_class'		=> 'top-menu',
+					'depth'				=> 1,
+					'container'			=> false,
+				) );
+				?>
+			</nav>
+		<?php } ?>
+
+
+		<div class="site-branding">
 			<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					)
-				);
-			?>
-		</nav><!-- #site-navigation -->
+
+			if ( is_front_page() && is_home() ) :
+				?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php
+			else :
+				?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			endif;
+			$tkd_description = get_bloginfo( 'description', 'display' );
+			if ( $tkd_description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php echo $tkd_description; /* WPCS: xss ok. */ ?></p>
+			<?php endif; ?>
+		</div><!-- .site-branding -->
+	
+		<?php if ( has_nav_menu( 'primary' ) && has_nav_menu( 'admin' ) ) { ?>
+			<nav id="site-navigation" class="main-navigation menu">
+				<button class="menu-toggle toggle--elastic" aria-controls="primary-menu" aria-expanded="false">
+					<span class="menu-label"><?php esc_html_e( 'Primary Menu', 'tkd' ); ?></span>
+					<span class="toggle-box"><span class="toggle-inner"></span></span>
+				</button>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location'	=> 'main',
+							'menu_id' 			=> 'primary-menu',
+							'menu_class'		=> 'main-menu',
+							'container'			=> false,
+						)
+					);
+					wp_nav_menu(
+						array(
+							'theme_location'	=> 'admin',
+							'menu_id'			=> 'top-navigation',
+							'menu_class'		=> 'admin-menu',
+							'depth'				=> 1,
+							'container'			=> false,
+						)
+					);
+				?>
+			</nav><!-- #site-navigation -->
+		<?php } else { ?>
+			<nav id="site-navigation" class="main-navigation menu">
+				<button class="menu-toggle toggle--elastic" aria-controls="primary-menu" aria-expanded="false">
+					<span class="menu-label"><?php esc_html_e( 'Primary Menu', 'tkd' ); ?></span>
+					<span class="toggle-box"><span class="toggle-inner"></span></span>
+				</button>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location'	=> 'main',
+							'menu_id' 			=> 'primary-menu',
+							'menu_class'		=> 'main-menu',
+							'container'			=> false,
+						)
+					);
+				?>
+			</nav><!-- #site-navigation -->
+		<?php } ?>
+
+	
 	</header><!-- #masthead -->

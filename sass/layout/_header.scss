@@ -1,11 +1,153 @@
 /* Baseline */
 
 .site-header {
+  position: relative;
+  background-color: $color__background-header;
+  box-shadow: $boxshadow__card;
+  color: $color__text-main;
   z-index: 999;
 }
 
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-logo-link {
+  display: block;
+  padding: 1em;
+
+  &:focus {
+    box-shadow: $focus__boxshadow;
+    outline: 0;
+    border-radius: 5px;
+
+    img {
+      opacity: 0.5;
+    }
+  }
+
+  img {
+    display: block;
+    height: 95px;
+    width: auto;
+  }
+}
+
+.site-branding__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 65px;
+}
+
+.site-title {
+  margin: 0 0 0.25em;
+  padding: 0;
+  font-size: 1.6em;
+  font-weight: 900;
+  line-height: 1em;
+
+  a {
+    color: $color__text-main;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color__branding-hover;
+    }
+
+    &:focus {
+      box-shadow: $focus__boxshadow;
+      outline: 0;
+      border-radius: 5px;
+    }
+  }
+}
+
+.site-description {
+  margin: 0 0 0.25em;
+  font-size: 0.9em;
+  font-style: italic;
+  font-weight: 100;
+}
+
+/*
 .site-header {
-  background-color: $color__background-header;
-  box-shadow: $boxshadow__card;
-  padding: 3em 2em;
+	position: relative;
+	font-family: $font__main;
+	background-color:transparent;
+}
+
+.site-branding {
+	display: flex;
+	min-height: 65px;
+}
+
+.custom-logo-link {
+	margin-right: 1em;
+
+  img {
+		display: block;
+		height: 65px;
+		width: auto;
+	}
+
+}
+
+.site-branding__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 65px;
+}
+
+.site-title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.6em;
+	font-weight: 900;
+	line-height: 1em;
+
+	a {
+		color: white;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+.site-description {
+	margin: 0;
+	font-size: .9em;
+	font-style: italic;
+	font-weight: 100;
+}
+
+*/
+
+@supports (grid-area: auto) {
+  @media screen and (min-width: $query__tablet) {
+    .site-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+        "admin-navigation admin-navigation admin-navigation admin-navigation admin-navigation"
+        "site-branding main-navigation main-navigation main-navigation main-navigation";
+    }
+
+    .admin-navigation {
+      grid-area: admin-navigation;
+    }
+    .site-branding {
+      grid-area: site-branding;
+    }
+    .main-navigation {
+      grid-area: main-navigation;
+    }
+  }
 }
