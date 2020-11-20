@@ -32,13 +32,16 @@
 				<?php
 				wp_nav_menu( array(
 					'theme_location'	=> 'admin',
-					'menu_class'		=> 'top-menu',
+					'menu_class'		=> 'top-menu admin-desktop',
 					'depth'				=> 1,
 					'container'			=> false,
 				) );
 				?>
 			</nav>
 		<?php } ?>
+
+
+
 
 
 		<div class="site-branding">
@@ -59,51 +62,73 @@
 				<p class="site-description"><?php echo $tkd_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
-	
-		<?php if ( has_nav_menu( 'primary' ) && has_nav_menu( 'admin' ) ) { ?>
-			<nav id="site-navigation" class="main-navigation menu">
-				<button class="menu-toggle toggle--elastic" aria-controls="primary-menu" aria-expanded="false">
-					<span class="menu-label"><?php esc_html_e( 'Primary Menu', 'tkd' ); ?></span>
-					<span class="toggle-box"><span class="toggle-inner"></span></span>
-				</button>
-				<?php
-					wp_nav_menu(
-						array(
-							'theme_location'	=> 'main',
-							'menu_id' 			=> 'primary-menu',
-							'menu_class'		=> 'main-menu',
-							'container'			=> false,
-						)
-					);
-					wp_nav_menu(
-						array(
-							'theme_location'	=> 'admin',
-							'menu_id'			=> 'top-navigation',
-							'menu_class'		=> 'admin-menu',
-							'depth'				=> 1,
-							'container'			=> false,
-						)
-					);
-				?>
-			</nav><!-- #site-navigation -->
-		<?php } else { ?>
-			<nav id="site-navigation" class="main-navigation menu">
-				<button class="menu-toggle toggle--elastic" aria-controls="primary-menu" aria-expanded="false">
-					<span class="menu-label"><?php esc_html_e( 'Primary Menu', 'tkd' ); ?></span>
-					<span class="toggle-box"><span class="toggle-inner"></span></span>
-				</button>
-				<?php
-					wp_nav_menu(
-						array(
-							'theme_location'	=> 'main',
-							'menu_id' 			=> 'primary-menu',
-							'menu_class'		=> 'main-menu',
-							'container'			=> false,
-						)
-					);
-				?>
-			</nav><!-- #site-navigation -->
-		<?php } ?>
 
-	
+
+
+
+
+
+		<?php if ( has_nav_menu( 'admin' ) && !has_nav_menu( 'main' ) ) { ?>
+			<nav id="site-navigation" class="main-navigation menu">
+				<button class="menu-toggle toggle--elastic" aria-controls="admin-menu" aria-expanded="false">
+					<span class="menu-label"><?php esc_html_e( 'Admin Menu', 'tkd' ); ?></span>
+					<span class="toggle-box"><span class="toggle-inner"></span></span>
+				</button>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location'    => 'admin',
+							'menu_id'           => 'top-navigation',
+							'menu_class'        => 'admin-menu admin-mobile',
+							'depth'             => 1,
+							'container'         => false,
+						)
+					);
+				?>
+			</nav>
+		<?php } elseif ( !has_nav_menu( 'admin' ) && has_nav_menu( 'main' ) ) { ?>
+			<nav id="site-navigation" class="main-navigation menu">
+				<button class="menu-toggle toggle--elastic" aria-controls="primary-menu" aria-expanded="false">
+					<span class="menu-label"><?php esc_html_e( 'Primary Menu', 'tkd' ); ?></span>
+					<span class="toggle-box"><span class="toggle-inner"></span></span>
+				</button>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location'    => 'main',
+							'menu_id'           => 'primary-menu',
+							'menu_class'        => 'main-menu',
+							'container'         => false,
+						)
+					);
+				?>
+			</nav>
+		<?php } elseif ( has_nav_menu( 'admin' ) && has_nav_menu( 'main' ) ) { ?>
+			<nav id="site-navigation" class="main-navigation menu">
+				<button class="menu-toggle toggle--elastic" aria-controls="primary-menu" aria-expanded="false">
+					<span class="menu-label"><?php esc_html_e( 'Primary Menu', 'tkd' ); ?></span>
+					<span class="toggle-box"><span class="toggle-inner"></span></span>
+				</button>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location'    => 'main',
+							'menu_id'           => 'primary-menu',
+							'menu_class'        => 'main-menu',
+							'container'         => false,
+						)
+					);
+					wp_nav_menu(
+						array(
+							'theme_location'    => 'admin',
+							'menu_id'           => 'top-navigation',
+							'menu_class'        => 'admin-menu admin-mobile',
+							'depth'             => 1,
+							'container'         => false,
+						)
+					);
+				?>
+			</nav>
+		<?php } else { /* No active menu! */ } ?>
+
 	</header><!-- #masthead -->

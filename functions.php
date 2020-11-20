@@ -46,15 +46,48 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		
+		// Set post thumbnail size.
+		set_post_thumbnail_size( 1200, 9999 );
+
+
+		/**
+		 * Custom Logo Function -> Remove and exchange with SVG on Demo site.
+		 */
+
+		// Custom logo.
+		$logo_width  = 120;
+		$logo_height = 90;
+
+		// If the retina setting is active, double the recommended width and height.
+		if ( get_theme_mod( 'retina_logo', false ) ) {
+			$logo_width  = floor( $logo_width * 2 );
+			$logo_height = floor( $logo_height * 2 );
+		}
+
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => $logo_height,
+				'width'       => $logo_width,
+				'flex-height' => true,
+				'flex-width'  => true,
+			)
+		);
 
 		/*
 		 * Opt in features to extend block editor.
 		 *
 		 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/
 		 */
-		add_theme_support( 'wp-block-styles' );
+		
+		 add_theme_support( 'wp-block-styles' );
 
+		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
