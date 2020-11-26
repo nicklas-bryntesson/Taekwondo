@@ -1,0 +1,319 @@
+//
+
+//
+
+//
+
+//
+
+/*
+ * ***  ***  ***
+ * SHARED STYLES
+ * ***  ***  ***
+ */
+
+//
+
+//
+
+//
+
+//
+
+.main-navigation {
+  clear: left;
+  line-height: 1;
+  padding: 0;
+
+  a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    display: block;
+
+    li {
+    }
+    /* 
+	* Hide Menu and children
+	*/
+
+    ul {
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+    }
+
+    li {
+      position: relative;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a,
+  .current-menu-ancestor > a {
+    font-weight: bolder;
+  }
+
+  button.dropdown-toggle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 1em;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  // Menu item dropdown buttons
+  ul li button {
+    border: none;
+  }
+
+  .dropdown-toggle {
+    cursor: pointer;
+    border: none;
+
+    &:focus {
+      outline: 4px solid $color__link-focus;
+    }
+  }
+
+  // make shure that the last menu position dropdown don't break layout.
+  ul li:last-child ul {
+    right: 0;
+  }
+
+  // Toggles on all children !!!
+
+  // Show Menu Children
+
+  ul.toggled-on,
+  .sub-menu.toggled-on {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+  }
+}
+
+//
+
+//
+
+//
+
+//
+
+/*
+ *  ***  ***  ***  ***  ***
+ *      - MOBILE - 
+ *  ***  ***  ***  ***  ***
+ */
+
+/************************/
+
+/*
+ *  ***  ***  ***  ***  ***
+ *    - NAVIGATION - 
+ *  ***  ***  ***  ***  ***
+ */
+
+//
+
+//
+
+//
+
+//
+
+@media screen and (max-width: $query__tablet) {
+  // Mobile styles
+
+  // Menu overlay
+  .main-navigation {
+    // Styles
+    flex-direction: column;
+
+    ul {
+      background-color: DarkBlue;
+      // Styles
+      display: none;
+      height: 100%;
+      margin-top: 1em;
+      justify-content: center;
+      padding: 3em;
+      overflow: visible;
+    }
+
+    li {
+      background-color: MediumBlue;
+      // Styles
+    }
+
+    a {
+      background-color: DodgerBlue;
+      // Styles
+      padding: 1em;
+      color: white;
+      width: 100%;
+    }
+
+    ul ul {
+      background-color: gold;
+      // Styles
+      z-index: 1;
+    }
+    ul ul li {
+      padding-left: 1em;
+    }
+  }
+}
+
+.main-navigation.toggled-on {
+  background-color: midnightblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  opacity: 0.95;
+}
+.main-navigation.toggled-on ul {
+  display: block;
+}
+
+/* .main-navigation.small-menu-toggled {
+  background-color: midnightblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  opacity: 0.95;
+}
+.main-navigation.small-menu-toggled ul {
+  display: block;
+} */
+
+//
+
+//
+
+//
+
+//
+
+/*
+ *  ***  ***  ***  ***  ***
+ *     - DESKTOP - 
+ *  ***  ***  ***  ***  ***
+ */
+
+/*************************/
+
+/*
+ *  ***  ***  ***  ***  ***
+ *    - NAVIGATION - 
+ *  ***  ***  ***  ***  ***
+ */
+
+//
+
+//
+
+//
+
+//
+
+@media screen and (min-width: $query__tablet) {
+  // main navigation bar - Desktop styles
+  .main-navigation,
+  .main-navigation.toggled-on {
+    background-color: mediumvioletred;
+    // Styles
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-height: 0;
+    opacity: 1;
+
+    ul,
+    .main-navigation.toggled-on ul {
+      display: flex;
+      padding: 0;
+      background-color: tan;
+      border: 1px solid gold;
+      width: 100%;
+
+      // Menu - Level 2
+      ul {
+        // Position the dropdown below menu
+        position: absolute;
+        top: calc(100% + 1em);
+        width: 250px;
+        flex-direction: column;
+        background-color: khaki;
+        border: 2px solid green;
+
+        li {
+          background-color: peachpuff;
+        }
+
+        // Menu - Level 3
+        ul {
+          display: block;
+          background-color: springgreen;
+          border: 1px solid salmon;
+
+          li {
+            padding-left: 0;
+          }
+          a:hover,
+          li:hover {
+            background-color: black;
+          }
+        }
+
+        a:hover,
+        li:hover {
+          background-color: palegreen;
+        }
+      }
+    }
+
+    li {
+      position: relative;
+    }
+
+    a {
+      color: black;
+      margin-left: 1em;
+    }
+  }
+  /*   .main-navigation li:hover > ul,
+  .main-navigation li.focus > ul {
+    left: auto;
+    right: 0;
+  }
+  .main-navigation ul ul li:hover > ul,
+  .main-navigation ul ul li.focus > ul {
+    left: auto;
+    right: 100%;
+  } */
+
+  // Fallback if mobile nav is toggled.on when resize
+}

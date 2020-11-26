@@ -1,0 +1,62 @@
+/*--------------------------------------------------------------
+## ADMIN TOP NAVIGATION - ALL STYLES
+--------------------------------------------------------------*/
+.admin-navigation {
+  background-color: tomato;
+  padding: 0 1.5em;
+
+  ul {
+    background-color: hotpink;
+    display: flex;
+
+    li {
+      padding: 1em 2em;
+    }
+
+    a {
+      color: white;
+    }
+  }
+}
+
+@media screen and (min-width: $query__tablet) {
+  .admin-navigation {
+    width: 100%;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+      }
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a {
+      &:hover {
+        &::after {
+          background: tomato;
+        }
+      }
+
+      // Fill the bottom border on active menu-item.
+      &::after {
+        background: red;
+      }
+
+      // Remove bottom border on focus & hover.
+      &:focus {
+        &:hover {
+          &::after {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}

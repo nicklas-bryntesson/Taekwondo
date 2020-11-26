@@ -1,7 +1,43 @@
 // All the different navigation menues in the site
 
-@import "admin-menu";
+/* 
+ *
+ *    MENU DISPLAY SWITCH
+ *
+ * ONLY SWITCHES WICH MENU SHOWS
+ *    IN DIFFERENT VIEWPORTS
+ */
+
+// Rules for Mobile
+@media screen and (max-width: $query__tablet) {
+  .admin-navigation {
+    display: none;
+  }
+}
+
+// Rules for desktop
+@media screen and (min-width: $query__tablet) {
+  .main-navigation {
+    .menu-toggle {
+      display: none;
+    }
+    .admin-mobile {
+      display: none;
+    }
+  }
+}
+// Styles shared by all menues + show switch
 @import "main-baseline";
-@import "main-mobile";
-@import "main-desktop";
+
+// Hamburger Icon
+@import "main-icon";
+@import "minda-navigation";
+
+// Styles for top admin menu
+@import "admin-menu";
+
+// @import "main-mobile";
+// @import "main-desktop";
+
+// Social media Footer menu
 @import "social-navigation";

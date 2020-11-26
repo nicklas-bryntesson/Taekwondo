@@ -4,7 +4,7 @@
 
 .menu {
   font-family: $font__main;
-  display: block;
+  // display: block;
   /*
 	  word-wrap: break-word; // Check if this need to apply on <'a'> instead?
 	  */
@@ -12,15 +12,10 @@
   /* clearfixing */
   ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
   }
 
   li {
     display: block;
-    /*
-		transition-duration: 0,5s;
-		*/
 
     &:hover {
       cursor: pointer;
@@ -37,13 +32,7 @@
     text-decoration: none;
 
     &:focus {
-      box-shadow: $focus__boxshadow;
-      outline: 0;
-
-      &:hover {
-        background-color: $color__focus;
-        color: white;
-      }
+      outline: 4px solid $color__link-focus;
     }
   }
 
@@ -53,30 +42,4 @@
   .current-menu-ancestor > a {
     font-weight: bold;
   }
-} // .menu
-
-button.dropdown-toggle {
-  @include font-size(1);
-  font-weight: 600;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1em;
-  width: 48px;
-  color: $color__text-main;
-  background: inherit;
-  border: none;
-
-  // Border radius for focus & hover class
-  border-radius: 5px;
-}
-
-.menu-item-description {
-  font-family: $font__meta;
-  font-weight: 400;
-  @include font-size(0.85);
-  font-style: italic;
-  display: block;
-  word-wrap: break-word;
-  margin-top: 0.5em;
 }

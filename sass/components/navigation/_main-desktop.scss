@@ -1,3 +1,83 @@
 /*--------------------------------------------------------------
-## MAIN NAVIGATION - DESKTOP
+## NAVIGATION - DESKTOP
 --------------------------------------------------------------*/
+
+.main-navigation {
+  @media screen and (min-width: $query__tablet) {
+    ul {
+      display: block;
+      display: flex;
+      flex-wrap: wrap;
+
+      ul {
+        border: 1px solid $color__border-input;
+        background-color: white;
+        flex-direction: column;
+        margin: 0;
+
+        ul {
+          border: none;
+          box-shadow: none;
+
+          li {
+            padding-left: 0;
+          }
+        }
+
+        a {
+          width: 15em;
+          border-left: 3px solid blue;
+          padding: 0, 5em 1em;
+          border-radius: 0;
+        }
+
+        a:hover,
+        li:hover {
+          background-color: LightGrey;
+        }
+      }
+    }
+
+    li {
+      &:hover {
+        background-color: transparent;
+      }
+
+      a {
+        padding: 0.4em 1em;
+      }
+    }
+
+    a {
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .menu-item-has-children,
+    .page_item_has_children {
+      width: 10em;
+    }
+
+    .menu-item-has-children > a,
+    .page_item_has_children > a {
+      padding-right: 2em;
+    }
+
+    button.dropdown-toggle {
+      width: 40px;
+      height: 40px;
+      padding: 0.5em;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a,
+    .current-menu-ancestor > a {
+      color: blue;
+    }
+  } // .main-navigation
+} // min-width: $query__small

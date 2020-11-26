@@ -269,8 +269,8 @@ function tkd_scripts() {
 	 */
 	wp_enqueue_script( 'tkd-navigation', get_template_directory_uri() . '/js/navigation-minda.js', array('jquery'), _S_VERSION, true );
 	wp_localize_script( 'tkd-navigation', 'tkdScreenReaderText', array(
-		'expand' => __( 'Expand child menu', 'tkd'),
-		'collapse' => __( 'Collapse child menu', 'tkd'),
+		'expand' => __( 'Open menu', 'tkd'),
+		'collapse' => __( 'Close menu', 'tkd'),
 	));
 
 

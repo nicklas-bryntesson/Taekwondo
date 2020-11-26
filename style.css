@@ -1086,7 +1086,6 @@ input[type="submit"] {
 	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	line-height: 1;
 	font-weight: 400;
-	padding: 8px 12px;
 	padding: 0.8rem 1.2rem;
 	background: transparent;
 	color: #0460d9;
@@ -1112,7 +1111,7 @@ input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus {
 	transition: all 0.4s ease;
-	background: white;
+	background: transparent;
 	color: #0460d9;
 }
 
@@ -1414,53 +1413,45 @@ textarea {
 
 /* Baseline */
 .site-header {
+	background-color: skyblue;
 	position: relative;
-	background-color: #f0f0f0;
 	box-shadow: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
 	color: #101926;
 	z-index: 999;
 }
 
 .site-branding {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	background-color: steelblue;
+	margin-left: 1.5em;
+	padding: 1em 1em 1em 0;
 }
 
 .custom-logo-link {
+	background-color: lightsteelblue;
 	display: block;
-	padding: 1em;
-}
-
-.custom-logo-link:focus {
-	box-shadow: 0 0 0 3px hotpink;
-	outline: 0;
-	border-radius: 5px;
-}
-
-.custom-logo-link:focus img {
-	opacity: 0.5;
+	margin: 0;
 }
 
 .custom-logo-link img {
 	display: block;
-	height: 95px;
 	width: auto;
+	height: 100px;
 }
 
-.site-branding__text {
+.site-branding {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 65px;
+}
+
+.header-titles h1 {
+	margin: 0;
 }
 
 .site-title {
-	margin: 0 0 0.25em;
-	padding: 0;
+	background-color: lightpink;
 	font-size: 1.6em;
 	font-weight: 900;
-	line-height: 1em;
 }
 
 .site-title a {
@@ -1470,84 +1461,31 @@ textarea {
 }
 
 .site-title a:hover {
-	color: darkblue;
-}
-
-.site-title a:focus {
-	box-shadow: 0 0 0 3px hotpink;
-	outline: 0;
-	border-radius: 5px;
+	color: #0460d9;
 }
 
 .site-description {
-	margin: 0 0 0.25em;
-	font-size: 0.9em;
-	font-style: italic;
-	font-weight: 100;
+	background-color: thistle;
+}
+
+.main-navigation {
+	background-color: tan;
+	display: flex;
+	align-items: center;
+	margin-right: 1.5em;
 }
 
 /*
-.site-header {
-	position: relative;
-	font-family: $font__main;
-	background-color:transparent;
-}
-
-.site-branding {
-	display: flex;
-	min-height: 65px;
-}
-
-.custom-logo-link {
-	margin-right: 1em;
-
-  img {
-		display: block;
-		height: 65px;
-		width: auto;
-	}
-
-}
-
-.site-branding__text {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 65px;
-}
-
-.site-title {
-	margin: 0;
-	padding: 0;
-	font-size: 1.6em;
-	font-weight: 900;
-	line-height: 1em;
-
-	a {
-		color: white;
-		text-decoration: none;
-
-		&:hover,
-		&:focus {
-			text-decoration: underline;
-		}
-	}
-}
-
-.site-description {
-	margin: 0;
-	font-size: .9em;
-	font-style: italic;
-	font-weight: 100;
-}
-
-*/
+ *
+ * CSS GRID -> PREFIX
+ *
+ */
 @supports (grid-area: auto) {
 	@media screen and (min-width: 768px) {
 		.site-header {
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-			grid-template-areas: "admin-navigation admin-navigation admin-navigation admin-navigation admin-navigation" "site-branding main-navigation main-navigation main-navigation main-navigation";
+			grid-template-columns: 1fr 3fr;
+			grid-template-areas: "admin-navigation admin-navigation" "site-branding main-navigation";
 		}
 		.admin-navigation {
 			grid-area: admin-navigation;
@@ -1653,6 +1591,507 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+/* 
+ *
+ *    MENU DISPLAY SWITCH
+ *
+ * ONLY SWITCHES WICH MENU SHOWS
+ *    IN DIFFERENT VIEWPORTS
+ */
+@media screen and (max-width: 768px) {
+	.admin-navigation {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.main-navigation .menu-toggle {
+		display: none;
+	}
+	.main-navigation .admin-mobile {
+		display: none;
+	}
+}
+
+/*--------------------------------------------------------------
+## MAIN NAVIGATION - BASELINE
+--------------------------------------------------------------*/
+.menu {
+	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	/*
+	  word-wrap: break-word; // Check if this need to apply on <'a'> instead?
+	  */
+	/* clearfixing */
+}
+
+.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	display: block;
+}
+
+.menu li:hover {
+	cursor: pointer;
+}
+
+.menu li ul {
+	margin: 0;
+	padding: 0;
+}
+
+.menu a {
+	display: block;
+	text-decoration: none;
+}
+
+.menu a:focus {
+	outline: 4px solid magenta;
+}
+
+.menu .current_page_item > a,
+.menu .current-menu-item > a,
+.menu .current_page_ancestor > a,
+.menu .current-menu-ancestor > a {
+	font-weight: bold;
+}
+
+/* 
+ * Icon for Mobile view
+ *
+ * Hamburgers
+ * @description: CSS-animated hamburger icon based on Jonathan suh's Hamburgers.
+ * @author Jonathan Suh @jonsuh
+ *
+ * @link https://github.com/jonsuh/hamburgers
+*/
+.menu-toggle {
+	display: inline-block;
+	cursor: pointer;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: none;
+	border-radius: 5px;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	z-index: 1000000;
+}
+
+.menu-toggle:focus {
+	outline: 4px solid magenta;
+}
+
+.toggle-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+}
+
+.toggle-inner {
+	display: block;
+	top: 50%;
+}
+
+.toggle-inner,
+.toggle-inner::before,
+.toggle-inner::after {
+	width: 40px;
+	height: 5px;
+	background-color: #101926;
+	border-radius: 5px;
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+}
+
+.menu-toggle.is-active .toggle-inner,
+.menu-toggle.is-active .toggle-inner::before,
+.menu-toggle.is-active .toggle-inner::after {
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+	background-color: white;
+}
+
+.toggle-inner::before,
+.toggle-inner::after {
+	content: "";
+	display: block;
+}
+
+.toggle-inner::before {
+	top: -10px;
+}
+
+.toggle-inner::after {
+	bottom: -10px;
+}
+
+/*
+	 * Elastic Icon Animation
+	 */
+.toggle--elastic .toggle-inner {
+	top: 2px;
+	transition-duration: 0.275s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toggle--elastic .toggle-inner::before {
+	top: 10px;
+	transition: opacity 0.125s 0.275s ease;
+}
+
+.toggle--elastic .toggle-inner::after {
+	top: 20px;
+	transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toggle--elastic.is-active .toggle-inner {
+	transform: translate3d(0, 10px, 0) rotate(135deg);
+	transition-delay: 0.075s;
+}
+
+.toggle--elastic.is-active .toggle-inner::before {
+	transition-delay: 0s;
+	opacity: 0;
+}
+
+.toggle--elastic.is-active .toggle-inner::after {
+	transform: translate3d(0, -20px, 0) rotate(-270deg);
+	transition-delay: 0.075s;
+}
+
+.menu-label {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+/*
+ * ***  ***  ***
+ * SHARED STYLES
+ * ***  ***  ***
+ */
+.main-navigation {
+	clear: left;
+	line-height: 1;
+	padding: 0;
+}
+
+.main-navigation a {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+}
+
+.main-navigation a:hover {
+	cursor: pointer;
+}
+
+.main-navigation ul {
+	display: block;
+	/* 
+	* Hide Menu and children
+	*/
+}
+
+.main-navigation ul ul {
+	visibility: hidden;
+	opacity: 0;
+	display: none;
+}
+
+.main-navigation ul li {
+	position: relative;
+}
+
+.main-navigation ul a {
+	display: inline-block;
+	width: 100%;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+	font-weight: bolder;
+}
+
+.main-navigation button.dropdown-toggle {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-left: 1em;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+.main-navigation ul li button {
+	border: none;
+}
+
+.main-navigation .dropdown-toggle {
+	cursor: pointer;
+	border: none;
+}
+
+.main-navigation .dropdown-toggle:focus {
+	outline: 4px solid magenta;
+}
+
+.main-navigation ul li:last-child ul {
+	right: 0;
+}
+
+.main-navigation ul.toggled-on,
+.main-navigation .sub-menu.toggled-on {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+}
+
+/*
+ *  ***  ***  ***  ***  ***
+ *      - MOBILE - 
+ *  ***  ***  ***  ***  ***
+ */
+/************************/
+/*
+ *  ***  ***  ***  ***  ***
+ *    - NAVIGATION - 
+ *  ***  ***  ***  ***  ***
+ */
+@media screen and (max-width: 768px) {
+	.main-navigation {
+		flex-direction: column;
+	}
+	.main-navigation ul {
+		background-color: DarkBlue;
+		display: none;
+		height: 100%;
+		margin-top: 1em;
+		justify-content: center;
+		padding: 3em;
+		overflow: visible;
+	}
+	.main-navigation li {
+		background-color: MediumBlue;
+	}
+	.main-navigation a {
+		background-color: DodgerBlue;
+		padding: 1em;
+		color: white;
+		width: 100%;
+	}
+	.main-navigation ul ul {
+		background-color: gold;
+		z-index: 1;
+	}
+	.main-navigation ul ul li {
+		padding-left: 1em;
+	}
+}
+
+.main-navigation.toggled-on {
+	background-color: midnightblue;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	min-height: 100vh;
+	width: 100%;
+	opacity: 0.95;
+}
+
+.main-navigation.toggled-on ul {
+	display: block;
+}
+
+/* .main-navigation.small-menu-toggled {
+  background-color: midnightblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  opacity: 0.95;
+}
+.main-navigation.small-menu-toggled ul {
+  display: block;
+} */
+/*
+ *  ***  ***  ***  ***  ***
+ *     - DESKTOP - 
+ *  ***  ***  ***  ***  ***
+ */
+/*************************/
+/*
+ *  ***  ***  ***  ***  ***
+ *    - NAVIGATION - 
+ *  ***  ***  ***  ***  ***
+ */
+@media screen and (min-width: 768px) {
+	.main-navigation,
+	.main-navigation.toggled-on {
+		background-color: mediumvioletred;
+		display: flex;
+		justify-content: center;
+		position: relative;
+		min-height: 0;
+		opacity: 1;
+	}
+	.main-navigation ul,
+	.main-navigation .main-navigation.toggled-on ul,
+	.main-navigation.toggled-on ul,
+	.main-navigation.toggled-on .main-navigation.toggled-on ul {
+		display: flex;
+		padding: 0;
+		background-color: tan;
+		border: 1px solid gold;
+		width: 100%;
+	}
+	.main-navigation ul ul,
+	.main-navigation .main-navigation.toggled-on ul ul,
+	.main-navigation.toggled-on ul ul,
+	.main-navigation.toggled-on .main-navigation.toggled-on ul ul {
+		position: absolute;
+		top: calc(100% + 1em);
+		width: 250px;
+		flex-direction: column;
+		background-color: khaki;
+		border: 2px solid green;
+	}
+	.main-navigation ul ul li,
+	.main-navigation .main-navigation.toggled-on ul ul li,
+	.main-navigation.toggled-on ul ul li,
+	.main-navigation.toggled-on .main-navigation.toggled-on ul ul li {
+		background-color: peachpuff;
+	}
+	.main-navigation ul ul ul,
+	.main-navigation .main-navigation.toggled-on ul ul ul,
+	.main-navigation.toggled-on ul ul ul,
+	.main-navigation.toggled-on .main-navigation.toggled-on ul ul ul {
+		display: block;
+		background-color: springgreen;
+		border: 1px solid salmon;
+	}
+	.main-navigation ul ul ul li,
+	.main-navigation .main-navigation.toggled-on ul ul ul li,
+	.main-navigation.toggled-on ul ul ul li,
+	.main-navigation.toggled-on .main-navigation.toggled-on ul ul ul li {
+		padding-left: 0;
+	}
+	.main-navigation ul ul ul a:hover,
+	.main-navigation ul ul ul li:hover,
+	.main-navigation .main-navigation.toggled-on ul ul ul a:hover,
+	.main-navigation .main-navigation.toggled-on ul ul ul li:hover,
+	.main-navigation.toggled-on ul ul ul a:hover,
+	.main-navigation.toggled-on ul ul ul li:hover,
+	.main-navigation.toggled-on .main-navigation.toggled-on ul ul ul a:hover,
+	.main-navigation.toggled-on .main-navigation.toggled-on ul ul ul li:hover {
+		background-color: black;
+	}
+	.main-navigation ul ul a:hover,
+	.main-navigation ul ul li:hover,
+	.main-navigation .main-navigation.toggled-on ul ul a:hover,
+	.main-navigation .main-navigation.toggled-on ul ul li:hover,
+	.main-navigation.toggled-on ul ul a:hover,
+	.main-navigation.toggled-on ul ul li:hover,
+	.main-navigation.toggled-on .main-navigation.toggled-on ul ul a:hover,
+	.main-navigation.toggled-on .main-navigation.toggled-on ul ul li:hover {
+		background-color: palegreen;
+	}
+	.main-navigation li,
+	.main-navigation.toggled-on li {
+		position: relative;
+	}
+	.main-navigation a,
+	.main-navigation.toggled-on a {
+		color: black;
+		margin-left: 1em;
+	}
+	/*   .main-navigation li:hover > ul,
+  .main-navigation li.focus > ul {
+    left: auto;
+    right: 0;
+  }
+  .main-navigation ul ul li:hover > ul,
+  .main-navigation ul ul li.focus > ul {
+    left: auto;
+    right: 100%;
+  } */
+}
+
+/*--------------------------------------------------------------
+## ADMIN TOP NAVIGATION - ALL STYLES
+--------------------------------------------------------------*/
+.admin-navigation {
+	background-color: tomato;
+	padding: 0 1.5em;
+}
+
+.admin-navigation ul {
+	background-color: hotpink;
+	display: flex;
+}
+
+.admin-navigation ul li {
+	padding: 1em 2em;
+}
+
+.admin-navigation ul a {
+	color: white;
+}
+
+@media screen and (min-width: 768px) {
+	.admin-navigation {
+		width: 100%;
+	}
+	.admin-navigation ul {
+		display: flex;
+		justify-content: flex-end;
+	}
+	.admin-navigation li {
+		display: inline-block;
+	}
+	.admin-navigation li a {
+		display: block;
+	}
+	.admin-navigation .current_page_item > a:hover::after,
+	.admin-navigation .current-menu-item > a:hover::after {
+		background: tomato;
+	}
+	.admin-navigation .current_page_item > a::after,
+	.admin-navigation .current-menu-item > a::after {
+		background: red;
+	}
+	.admin-navigation .current_page_item > a:focus:hover::after,
+	.admin-navigation .current-menu-item > a:focus:hover::after {
+		background: transparent;
+	}
+}
+
 .social-menu {
 	padding: 1em;
 }
@@ -2118,10 +2557,10 @@ object {
 }
 
 /* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
-}
-
+/* .custom-logo-link {
+  display: inline-block;
+  margin: 0;
+} */
 /* Captions
 --------------------------------------------- */
 .wp-caption {
@@ -3126,5 +3565,13 @@ body {
 .circle-blue {
 	background-color: blue;
 }
+
+/* 
+@media screen and (max-width: $query__tablet-wide) {
+  .site-branding {
+    display: none;
+  }
+}
+ */
 
 /*# sourceMappingURL=style.css.map */

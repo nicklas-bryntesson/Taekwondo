@@ -1,3 +1,101 @@
 /*--------------------------------------------------------------
 ## MAIN NAVIGATION - MOBILE
 --------------------------------------------------------------*/
+
+/* Toggle small menu and children on */
+.main-navigation {
+  clear: left;
+  line-height: 1;
+  // font-family: $font__main;
+  // @include font-size(1.2);
+  // font-weight: 600;
+
+  ul {
+    display: none;
+
+    ul {
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+    }
+
+    li:hover > ul,
+    li.focus > ul {
+      left: auto;
+    }
+  }
+
+  li {
+    position: relative;
+
+    // Shift link to the right as we move down. Shorthand?
+    ul a {
+      background-color: tomato;
+    }
+    ul ul a {
+      background-color: plum;
+    }
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+  }
+
+  li:hover > button,
+  li:hover > a,
+  a:hover,
+  button.dropdown-toggle:hover {
+    color: blue;
+  }
+
+  a:hover,
+  button.dropdown-toggle:hover {
+    // Hover color of menu items
+    background-color: cadetblue;
+  }
+
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a,
+  .current-menu-ancestor > a {
+    // Text color of current link
+    color: plum;
+  }
+
+  .menu-item-has-children,
+  .page_item_has_children {
+    min-width: 200px;
+  }
+
+  .menu-item-has-children > a,
+  .page_item_has_children > a {
+    padding-right: 1.5em;
+  }
+
+  /*
+   *
+   *  Controls the behaviour of the nested top menu
+   *
+   */
+
+  /*   .admin-menu {
+    background-color: green;
+
+    a {
+      color: white;
+
+      &:hover {
+        background-color: yellow;
+        color: white;
+      }
+
+      &:focus {
+        &:hover {
+          background-color: tomato;
+          color: white;
+        }
+      }
+    }
+  } */
+}

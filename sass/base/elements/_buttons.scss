@@ -5,7 +5,6 @@ input[type="submit"] {
   font-family: $font__main;
   line-height: 1;
   font-weight: 400;
-  padding: 8px 12px;
   padding: 0.8rem 1.2rem;
   background: transparent;
   color: $color__branding-main;
@@ -20,7 +19,7 @@ input[type="submit"] {
   &:active,
   &:focus {
     transition: $transition__button-hover;
-    background: white;
+    background: transparent;
     color: $color__branding-main;
   }
 

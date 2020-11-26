@@ -1,20 +1,18 @@
-/* global tkdScreenReaderText */
-/**
+/*
  * Theme functions file.
  *
  * Contains handlers for navigation and widget area.
  */
 
-( function( $ ) {
-	let masthead;
-	let menuToggle;
-	let siteNavigation;
+/* global tkdScreenReaderText */
+/* eslint-env jquery */
 
+( function( $ ) {
 	function initMainNavigation( container ) {
 		// Add dropdown toggle that displays child menu items.
-		const dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false } )
-			.append( $( '<span />', { 'class': 'dropdown-symbol', text: '+' } ) )
-			.append( $( '<span />', { 'class': 'screen-reader-text', text: tkdScreenReaderText.expand } ) );
+		const dropdownToggle = $( '<button />', { class: 'dropdown-toggle', 'aria-expanded': false } )
+			.append( $( '<span />', { class: 'dropdown-symbol', text: '+' } ) )
+			.append( $( '<span />', { class: 'screen-reader-text', text: tkdScreenReaderText.expand } ) );
 
 		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 
@@ -39,20 +37,37 @@
 	initMainNavigation( $( '.main-navigation' ) );
 
 	// eslint-disable-next-line prefer-const
-	masthead       = $( '#masthead' );
-	menuToggle     = masthead.find( '.menu-toggle' );
-	siteNavigation = masthead.find( '.main-navigation > ul' );
+	let masthead = $( '#masthead' );
+	const menuToggle = masthead.find( '.menu-toggle' );
+	const siteNavigation = masthead.find( '.main-navigation > ul' );
 
 	// Add active class for icon in menu-toggle button
 
 	// Look for .hamburger
-	const hamburger = document.querySelector( '.menu-toggle' );
+	const menuIcon = document.querySelector( '.menu-toggle' );
+	const mainNav = document.querySelector( '.main-navigation' );
+	// const toggleBtn = document.getElementsByClassName( 'menu-toggle' );
+
 	// On click
-	hamburger.addEventListener( 'click', function() {
+	menuIcon.addEventListener( 'click', function() {
 	// Toggle class "is-active"
-		hamburger.classList.toggle( 'is-active' );
-		// Do something else, like open/close menu
+		menuIcon.classList.toggle( 'is-active' );
+		// mainNavigation.classList.toggle( 'small-menu-toggled' );
 	} );
+
+	// Reset menu if it is toggled on and window resize to above query-tablet
+	function resetOnResize( queryTablet ) {
+		if ( queryTablet.matches ) { // If media query matches
+			// Remove active class on hamburger icon
+			menuIcon.classList.remove( 'is-active' );
+			// Remove active class on main-navigation
+			mainNav.classList.remove( 'toggled-on' );
+		}
+	} // For some reason the aria-expanded also rests -> Look into this.
+
+	const queryTablet = window.matchMedia( '(min-width: 768px)' );
+	resetOnResize( queryTablet );	// Call listener function at run time
+	queryTablet.addListener( resetOnResize );
 
 	// Enable menuToggle.
 	( function() {
@@ -90,7 +105,7 @@
 
 				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
 					.on( 'touchstart.tkd', function( e ) {
-						let el = $( this ).parent( 'li' );
+						const el = $( this ).parent( 'li' );
 
 						if ( ! el.hasClass( 'focus' ) ) {
 							e.preventDefault();

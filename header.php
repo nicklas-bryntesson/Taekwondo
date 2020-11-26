@@ -32,7 +32,6 @@
 				<?php
 				wp_nav_menu( array(
 					'theme_location'	=> 'admin',
-					'menu_class'		=> 'top-menu admin-desktop',
 					'depth'				=> 1,
 					'container'			=> false,
 				) );
@@ -40,33 +39,19 @@
 			</nav>
 		<?php } ?>
 
-
-
-
-
 		<div class="site-branding">
-			<?php
+			<div class="header-titles">
 
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
-			else :
+				// Site title or logo.
+				tkd_site_logo();
+
+				// Site description.
+				tkd_site_description();
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$tkd_description = get_bloginfo( 'description', 'display' );
-			if ( $tkd_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $tkd_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+
+			</div><!-- .header-titles -->
 		</div><!-- .site-branding -->
-
-
-
-
-
 
 		<?php if ( has_nav_menu( 'admin' ) && !has_nav_menu( 'main' ) ) { ?>
 			<nav id="site-navigation" class="main-navigation menu">
@@ -122,7 +107,7 @@
 						array(
 							'theme_location'    => 'admin',
 							'menu_id'           => 'top-navigation',
-							'menu_class'        => 'admin-menu admin-mobile',
+							'menu_class'        => 'admin-mobile',
 							'depth'             => 1,
 							'container'         => false,
 						)
