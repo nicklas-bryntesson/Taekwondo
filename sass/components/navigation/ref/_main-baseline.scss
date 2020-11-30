@@ -1,7 +1,5 @@
-// All the different navigation menues in the site
-
 /*--------------------------------------------------------------
-## MAIN NAVIGATION - RESET & BASELINE
+## MAIN NAVIGATION - BASELINE
 --------------------------------------------------------------*/
 
 .menu {
@@ -31,10 +29,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    padding: 1em;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
   }
 
@@ -84,46 +81,12 @@
       display: none;
     }
   }
-}
 
-/* 
- *
- *    MENU DISPLAY SWITCH
- *
- * ONLY SWITCHES WICH MENU SHOWS
- *    IN DIFFERENT VIEWPORTS
- */
-
-// Rules for Mobile
-@media screen and (max-width: $query__tablet) {
-  .admin-navigation {
-    display: none;
+  ul.toggled-on,
+  .sub-menu.toggled-on {
+    // Show Menu Children
+    visibility: visible;
+    opacity: 1;
+    display: block;
   }
 }
-
-// Rules for desktop
-@media screen and (min-width: $query__tablet) {
-  .main-navigation {
-    .menu-toggle {
-      display: none;
-    }
-    .admin-mobile {
-      display: none;
-    }
-  }
-}
-
-// Hamburger menu icon
-@import "main-icon";
-
-// Top Admin menu
-@import "ref/admin-menu";
-
-// Mobile menu
-@import "main-mobile";
-
-// Desktop menu
-@import "main-desktop";
-
-// Social media Footer menu
-@import "social-navigation";

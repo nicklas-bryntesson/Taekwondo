@@ -7,116 +7,6 @@
 //
 
 /*
- * ***  ***  ***
- * SHARED STYLES
- * ***  ***  ***
- */
-
-//
-
-//
-
-//
-
-//
-
-.main-navigation {
-  clear: left;
-  line-height: 1;
-  padding: 0;
-
-  a {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  ul {
-    display: block;
-
-    li {
-    }
-    /* 
-	* Hide Menu and children
-	*/
-
-    ul {
-      visibility: hidden;
-      opacity: 0;
-      display: none;
-    }
-
-    li {
-      position: relative;
-    }
-
-    a {
-      display: inline-block;
-      width: 100%;
-    }
-  }
-
-  .current_page_item > a,
-  .current-menu-item > a,
-  .current_page_ancestor > a,
-  .current-menu-ancestor > a {
-    font-weight: bolder;
-  }
-
-  button.dropdown-toggle {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 1em;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-  }
-
-  // Menu item dropdown buttons
-  ul li button {
-    border: none;
-  }
-
-  .dropdown-toggle {
-    cursor: pointer;
-    border: none;
-
-    &:focus {
-      outline: 4px solid $color__link-focus;
-    }
-  }
-
-  // make shure that the last menu position dropdown don't break layout.
-  ul li:last-child ul {
-    right: 0;
-  }
-
-  // Toggles on all children !!!
-
-  // Show Menu Children
-
-  ul.toggled-on,
-  .sub-menu.toggled-on {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-  }
-}
-
-//
-
-//
-
-//
-
-//
-
-/*
  *  ***  ***  ***  ***  ***
  *      - MOBILE - 
  *  ***  ***  ***  ***  ***
@@ -139,22 +29,40 @@
 //
 
 @media screen and (max-width: $query__tablet) {
-  // Mobile styles
-
-  // Menu overlay
   .main-navigation {
     // Styles
     flex-direction: column;
 
     ul {
-      background-color: DarkBlue;
-      // Styles
+      // Menu is hidden by default
       display: none;
-      height: 100%;
-      margin-top: 1em;
-      justify-content: center;
       padding: 3em;
-      overflow: visible;
+      width: 75%;
+
+      /*     ul {
+        // Padding inside submenu items
+        padding: 0;
+      } */
+    }
+
+    .dropdown-toggle {
+      padding: 1em;
+      width: 48px;
+      color: white;
+
+      &:focus,
+      &:active {
+        color: white;
+      }
+
+      &:focus:not(.focus-visible) {
+        // Overide focus-visible polyfill issue
+        color: white;
+      }
+    }
+
+    .dropdown-toggle::before {
+      border-left: 1px solid hotpink;
     }
 
     li {
@@ -182,6 +90,7 @@
 }
 
 .main-navigation.toggled-on {
+  // Create overlay on button press
   background-color: midnightblue;
   position: absolute;
   top: 0;
@@ -189,25 +98,22 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
-  opacity: 0.95;
-}
-.main-navigation.toggled-on ul {
-  display: block;
-}
+  opacity: 0.98;
 
-/* .main-navigation.small-menu-toggled {
-  background-color: midnightblue;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  opacity: 0.95;
+  ul {
+    // Show hidden menu
+    display: block;
+    justify-content: center;
+  }
+
+  .admin-mobile {
+    border-top: 3px solid white;
+
+    a {
+      font-weight: bolder;
+    }
+  }
 }
-.main-navigation.small-menu-toggled ul {
-  display: block;
-} */
 
 //
 
@@ -316,4 +222,14 @@
   } */
 
   // Fallback if mobile nav is toggled.on when resize
+
+  .menu-item-has-children,
+  .page_item_has_children {
+    min-width: 200px;
+  }
+
+  .menu-item-has-children > a,
+  .page_item_has_children > a {
+    padding-right: 1.5em;
+  }
 }

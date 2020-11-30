@@ -2,82 +2,91 @@
 ## NAVIGATION - DESKTOP
 --------------------------------------------------------------*/
 
-.main-navigation {
-  @media screen and (min-width: $query__tablet) {
-    ul {
-      display: block;
+@media screen and (min-width: $query__tablet) {
+  // main navigation bar - Desktop styles
+  .main-navigation,
+  .main-navigation.toggled-on {
+    background-color: mediumvioletred;
+    // Styles
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-height: 0;
+    opacity: 1;
+
+    ul,
+    .main-navigation.toggled-on ul {
       display: flex;
-      flex-wrap: wrap;
+      padding: 0;
+      background-color: tan;
+      border: 1px solid gold;
+      width: 100%;
 
+      // Menu - Level 2
       ul {
-        border: 1px solid $color__border-input;
-        background-color: white;
+        // Position the dropdown below menu
+        position: absolute;
+        top: calc(100% + 1em);
+        width: 250px;
         flex-direction: column;
-        margin: 0;
+        background-color: khaki;
+        border: 2px solid green;
 
+        li {
+          background-color: peachpuff;
+        }
+
+        // Menu - Level 3
         ul {
-          border: none;
-          box-shadow: none;
+          display: block;
+          background-color: springgreen;
+          border: 1px solid salmon;
 
           li {
             padding-left: 0;
           }
-        }
-
-        a {
-          width: 15em;
-          border-left: 3px solid blue;
-          padding: 0, 5em 1em;
-          border-radius: 0;
+          a:hover,
+          li:hover {
+            background-color: black;
+          }
         }
 
         a:hover,
         li:hover {
-          background-color: LightGrey;
+          background-color: palegreen;
         }
       }
     }
 
     li {
-      &:hover {
-        background-color: transparent;
-      }
-
-      a {
-        padding: 0.4em 1em;
-      }
+      position: relative;
     }
 
     a {
-      margin: 0;
-      border-radius: 0;
+      color: black;
+      margin-left: 1em;
     }
+  }
+  /*   .main-navigation li:hover > ul,
+  .main-navigation li.focus > ul {
+    left: auto;
+    right: 0;
+  }
+  .main-navigation ul ul li:hover > ul,
+  .main-navigation ul ul li.focus > ul {
+    left: auto;
+    right: 100%;
+  } */
 
-    .menu-item-has-children,
-    .page_item_has_children {
-      width: 10em;
-    }
+  // Fallback if mobile nav is toggled.on when resize
 
-    .menu-item-has-children > a,
-    .page_item_has_children > a {
-      padding-right: 2em;
-    }
+  .menu-item-has-children,
+  .page_item_has_children {
+    min-width: 200px;
+  }
 
-    button.dropdown-toggle {
-      width: 40px;
-      height: 40px;
-      padding: 0.5em;
-
-      &:hover {
-        background-color: transparent;
-      }
-    }
-
-    .current_page_item > a,
-    .current-menu-item > a,
-    .current_page_ancestor > a,
-    .current-menu-ancestor > a {
-      color: blue;
-    }
-  } // .main-navigation
-} // min-width: $query__small
+  .menu-item-has-children > a,
+  .page_item_has_children > a {
+    padding-right: 1.5em;
+  }
+}

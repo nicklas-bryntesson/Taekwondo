@@ -2,100 +2,115 @@
 ## MAIN NAVIGATION - MOBILE
 --------------------------------------------------------------*/
 
-/* Toggle small menu and children on */
-.main-navigation {
-  clear: left;
-  line-height: 1;
-  // font-family: $font__main;
-  // @include font-size(1.2);
-  // font-weight: 600;
+@media screen and (max-width: $query__tablet) {
+  .main-navigation {
+    font-size: larger;
+    // Styles
+    flex-direction: column;
 
-  ul {
-    display: none;
-
-    ul {
-      visibility: hidden;
-      opacity: 0;
+    .main-menu {
+      margin-top: 4em;
+      // Menu is hidden by default
       display: none;
+      width: 75%;
+
+      .sub-menu {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        // Padding inside submenu items
+        padding: 0;
+        margin-bottom: 1em;
+        // Change to transparent dark blue
+        background-color: hsl(240, 100%, 40%);
+        border-radius: 0.25em;
+      }
+
+      .sub-menu.toggled-on {
+        // Show Menu Children
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
     }
 
-    li:hover > ul,
-    li.focus > ul {
-      left: auto;
+    .dropdown-toggle {
+      margin-left: 1em;
+      font-size: larger;
+      color: $color__theme-white;
+      height: 2.5em;
+      width: 2.5em;
+
+      &:focus,
+      &:active {
+        color: $color__theme-white;
+        outline: 4px solid $color__link-focus;
+        border-left-color: transparent;
+      }
+
+      &:focus:not(.focus-visible) {
+        // Overide focus-visible polyfill issue
+        color: $color__theme-white;
+      }
     }
-  }
 
-  li {
-    position: relative;
+    li {
+      // Styles
+      margin-bottom: 2px;
 
-    // Shift link to the right as we move down. Shorthand?
-    ul a {
-      background-color: tomato;
+      ul a {
+        padding-left: 2em;
+      }
+      ul ul a {
+        padding-left: 2.5em;
+      }
+      ul ul ul a {
+        padding-left: 3em;
+      }
+      ul ul ul ul a {
+        padding-left: 3.5em;
+      }
     }
-    ul ul a {
-      background-color: plum;
-    }
-  }
-
-  a {
-    display: inline-block;
-    width: 100%;
-  }
-
-  li:hover > button,
-  li:hover > a,
-  a:hover,
-  button.dropdown-toggle:hover {
-    color: blue;
-  }
-
-  a:hover,
-  button.dropdown-toggle:hover {
-    // Hover color of menu items
-    background-color: cadetblue;
-  }
-
-  .current_page_item > a,
-  .current-menu-item > a,
-  .current_page_ancestor > a,
-  .current-menu-ancestor > a {
-    // Text color of current link
-    color: plum;
-  }
-
-  .menu-item-has-children,
-  .page_item_has_children {
-    min-width: 200px;
-  }
-
-  .menu-item-has-children > a,
-  .page_item_has_children > a {
-    padding-right: 1.5em;
-  }
-
-  /*
-   *
-   *  Controls the behaviour of the nested top menu
-   *
-   */
-
-  /*   .admin-menu {
-    background-color: green;
 
     a {
-      color: white;
-
-      &:hover {
-        background-color: yellow;
-        color: white;
-      }
-
-      &:focus {
-        &:hover {
-          background-color: tomato;
-          color: white;
-        }
-      }
+      // background-color: DodgerBlue;
+      // Styles
+      padding: 1em;
+      color: $color__theme-white;
+      width: 100%;
+      margin: 0;
     }
-  } */
+  }
+}
+
+.main-navigation.toggled-on {
+  // Create overlay on button press
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    332deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(1, 17, 64, 0.98) 100%
+  );
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+
+  ul {
+    // Show hidden menu
+    display: block;
+  }
+
+  .admin-mobile {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 4px solid $color__theme-white;
+    width: 75%;
+    margin-bottom: 4em;
+  }
 }

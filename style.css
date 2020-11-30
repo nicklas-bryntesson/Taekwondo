@@ -1591,6 +1591,87 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+/*--------------------------------------------------------------
+## MAIN NAVIGATION - RESET & BASELINE
+--------------------------------------------------------------*/
+.menu {
+	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	word-wrap: break-word;
+	clear: left;
+	line-height: 1;
+}
+
+.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	display: block;
+	position: relative;
+	text-decoration: none;
+}
+
+.menu li:hover {
+	cursor: pointer;
+}
+
+.menu .dropdown-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	border: none;
+	cursor: pointer;
+}
+
+.menu a {
+	display: inline-block;
+	width: 100%;
+}
+
+.menu a:hover {
+	cursor: pointer;
+}
+
+.menu a:focus {
+	outline: 4px solid magenta;
+}
+
+.menu .current_page_item > a,
+.menu .current-menu-item > a,
+.menu .current_page_ancestor > a,
+.menu .current-menu-ancestor > a {
+	font-weight: bolder;
+}
+
+.menu ul li:last-child ul {
+	right: 0;
+}
+
+/*--------------------------------------------------------------
+## MAIN NAVIGATION - BASELINE - Move into Menu???
+--------------------------------------------------------------*/
+.main-navigation {
+	display: flex;
+	clear: left;
+	line-height: 1;
+	padding: 0;
+}
+
+.main-navigation ul {
+	display: none;
+}
+
+.main-navigation ul ul {
+	visibility: hidden;
+	opacity: 0;
+	display: none;
+}
+
 /* 
  *
  *    MENU DISPLAY SWITCH
@@ -1611,52 +1692,6 @@ textarea {
 	.main-navigation .admin-mobile {
 		display: none;
 	}
-}
-
-/*--------------------------------------------------------------
-## MAIN NAVIGATION - BASELINE
---------------------------------------------------------------*/
-.menu {
-	font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
-	/*
-	  word-wrap: break-word; // Check if this need to apply on <'a'> instead?
-	  */
-	/* clearfixing */
-}
-
-.menu ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.menu li {
-	display: block;
-}
-
-.menu li:hover {
-	cursor: pointer;
-}
-
-.menu li ul {
-	margin: 0;
-	padding: 0;
-}
-
-.menu a {
-	display: block;
-	text-decoration: none;
-}
-
-.menu a:focus {
-	outline: 4px solid magenta;
-}
-
-.menu .current_page_item > a,
-.menu .current-menu-item > a,
-.menu .current_page_ancestor > a,
-.menu .current-menu-ancestor > a {
-	font-weight: bold;
 }
 
 /* 
@@ -1786,171 +1821,149 @@ textarea {
 	word-wrap: normal !important;
 }
 
-/*
- * ***  ***  ***
- * SHARED STYLES
- * ***  ***  ***
- */
-.main-navigation {
-	clear: left;
-	line-height: 1;
-	padding: 0;
+/*--------------------------------------------------------------
+## ADMIN TOP NAVIGATION - ALL STYLES
+--------------------------------------------------------------*/
+.admin-navigation {
+	background-color: tomato;
+	padding: 0 1.5em;
 }
 
-.main-navigation a {
-	display: block;
-	width: 100%;
-	text-decoration: none;
-}
-
-.main-navigation a:hover {
-	cursor: pointer;
-}
-
-.main-navigation ul {
-	display: block;
-	/* 
-	* Hide Menu and children
-	*/
-}
-
-.main-navigation ul ul {
-	visibility: hidden;
-	opacity: 0;
-	display: none;
-}
-
-.main-navigation ul li {
-	position: relative;
-}
-
-.main-navigation ul a {
-	display: inline-block;
-	width: 100%;
-}
-
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-	font-weight: bolder;
-}
-
-.main-navigation button.dropdown-toggle {
+.admin-navigation ul {
+	background-color: hotpink;
 	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	margin-left: 1em;
-	height: 100%;
-	width: 100%;
-	padding: 0;
 }
 
-.main-navigation ul li button {
-	border: none;
+.admin-navigation ul li {
+	padding: 1em 2em;
 }
 
-.main-navigation .dropdown-toggle {
-	cursor: pointer;
-	border: none;
+.admin-navigation ul a {
+	color: white;
 }
 
-.main-navigation .dropdown-toggle:focus {
-	outline: 4px solid magenta;
-}
-
-.main-navigation ul li:last-child ul {
-	right: 0;
-}
-
-.main-navigation ul.toggled-on,
-.main-navigation .sub-menu.toggled-on {
-	visibility: visible;
-	opacity: 1;
-	display: block;
-}
-
-/*
- *  ***  ***  ***  ***  ***
- *      - MOBILE - 
- *  ***  ***  ***  ***  ***
- */
-/************************/
-/*
- *  ***  ***  ***  ***  ***
- *    - NAVIGATION - 
- *  ***  ***  ***  ***  ***
- */
-@media screen and (max-width: 768px) {
-	.main-navigation {
-		flex-direction: column;
-	}
-	.main-navigation ul {
-		background-color: DarkBlue;
-		display: none;
-		height: 100%;
-		margin-top: 1em;
-		justify-content: center;
-		padding: 3em;
-		overflow: visible;
-	}
-	.main-navigation li {
-		background-color: MediumBlue;
-	}
-	.main-navigation a {
-		background-color: DodgerBlue;
-		padding: 1em;
-		color: white;
+@media screen and (min-width: 768px) {
+	.admin-navigation {
 		width: 100%;
 	}
-	.main-navigation ul ul {
-		background-color: gold;
-		z-index: 1;
+	.admin-navigation ul {
+		display: flex;
+		justify-content: flex-end;
 	}
-	.main-navigation ul ul li {
-		padding-left: 1em;
+	.admin-navigation li {
+		display: inline-block;
+	}
+	.admin-navigation li a {
+		display: block;
+	}
+	.admin-navigation .current_page_item > a:hover::after,
+	.admin-navigation .current-menu-item > a:hover::after {
+		background: tomato;
+	}
+	.admin-navigation .current_page_item > a::after,
+	.admin-navigation .current-menu-item > a::after {
+		background: red;
+	}
+	.admin-navigation .current_page_item > a:focus:hover::after,
+	.admin-navigation .current-menu-item > a:focus:hover::after {
+		background: transparent;
+	}
+}
+
+/*--------------------------------------------------------------
+## MAIN NAVIGATION - MOBILE
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+	.main-navigation {
+		font-size: larger;
+		flex-direction: column;
+	}
+	.main-navigation .main-menu {
+		margin-top: 4em;
+		display: none;
+		width: 75%;
+	}
+	.main-navigation .main-menu .sub-menu {
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+		padding: 0;
+		margin-bottom: 1em;
+		background-color: #0000cc;
+		border-radius: 0.25em;
+	}
+	.main-navigation .main-menu .sub-menu.toggled-on {
+		visibility: visible;
+		opacity: 1;
+		display: block;
+	}
+	.main-navigation .dropdown-toggle {
+		margin-left: 1em;
+		font-size: larger;
+		color: #fff;
+		height: 2.5em;
+		width: 2.5em;
+	}
+	.main-navigation .dropdown-toggle:focus, .main-navigation .dropdown-toggle:active {
+		color: #fff;
+		outline: 4px solid magenta;
+		border-left-color: transparent;
+	}
+	.main-navigation .dropdown-toggle:focus:not(.focus-visible) {
+		color: #fff;
+	}
+	.main-navigation li {
+		margin-bottom: 2px;
+	}
+	.main-navigation li ul a {
+		padding-left: 2em;
+	}
+	.main-navigation li ul ul a {
+		padding-left: 2.5em;
+	}
+	.main-navigation li ul ul ul a {
+		padding-left: 3em;
+	}
+	.main-navigation li ul ul ul ul a {
+		padding-left: 3.5em;
+	}
+	.main-navigation a {
+		padding: 1em;
+		color: #fff;
+		width: 100%;
+		margin: 0;
 	}
 }
 
 .main-navigation.toggled-on {
-	background-color: midnightblue;
-	position: absolute;
+	background: #020024;
+	background: linear-gradient(332deg, #020024 0%, rgba(1, 17, 64, 0.98) 100%);
+	position: fixed;
+	overflow-y: scroll;
 	top: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
 	display: flex;
 	min-height: 100vh;
 	width: 100%;
-	opacity: 0.95;
 }
 
 .main-navigation.toggled-on ul {
 	display: block;
 }
 
-/* .main-navigation.small-menu-toggled {
-  background-color: midnightblue;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  opacity: 0.95;
+.main-navigation.toggled-on .admin-mobile {
+	margin-top: 1em;
+	padding-top: 1em;
+	border-top: 4px solid #fff;
+	width: 75%;
+	margin-bottom: 4em;
 }
-.main-navigation.small-menu-toggled ul {
-  display: block;
-} */
-/*
- *  ***  ***  ***  ***  ***
- *     - DESKTOP - 
- *  ***  ***  ***  ***  ***
- */
-/*************************/
-/*
- *  ***  ***  ***  ***  ***
- *    - NAVIGATION - 
- *  ***  ***  ***  ***  ***
- */
+
+/*--------------------------------------------------------------
+## NAVIGATION - DESKTOP
+--------------------------------------------------------------*/
 @media screen and (min-width: 768px) {
 	.main-navigation,
 	.main-navigation.toggled-on {
@@ -2041,54 +2054,13 @@ textarea {
     left: auto;
     right: 100%;
   } */
-}
-
-/*--------------------------------------------------------------
-## ADMIN TOP NAVIGATION - ALL STYLES
---------------------------------------------------------------*/
-.admin-navigation {
-	background-color: tomato;
-	padding: 0 1.5em;
-}
-
-.admin-navigation ul {
-	background-color: hotpink;
-	display: flex;
-}
-
-.admin-navigation ul li {
-	padding: 1em 2em;
-}
-
-.admin-navigation ul a {
-	color: white;
-}
-
-@media screen and (min-width: 768px) {
-	.admin-navigation {
-		width: 100%;
+	.menu-item-has-children,
+	.page_item_has_children {
+		min-width: 200px;
 	}
-	.admin-navigation ul {
-		display: flex;
-		justify-content: flex-end;
-	}
-	.admin-navigation li {
-		display: inline-block;
-	}
-	.admin-navigation li a {
-		display: block;
-	}
-	.admin-navigation .current_page_item > a:hover::after,
-	.admin-navigation .current-menu-item > a:hover::after {
-		background: tomato;
-	}
-	.admin-navigation .current_page_item > a::after,
-	.admin-navigation .current-menu-item > a::after {
-		background: red;
-	}
-	.admin-navigation .current_page_item > a:focus:hover::after,
-	.admin-navigation .current-menu-item > a:focus:hover::after {
-		background: transparent;
+	.menu-item-has-children > a,
+	.page_item_has_children > a {
+		padding-right: 1.5em;
 	}
 }
 
@@ -3565,13 +3537,5 @@ body {
 .circle-blue {
 	background-color: blue;
 }
-
-/* 
-@media screen and (max-width: $query__tablet-wide) {
-  .site-branding {
-    display: none;
-  }
-}
- */
 
 /*# sourceMappingURL=style.css.map */

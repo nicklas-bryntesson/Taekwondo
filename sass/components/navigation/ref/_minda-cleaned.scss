@@ -1,0 +1,163 @@
+/*--------------------------------------------------------------
+## BASELINE
+--------------------------------------------------------------*/
+
+.menu {
+  display: block;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .dropdown-toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1em;
+      width: 48px;
+      color: $color__text-main;
+      background: inherit;
+      border: none;
+      // Border radius for focus & hover class
+      border-radius: 5px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+} // .menu
+
+// Dropdown buttons -> outside of document flow now?
+
+.main-navigation {
+  clear: left;
+  line-height: 1;
+  padding: 0;
+
+  ul {
+    display: none;
+
+    ul {
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+    }
+
+    li:hover > ul,
+    li.focus > ul {
+      left: auto;
+    }
+  }
+
+  li {
+    position: relative;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+    padding: 0.8em 1em;
+    border: 3px solid transparent;
+    margin-bottom: 4px;
+  }
+
+  .menu-item-has-children,
+  .page_item_has_children {
+    min-width: 200px;
+  }
+
+  .menu-item-has-children > a,
+  .page_item_has_children > a {
+    padding-right: 1.5em;
+  }
+} // .main-navigation
+
+/* Toggle small menu and children on */
+
+.toggled-on ul,
+.sub-menu.toggled-on {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+@media screen and (min-width: $query__small) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation {
+    width: auto;
+
+    ul {
+      display: flex;
+      padding: 0;
+
+      ul {
+        padding: 0;
+        flex-direction: column;
+        margin: 0;
+
+        ul {
+          display: block;
+
+          li {
+            padding-left: 0;
+          }
+        }
+
+        a {
+          width: 15em;
+          border: 3px solid transparent;
+          padding: 0, 5em 1em 0, 5em 0.6em;
+          border-radius: 0;
+        }
+      }
+    }
+
+    li {
+      border: 0;
+
+      a {
+        padding: 0.4em 1em;
+      }
+    }
+
+    a {
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .menu-item-has-children,
+    .page_item_has_children {
+      width: 10em;
+    }
+
+    .menu-item-has-children > a,
+    .page_item_has_children > a {
+      padding-right: 2em;
+    }
+
+    button.dropdown-toggle {
+      width: 40px;
+      height: 40px;
+      padding: 0.5em;
+    }
+  } // .main-navigation
+} // min-width: $query__small
