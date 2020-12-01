@@ -1,25 +1,17 @@
 /* Baseline */
 
 .site-header {
-  background-color: skyblue;
-  // Rules
   position: relative;
-  box-shadow: $boxshadow__card;
-  color: $color__text-main;
   z-index: 999;
+  color: $color__text-main;
 }
 
 .site-branding {
-  background-color: steelblue;
-  // Rules
-  // min-height: 100px;
   margin-left: 1.5em;
   padding: 1em 1em 1em 0;
 }
 
 .custom-logo-link {
-  background-color: lightsteelblue;
-  // Rules
   display: block;
   margin: 0;
 
@@ -42,8 +34,6 @@
 }
 
 .site-title {
-  background-color: lightpink;
-  // Rules
   font-size: 1.6em;
   font-weight: 900;
 
@@ -55,19 +45,33 @@
     &:hover {
       color: $color__branding-main;
     }
+  }
+}
 
-    &:focus {
-    }
+@media screen and (max-width: $query__tablet) {
+  .site-header {
+    // border-bottom: 2px solid gold;
+  }
+}
+
+@media screen and (min-width: $query__tablet) {
+  .site-header {
+    box-shadow: $boxshadow__card;
+  }
+
+  .frontpage .site-header {
+    background-color: transparent;
+    box-shadow: none;
   }
 }
 
 .site-description {
-  background-color: thistle;
+  // background-color: thistle;
   // Rules
 }
 
 .main-navigation {
-  background-color: tan;
+  // background-color: tan;
   // Rules
   display: flex;
   align-items: center;

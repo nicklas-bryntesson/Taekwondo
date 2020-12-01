@@ -3,90 +3,131 @@
 --------------------------------------------------------------*/
 
 @media screen and (min-width: $query__tablet) {
-  // main navigation bar - Desktop styles
-  .main-navigation,
-  .main-navigation.toggled-on {
-    background-color: mediumvioletred;
-    // Styles
-    display: flex;
-    justify-content: center;
+  .main-navigation {
     position: relative;
     min-height: 0;
-    opacity: 1;
+    font-weight: normal;
+    font-size: large;
 
-    ul,
-    .main-navigation.toggled-on ul {
+    .main-menu {
       display: flex;
-      padding: 0;
-      background-color: tan;
-      border: 1px solid gold;
+      justify-content: flex-end;
       width: 100%;
+      // background-color: tan;
+      // border: 3px solid gold;
 
-      // Menu - Level 2
-      ul {
-        // Position the dropdown below menu
+      a {
+        color: $color__text-main;
+      }
+
+      .sub-menu {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .sub-menu.toggled-on {
+        display: block;
+        visibility: visible;
+        opacity: 1;
         position: absolute;
-        top: calc(100% + 1em);
-        width: 250px;
-        flex-direction: column;
-        background-color: khaki;
-        border: 2px solid green;
+        top: calc(100% + 0.2em);
+        right: 0;
+        width: 300px;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          332deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(1, 17, 64, 0.98) 100%
+        );
+        box-shadow: $boxshadow__card;
 
-        li {
-          background-color: peachpuff;
-        }
+        /*
+         * Inside drop down toggle menu
+         */
 
-        // Menu - Level 3
-        ul {
-          display: block;
-          background-color: springgreen;
-          border: 1px solid salmon;
+        a {
+          color: $color__theme-white;
 
-          li {
-            padding-left: 0;
-          }
-          a:hover,
-          li:hover {
-            background-color: black;
+          &:hover {
+            background-color: transparent;
           }
         }
 
-        a:hover,
-        li:hover {
-          background-color: palegreen;
+        .dropdown-toggle {
+          color: $color__theme-white;
+
+          &:hover {
+            background-color: transparent;
+            border-radius: 0;
+          }
+
+          &:focus,
+          &:active {
+            color: $color__theme-white;
+          }
         }
+        .menu-item-has-children {
+          max-width: none;
+          box-shadow: none;
+        }
+      }
+      /*
+       *
+       * Styles for the second level sub menues
+       *
+       */
+    }
+
+    .dropdown-toggle {
+      font-size: larger;
+      color: $color__text-main;
+      height: 2.5em;
+      width: 2.5em;
+
+      &:hover {
+        color: $color__branding-main;
+        background-color: $color__theme-white;
+        border-radius: 0.5em;
+      }
+
+      &:focus,
+      &:active {
+        color: $color__text-main;
+        outline: 4px solid $color__link-focus;
+        border-left-color: transparent;
       }
     }
 
     li {
       position: relative;
+      padding-left: 1em;
+      // background-color: tomato;
     }
 
     a {
-      color: black;
-      margin-left: 1em;
+      padding: 1em;
+      word-break: normal;
+      width: 100%;
+      max-width: 200px;
+
+      &:hover {
+        color: $color__branding-main;
+        background-color: $color__theme-white;
+        border-radius: 0.5em;
+      }
     }
   }
-  /*   .main-navigation li:hover > ul,
-  .main-navigation li.focus > ul {
-    left: auto;
-    right: 0;
-  }
-  .main-navigation ul ul li:hover > ul,
-  .main-navigation ul ul li.focus > ul {
-    left: auto;
-    right: 100%;
-  } */
 
   // Fallback if mobile nav is toggled.on when resize
 
-  .menu-item-has-children,
-  .page_item_has_children {
-    min-width: 200px;
+  .menu-item-has-children {
+    max-width: 225px;
   }
 
   .menu-item-has-children > a,
   .page_item_has_children > a {
-    padding-right: 1.5em;
+    // Make room for dropdown icon
+    padding-right: 3.25em;
   }
 }

@@ -1413,21 +1413,17 @@ textarea {
 
 /* Baseline */
 .site-header {
-	background-color: skyblue;
 	position: relative;
-	box-shadow: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
-	color: #101926;
 	z-index: 999;
+	color: #101926;
 }
 
 .site-branding {
-	background-color: steelblue;
 	margin-left: 1.5em;
 	padding: 1em 1em 1em 0;
 }
 
 .custom-logo-link {
-	background-color: lightsteelblue;
 	display: block;
 	margin: 0;
 }
@@ -1449,7 +1445,6 @@ textarea {
 }
 
 .site-title {
-	background-color: lightpink;
 	font-size: 1.6em;
 	font-weight: 900;
 }
@@ -1464,12 +1459,17 @@ textarea {
 	color: #0460d9;
 }
 
-.site-description {
-	background-color: thistle;
+@media screen and (min-width: 768px) {
+	.site-header {
+		box-shadow: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
+	}
+	.frontpage .site-header {
+		background-color: transparent;
+		box-shadow: none;
+	}
 }
 
 .main-navigation {
-	background-color: tan;
 	display: flex;
 	align-items: center;
 	margin-right: 1.5em;
@@ -1631,6 +1631,7 @@ textarea {
 .menu a {
 	display: inline-block;
 	width: 100%;
+	transition: all 0.4s ease;
 }
 
 .menu a:hover {
@@ -1660,16 +1661,6 @@ textarea {
 	clear: left;
 	line-height: 1;
 	padding: 0;
-}
-
-.main-navigation ul {
-	display: none;
-}
-
-.main-navigation ul ul {
-	visibility: hidden;
-	opacity: 0;
-	display: none;
 }
 
 /* 
@@ -1824,49 +1815,51 @@ textarea {
 /*--------------------------------------------------------------
 ## ADMIN TOP NAVIGATION - ALL STYLES
 --------------------------------------------------------------*/
-.admin-navigation {
-	background-color: tomato;
-	padding: 0 1.5em;
-}
-
-.admin-navigation ul {
-	background-color: hotpink;
-	display: flex;
-}
-
-.admin-navigation ul li {
-	padding: 1em 2em;
-}
-
-.admin-navigation ul a {
-	color: white;
-}
-
 @media screen and (min-width: 768px) {
 	.admin-navigation {
+		font-size: 17.6px;
+		font-size: 1.1rem;
 		width: 100%;
+		padding: 0 1.5em;
+		border-bottom: 1px solid lightgrey;
+		font-weight: 300;
 	}
 	.admin-navigation ul {
 		display: flex;
 		justify-content: flex-end;
 	}
 	.admin-navigation li {
-		display: inline-block;
+		margin-top: 0.25em solid transparent;
+		padding-left: 2em;
 	}
 	.admin-navigation li a {
 		display: block;
+		margin-top: 4px;
+		margin-bottom: 4px;
+		padding-top: 0.6em;
+		padding-bottom: 0.35em;
+		color: #101926;
 	}
-	.admin-navigation .current_page_item > a:hover::after,
-	.admin-navigation .current-menu-item > a:hover::after {
-		background: tomato;
+	.admin-navigation li a::after {
+		display: block;
+		content: "";
+		position: relative;
+		width: 50px;
+		top: 0.6em;
+		height: 0.25em;
+		background: transparent;
+		border-radius: 5px;
+	}
+	.admin-navigation li a:hover {
+		color: #0460d9;
+	}
+	.admin-navigation .current_page_item > a,
+	.admin-navigation .current-menu-item > a {
+		font-weight: bold;
 	}
 	.admin-navigation .current_page_item > a::after,
 	.admin-navigation .current-menu-item > a::after {
-		background: red;
-	}
-	.admin-navigation .current_page_item > a:focus:hover::after,
-	.admin-navigation .current-menu-item > a:focus:hover::after {
-		background: transparent;
+		background: #0460d9;
 	}
 }
 
@@ -1875,34 +1868,36 @@ textarea {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
 	.main-navigation {
-		font-size: larger;
 		flex-direction: column;
+		font-size: larger;
 	}
-	.main-navigation .main-menu {
-		margin-top: 4em;
+	.main-navigation .main-menu,
+	.main-navigation .admin-mobile {
 		display: none;
 		width: 75%;
+		margin-top: 4em;
 	}
-	.main-navigation .main-menu .sub-menu {
+	.main-navigation .main-menu .sub-menu,
+	.main-navigation .admin-mobile .sub-menu {
 		display: none;
-		opacity: 0;
 		visibility: hidden;
+		opacity: 0;
 		padding: 0;
-		margin-bottom: 1em;
-		background-color: #0000cc;
+		background-color: transparent;
 		border-radius: 0.25em;
 	}
-	.main-navigation .main-menu .sub-menu.toggled-on {
+	.main-navigation .main-menu .sub-menu.toggled-on,
+	.main-navigation .admin-mobile .sub-menu.toggled-on {
+		display: block;
 		visibility: visible;
 		opacity: 1;
-		display: block;
 	}
 	.main-navigation .dropdown-toggle {
+		width: 2.5em;
+		height: 2.5em;
 		margin-left: 1em;
 		font-size: larger;
 		color: #fff;
-		height: 2.5em;
-		width: 2.5em;
 	}
 	.main-navigation .dropdown-toggle:focus, .main-navigation .dropdown-toggle:active {
 		color: #fff;
@@ -1912,41 +1907,42 @@ textarea {
 	.main-navigation .dropdown-toggle:focus:not(.focus-visible) {
 		color: #fff;
 	}
-	.main-navigation li {
-		margin-bottom: 2px;
-	}
 	.main-navigation li ul a {
 		padding-left: 2em;
+		background: rgba(0, 0, 0, 0.2);
 	}
 	.main-navigation li ul ul a {
 		padding-left: 2.5em;
+		background: rgba(0, 0, 0, 0.4);
 	}
 	.main-navigation li ul ul ul a {
 		padding-left: 3em;
+		background: rgba(0, 0, 0, 0.6);
 	}
 	.main-navigation li ul ul ul ul a {
 		padding-left: 3.5em;
+		background: rgba(0, 0, 0, 0.8);
 	}
 	.main-navigation a {
-		padding: 1em;
-		color: #fff;
 		width: 100%;
 		margin: 0;
+		padding: 1em;
+		color: #fff;
 	}
 }
 
 .main-navigation.toggled-on {
-	background: #020024;
-	background: linear-gradient(332deg, #020024 0%, rgba(1, 17, 64, 0.98) 100%);
+	display: flex;
 	position: fixed;
 	overflow-y: scroll;
 	top: 0;
-	left: 0;
 	right: 0;
 	bottom: 0;
-	display: flex;
-	min-height: 100vh;
+	left: 0;
 	width: 100%;
+	min-height: 100vh;
+	background: #020024;
+	background: linear-gradient(332deg, #020024 0%, rgba(1, 17, 64, 0.98) 100%);
 }
 
 .main-navigation.toggled-on ul {
@@ -1954,113 +1950,117 @@ textarea {
 }
 
 .main-navigation.toggled-on .admin-mobile {
+	width: 75%;
 	margin-top: 1em;
+	margin-bottom: 4em;
 	padding-top: 1em;
 	border-top: 4px solid #fff;
-	width: 75%;
-	margin-bottom: 4em;
+}
+
+.logged-in .main-navigation.toggled-on .menu-toggle {
+	padding-top: 46px;
 }
 
 /*--------------------------------------------------------------
 ## NAVIGATION - DESKTOP
 --------------------------------------------------------------*/
 @media screen and (min-width: 768px) {
-	.main-navigation,
-	.main-navigation.toggled-on {
-		background-color: mediumvioletred;
-		display: flex;
-		justify-content: center;
+	.main-navigation {
 		position: relative;
 		min-height: 0;
-		opacity: 1;
+		font-weight: normal;
+		font-size: large;
 	}
-	.main-navigation ul,
-	.main-navigation .main-navigation.toggled-on ul,
-	.main-navigation.toggled-on ul,
-	.main-navigation.toggled-on .main-navigation.toggled-on ul {
+	.main-navigation .main-menu {
 		display: flex;
-		padding: 0;
-		background-color: tan;
-		border: 1px solid gold;
+		justify-content: flex-end;
 		width: 100%;
+		/*
+       *
+       * Styles for the second level sub menues
+       *
+       */
 	}
-	.main-navigation ul ul,
-	.main-navigation .main-navigation.toggled-on ul ul,
-	.main-navigation.toggled-on ul ul,
-	.main-navigation.toggled-on .main-navigation.toggled-on ul ul {
-		position: absolute;
-		top: calc(100% + 1em);
-		width: 250px;
-		flex-direction: column;
-		background-color: khaki;
-		border: 2px solid green;
+	.main-navigation .main-menu a {
+		color: #101926;
 	}
-	.main-navigation ul ul li,
-	.main-navigation .main-navigation.toggled-on ul ul li,
-	.main-navigation.toggled-on ul ul li,
-	.main-navigation.toggled-on .main-navigation.toggled-on ul ul li {
-		background-color: peachpuff;
+	.main-navigation .main-menu .sub-menu {
+		display: none;
+		visibility: hidden;
+		opacity: 0;
 	}
-	.main-navigation ul ul ul,
-	.main-navigation .main-navigation.toggled-on ul ul ul,
-	.main-navigation.toggled-on ul ul ul,
-	.main-navigation.toggled-on .main-navigation.toggled-on ul ul ul {
+	.main-navigation .main-menu .sub-menu.toggled-on {
 		display: block;
-		background-color: springgreen;
-		border: 1px solid salmon;
+		visibility: visible;
+		opacity: 1;
+		position: absolute;
+		top: calc(100% + 0.2em);
+		right: 0;
+		width: 300px;
+		background: #020024;
+		background: linear-gradient(332deg, #020024 0%, rgba(1, 17, 64, 0.98) 100%);
+		box-shadow: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
+		/*
+         * Inside drop down toggle menu
+         */
 	}
-	.main-navigation ul ul ul li,
-	.main-navigation .main-navigation.toggled-on ul ul ul li,
-	.main-navigation.toggled-on ul ul ul li,
-	.main-navigation.toggled-on .main-navigation.toggled-on ul ul ul li {
-		padding-left: 0;
+	.main-navigation .main-menu .sub-menu.toggled-on a {
+		color: #fff;
 	}
-	.main-navigation ul ul ul a:hover,
-	.main-navigation ul ul ul li:hover,
-	.main-navigation .main-navigation.toggled-on ul ul ul a:hover,
-	.main-navigation .main-navigation.toggled-on ul ul ul li:hover,
-	.main-navigation.toggled-on ul ul ul a:hover,
-	.main-navigation.toggled-on ul ul ul li:hover,
-	.main-navigation.toggled-on .main-navigation.toggled-on ul ul ul a:hover,
-	.main-navigation.toggled-on .main-navigation.toggled-on ul ul ul li:hover {
-		background-color: black;
+	.main-navigation .main-menu .sub-menu.toggled-on a:hover {
+		background-color: transparent;
 	}
-	.main-navigation ul ul a:hover,
-	.main-navigation ul ul li:hover,
-	.main-navigation .main-navigation.toggled-on ul ul a:hover,
-	.main-navigation .main-navigation.toggled-on ul ul li:hover,
-	.main-navigation.toggled-on ul ul a:hover,
-	.main-navigation.toggled-on ul ul li:hover,
-	.main-navigation.toggled-on .main-navigation.toggled-on ul ul a:hover,
-	.main-navigation.toggled-on .main-navigation.toggled-on ul ul li:hover {
-		background-color: palegreen;
+	.main-navigation .main-menu .sub-menu.toggled-on .dropdown-toggle {
+		color: #fff;
 	}
-	.main-navigation li,
-	.main-navigation.toggled-on li {
+	.main-navigation .main-menu .sub-menu.toggled-on .dropdown-toggle:hover {
+		background-color: transparent;
+		border-radius: 0;
+	}
+	.main-navigation .main-menu .sub-menu.toggled-on .dropdown-toggle:focus, .main-navigation .main-menu .sub-menu.toggled-on .dropdown-toggle:active {
+		color: #fff;
+	}
+	.main-navigation .main-menu .sub-menu.toggled-on .menu-item-has-children {
+		max-width: none;
+		box-shadow: none;
+	}
+	.main-navigation .dropdown-toggle {
+		font-size: larger;
+		color: #101926;
+		height: 2.5em;
+		width: 2.5em;
+	}
+	.main-navigation .dropdown-toggle:hover {
+		color: #0460d9;
+		background-color: #fff;
+		border-radius: 0.5em;
+	}
+	.main-navigation .dropdown-toggle:focus, .main-navigation .dropdown-toggle:active {
+		color: #101926;
+		outline: 4px solid magenta;
+		border-left-color: transparent;
+	}
+	.main-navigation li {
 		position: relative;
+		padding-left: 1em;
 	}
-	.main-navigation a,
-	.main-navigation.toggled-on a {
-		color: black;
-		margin-left: 1em;
+	.main-navigation a {
+		padding: 1em;
+		word-break: normal;
+		width: 100%;
+		max-width: 200px;
 	}
-	/*   .main-navigation li:hover > ul,
-  .main-navigation li.focus > ul {
-    left: auto;
-    right: 0;
-  }
-  .main-navigation ul ul li:hover > ul,
-  .main-navigation ul ul li.focus > ul {
-    left: auto;
-    right: 100%;
-  } */
-	.menu-item-has-children,
-	.page_item_has_children {
-		min-width: 200px;
+	.main-navigation a:hover {
+		color: #0460d9;
+		background-color: #fff;
+		border-radius: 0.5em;
+	}
+	.menu-item-has-children {
+		max-width: 225px;
 	}
 	.menu-item-has-children > a,
 	.page_item_has_children > a {
-		padding-right: 1.5em;
+		padding-right: 3.25em;
 	}
 }
 

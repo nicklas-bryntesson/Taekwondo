@@ -4,42 +4,37 @@
 
 @media screen and (max-width: $query__tablet) {
   .main-navigation {
-    font-size: larger;
-    // Styles
     flex-direction: column;
+    font-size: larger;
 
-    .main-menu {
-      margin-top: 4em;
-      // Menu is hidden by default
+    .main-menu,
+    .admin-mobile {
       display: none;
       width: 75%;
+      margin-top: 4em;
 
       .sub-menu {
         display: none;
-        opacity: 0;
         visibility: hidden;
-        // Padding inside submenu items
+        opacity: 0;
         padding: 0;
-        margin-bottom: 1em;
-        // Change to transparent dark blue
-        background-color: hsl(240, 100%, 40%);
+        background-color: transparent;
         border-radius: 0.25em;
       }
 
       .sub-menu.toggled-on {
-        // Show Menu Children
+        display: block;
         visibility: visible;
         opacity: 1;
-        display: block;
       }
     }
 
     .dropdown-toggle {
+      width: 2.5em;
+      height: 2.5em;
       margin-left: 1em;
       font-size: larger;
       color: $color__theme-white;
-      height: 2.5em;
-      width: 2.5em;
 
       &:focus,
       &:active {
@@ -55,51 +50,49 @@
     }
 
     li {
-      // Styles
-      margin-bottom: 2px;
-
       ul a {
         padding-left: 2em;
+        background: rgba(black, 0.2);
       }
       ul ul a {
         padding-left: 2.5em;
+        background: rgba(black, 0.4);
       }
       ul ul ul a {
         padding-left: 3em;
+        background: rgba(black, 0.6);
       }
       ul ul ul ul a {
         padding-left: 3.5em;
+        background: rgba(black, 0.8);
       }
     }
 
     a {
-      // background-color: DodgerBlue;
-      // Styles
-      padding: 1em;
-      color: $color__theme-white;
       width: 100%;
       margin: 0;
+      padding: 1em;
+      color: $color__theme-white;
     }
   }
 }
 
 .main-navigation.toggled-on {
-  // Create overlay on button press
+  display: flex;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     332deg,
     rgba(2, 0, 36, 1) 0%,
     rgba(1, 17, 64, 0.98) 100%
   );
-  position: fixed;
-  overflow-y: scroll;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
 
   ul {
     // Show hidden menu
@@ -107,10 +100,17 @@
   }
 
   .admin-mobile {
+    width: 75%;
     margin-top: 1em;
+    margin-bottom: 4em;
     padding-top: 1em;
     border-top: 4px solid $color__theme-white;
-    width: 75%;
-    margin-bottom: 4em;
+  }
+}
+
+// Move menu down 46 px if admin-bar is present
+.logged-in .main-navigation.toggled-on {
+  .menu-toggle {
+    padding-top: 46px;
   }
 }
