@@ -1,4 +1,5 @@
 // Belt colors -> Update & Remove
+
 $color__gradient-card--belt-red: #cf222c;
 $color__gradient-card--belt-black: #1e2738;
 
@@ -7,11 +8,17 @@ $color__branding--belt-red: #cf222c;
 $color__branding--belt-black: #1e2738;
 $color__branding--belt-text-yellow: #ceb45c;
 
+$color__gradient-menu: linear-gradient(
+  135deg,
+  hsl(220, 97%, 23%),
+  hsl(225, 97%, 13%) 0%
+);
+
 // Gradient - Solid backgrounds. -> Update
 $color__gradient-solid--branding: linear-gradient(
   to bottom,
   rgba(65, 157, 232, 1) 0%,
-  rgba(27, 113, 184, 1) 100%
+  rgba(65, 157, 232, 1) 0%
 );
 $color__gradient-solid--blue-blue: linear-gradient(
   to bottom,
@@ -67,6 +74,31 @@ $textshadow__text-main: 0 0 5px rgba(0, 0, 0, 0.3);
 // Transitions
 $transition__card-hover: all 0.3s ease;
 $transition__button-hover: all 0.3s ease;
+$transition__test: all 5s ease;
 
 // Filters
 $filter__card-images-hover: brightness(75%);
+
+$boxshadow__button: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
+$boxshadow__button-branding: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
+
+$boxshadow__focus: 0 0 0 0.25em $color__text-input-focus;
+
+$boxshadow__card: 0px 8px 14px 0px rgba(148, 148, 148, 0.35);
+$boxshadow__card-hover: 0px 11px 16px 1px rgba(116, 132, 148, 0.75);
+
+$transition__card-hover: all 0.4s ease;
+$transition__button-hover: all 0.4s ease;
+$transition__focus: all 0.6s ease;
+
+$filter__card-images-hover: brightness(75%);
+
+$padding__section: 1.25rem;
+$padding__section-wide: 2rem;
+
+$focus__boxshadow: 0 0 0 3px $color__focus;
+$focus__border: 0.3px solid $color__focus;
+$focus__outline: 0.25em solid $color__focus;
+
+$focus__boxshadow-active: 0 0 0 3px plum;
+$focus__boxshadow-focus-active: 0 0 0 3px blue;

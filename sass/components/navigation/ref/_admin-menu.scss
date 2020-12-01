@@ -1,0 +1,56 @@
+/*--------------------------------------------------------------
+## ADMIN TOP NAVIGATION - ALL STYLES
+--------------------------------------------------------------*/
+
+@media screen and (min-width: $query__tablet) {
+  .admin-navigation {
+    @include font-size(1.1);
+    width: 100%;
+    padding: 0 1.5em;
+    border-bottom: 1px solid lightgrey;
+    font-weight: 300;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    li {
+      margin-top: 0.25em solid transparent;
+      padding-left: 2em;
+
+      a {
+        display: block;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        padding-top: 0.6em;
+        padding-bottom: 0.35em;
+        color: $color__text-main;
+
+        &::after {
+          display: block;
+          content: "";
+          position: relative;
+          width: 50px;
+          top: 0.6em;
+          height: 0.25em;
+          background: transparent;
+          border-radius: 5px;
+        }
+
+        &:hover {
+          color: $color__branding-main;
+        }
+      }
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a {
+      font-weight: bold;
+      // Fill the bottom border on active menu-item.
+      &::after {
+        background: $color__branding-main;
+      }
+    }
+  } // admin-menu
+} // Query

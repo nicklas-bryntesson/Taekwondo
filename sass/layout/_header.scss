@@ -1,11 +1,107 @@
 /* Baseline */
 
 .site-header {
+  position: relative;
   z-index: 999;
+  color: $color__text-main;
 }
 
-.site-header {
-  background-color: $color__background-header;
-  box-shadow: $boxshadow__card;
-  padding: 3em 2em;
+.site-branding {
+  margin-left: 1.5em;
+  padding: 1em 1em 1em 0;
+}
+
+.custom-logo-link {
+  display: block;
+  margin: 0;
+
+  img {
+    display: block;
+    width: auto;
+    height: 100px;
+  }
+}
+
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// Remove h1 margin on blog page
+.header-titles h1 {
+  margin: 0;
+}
+
+.site-title {
+  font-size: 1.6em;
+  font-weight: 900;
+
+  a {
+    color: $color__text-main;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color__branding-main;
+    }
+  }
+}
+
+@media screen and (max-width: $query__tablet) {
+  .site-header {
+    // border-bottom: 2px solid gold;
+  }
+}
+
+@media screen and (min-width: $query__tablet) {
+  .site-header {
+    box-shadow: $boxshadow__card;
+  }
+
+  .frontpage .site-header {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.site-description {
+  // background-color: thistle;
+  // Rules
+}
+
+.main-navigation {
+  // background-color: tan;
+  // Rules
+  display: flex;
+  align-items: center;
+  margin-right: 1.5em;
+}
+
+/*
+ *
+ * CSS GRID -> PREFIX
+ *
+ */
+
+@supports (grid-area: auto) {
+  @media screen and (min-width: $query__tablet) {
+    .site-header {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas:
+        "admin-navigation admin-navigation"
+        "site-branding main-navigation";
+    }
+
+    .admin-navigation {
+      grid-area: admin-navigation;
+    }
+    .site-branding {
+      grid-area: site-branding;
+    }
+    .main-navigation {
+      grid-area: main-navigation;
+    }
+  }
 }

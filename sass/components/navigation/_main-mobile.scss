@@ -1,0 +1,116 @@
+/*--------------------------------------------------------------
+## MAIN NAVIGATION - MOBILE
+--------------------------------------------------------------*/
+
+@media screen and (max-width: $query__tablet) {
+  .main-navigation {
+    flex-direction: column;
+    font-size: larger;
+
+    .main-menu,
+    .admin-mobile {
+      display: none;
+      width: 75%;
+      margin-top: 4em;
+
+      .sub-menu {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        padding: 0;
+        background-color: transparent;
+        border-radius: 0.25em;
+      }
+
+      .sub-menu.toggled-on {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .dropdown-toggle {
+      width: 2.5em;
+      height: 2.5em;
+      margin-left: 1em;
+      font-size: larger;
+      color: $color__theme-white;
+
+      &:focus,
+      &:active {
+        color: $color__theme-white;
+        outline: 4px solid $color__link-focus;
+        border-left-color: transparent;
+      }
+
+      &:focus:not(.focus-visible) {
+        // Overide focus-visible polyfill issue
+        color: $color__theme-white;
+      }
+    }
+
+    li {
+      ul a {
+        padding-left: 2em;
+        background: rgba(black, 0.2);
+      }
+      ul ul a {
+        padding-left: 2.5em;
+        background: rgba(black, 0.4);
+      }
+      ul ul ul a {
+        padding-left: 3em;
+        background: rgba(black, 0.6);
+      }
+      ul ul ul ul a {
+        padding-left: 3.5em;
+        background: rgba(black, 0.8);
+      }
+    }
+
+    a {
+      width: 100%;
+      margin: 0;
+      padding: 1em;
+      color: $color__theme-white;
+    }
+  }
+}
+
+.main-navigation.toggled-on {
+  display: flex;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    332deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(1, 17, 64, 0.98) 100%
+  );
+
+  ul {
+    // Show hidden menu
+    display: block;
+  }
+
+  .admin-mobile {
+    width: 75%;
+    margin-top: 1em;
+    margin-bottom: 4em;
+    padding-top: 1em;
+    border-top: 4px solid $color__theme-white;
+  }
+}
+
+// Move menu down 46 px if admin-bar is present
+.logged-in .main-navigation.toggled-on {
+  .menu-toggle {
+    padding-top: 46px;
+  }
+}

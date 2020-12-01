@@ -1,0 +1,235 @@
+//
+
+//
+
+//
+
+//
+
+/*
+ *  ***  ***  ***  ***  ***
+ *      - MOBILE - 
+ *  ***  ***  ***  ***  ***
+ */
+
+/************************/
+
+/*
+ *  ***  ***  ***  ***  ***
+ *    - NAVIGATION - 
+ *  ***  ***  ***  ***  ***
+ */
+
+//
+
+//
+
+//
+
+//
+
+@media screen and (max-width: $query__tablet) {
+  .main-navigation {
+    // Styles
+    flex-direction: column;
+
+    ul {
+      // Menu is hidden by default
+      display: none;
+      padding: 3em;
+      width: 75%;
+
+      /*     ul {
+        // Padding inside submenu items
+        padding: 0;
+      } */
+    }
+
+    .dropdown-toggle {
+      padding: 1em;
+      width: 48px;
+      color: white;
+
+      &:focus,
+      &:active {
+        color: white;
+      }
+
+      &:focus:not(.focus-visible) {
+        // Overide focus-visible polyfill issue
+        color: white;
+      }
+    }
+
+    .dropdown-toggle::before {
+      border-left: 1px solid hotpink;
+    }
+
+    li {
+      background-color: MediumBlue;
+      // Styles
+    }
+
+    a {
+      background-color: DodgerBlue;
+      // Styles
+      padding: 1em;
+      color: white;
+      width: 100%;
+    }
+
+    ul ul {
+      background-color: gold;
+      // Styles
+      z-index: 1;
+    }
+    ul ul li {
+      padding-left: 1em;
+    }
+  }
+}
+
+.main-navigation.toggled-on {
+  // Create overlay on button press
+  background-color: midnightblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  opacity: 0.98;
+
+  ul {
+    // Show hidden menu
+    display: block;
+    justify-content: center;
+  }
+
+  .admin-mobile {
+    border-top: 3px solid white;
+
+    a {
+      font-weight: bolder;
+    }
+  }
+}
+
+//
+
+//
+
+//
+
+//
+
+/*
+ *  ***  ***  ***  ***  ***
+ *     - DESKTOP - 
+ *  ***  ***  ***  ***  ***
+ */
+
+/*************************/
+
+/*
+ *  ***  ***  ***  ***  ***
+ *    - NAVIGATION - 
+ *  ***  ***  ***  ***  ***
+ */
+
+//
+
+//
+
+//
+
+//
+
+@media screen and (min-width: $query__tablet) {
+  // main navigation bar - Desktop styles
+  .main-navigation,
+  .main-navigation.toggled-on {
+    background-color: mediumvioletred;
+    // Styles
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-height: 0;
+    opacity: 1;
+
+    ul,
+    .main-navigation.toggled-on ul {
+      display: flex;
+      padding: 0;
+      background-color: tan;
+      border: 1px solid gold;
+      width: 100%;
+
+      // Menu - Level 2
+      ul {
+        // Position the dropdown below menu
+        position: absolute;
+        top: calc(100% + 1em);
+        width: 250px;
+        flex-direction: column;
+        background-color: khaki;
+        border: 2px solid green;
+
+        li {
+          background-color: peachpuff;
+        }
+
+        // Menu - Level 3
+        ul {
+          display: block;
+          background-color: springgreen;
+          border: 1px solid salmon;
+
+          li {
+            padding-left: 0;
+          }
+          a:hover,
+          li:hover {
+            background-color: black;
+          }
+        }
+
+        a:hover,
+        li:hover {
+          background-color: palegreen;
+        }
+      }
+    }
+
+    li {
+      position: relative;
+    }
+
+    a {
+      color: black;
+      margin-left: 1em;
+    }
+  }
+  /*   .main-navigation li:hover > ul,
+  .main-navigation li.focus > ul {
+    left: auto;
+    right: 0;
+  }
+  .main-navigation ul ul li:hover > ul,
+  .main-navigation ul ul li.focus > ul {
+    left: auto;
+    right: 100%;
+  } */
+
+  // Fallback if mobile nav is toggled.on when resize
+
+  .menu-item-has-children,
+  .page_item_has_children {
+    min-width: 200px;
+  }
+
+  .menu-item-has-children > a,
+  .page_item_has_children > a {
+    padding-right: 1.5em;
+  }
+}

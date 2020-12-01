@@ -1,0 +1,119 @@
+// All the different navigation menues in the site
+
+/*--------------------------------------------------------------
+## MAIN NAVIGATION - RESET & BASELINE
+--------------------------------------------------------------*/
+
+.menu {
+  font-family: $font__main;
+  word-wrap: break-word; // Check if this need to apply on <'a'> instead?
+  clear: left;
+  line-height: 1;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+    position: relative; // to position button
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  // menu dropdown button
+  .dropdown-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+    transition: $transition__button-hover;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: 4px solid $color__link-focus;
+    }
+  }
+
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a,
+  .current-menu-ancestor > a {
+    font-weight: bolder;
+  }
+
+  // make shure that the last menu position dropdown don't break layout.
+  ul li:last-child ul {
+    right: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+## MAIN NAVIGATION - BASELINE - Move into Menu???
+--------------------------------------------------------------*/
+
+.main-navigation {
+  display: flex;
+  clear: left;
+  line-height: 1;
+  padding: 0;
+}
+
+/* 
+ *
+ *    MENU DISPLAY SWITCH
+ *
+ * ONLY SWITCHES WICH MENU SHOWS
+ *    IN DIFFERENT VIEWPORTS
+ */
+
+// Rules for Mobile
+@media screen and (max-width: $query__tablet) {
+  .admin-navigation {
+    display: none;
+  }
+}
+
+// Rules for desktop
+@media screen and (min-width: $query__tablet) {
+  .main-navigation {
+    .menu-toggle {
+      display: none;
+    }
+    .admin-mobile {
+      display: none;
+    }
+  }
+}
+
+// Hamburger menu icon
+@import "main-icon";
+
+// Top Admin menu
+@import "ref/admin-menu";
+
+// Mobile menu
+@import "main-mobile";
+
+// Desktop menu
+@import "main-desktop";
+
+// Social media Footer menu
+@import "social-navigation";

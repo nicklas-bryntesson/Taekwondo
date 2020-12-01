@@ -46,20 +46,54 @@ if ( ! function_exists( 'tkd_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		
+		// Set post thumbnail size.
+		set_post_thumbnail_size( 1200, 9999 );
+
+
+		/**
+		 * Custom Logo Function -> Remove and exchange with SVG on Demo site.
+		 */
+
+		// Custom logo.
+		$logo_width  = 120;
+		$logo_height = 90;
+
+		// If the retina setting is active, double the recommended width and height.
+		if ( get_theme_mod( 'retina_logo', false ) ) {
+			$logo_width  = floor( $logo_width * 2 );
+			$logo_height = floor( $logo_height * 2 );
+		}
+
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => $logo_height,
+				'width'       => $logo_width,
+				'flex-height' => true,
+				'flex-width'  => true,
+			)
+		);
 
 		/*
 		 * Opt in features to extend block editor.
 		 *
 		 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/
 		 */
-		add_theme_support( 'wp-block-styles' );
+		
+		 add_theme_support( 'wp-block-styles' );
 
+		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1'	=> esc_html__( 'Primary', 'tkd' ),
+				'main'	=> esc_html__( 'Primary', 'tkd' ),
+				'admin' 	=> esc_html__( 'Administration Menu', 'tkd' ),
 				'social'	=> esc_html__( 'Social Media Menu', 'tkd' ),
 			)
 		);
@@ -167,7 +201,6 @@ function tkd_resource_hints( $urls, $relation_type ) {
 			'crossorigin',
 		);
 	}
-
 	return $urls;
 }
 add_filter( 'wp_resource_hints', 'tkd_resource_hints', 10, 2 );
@@ -222,7 +255,25 @@ function tkd_scripts() {
 	 */
 	wp_enqueue_script( 'focus-visible', get_template_directory_uri() . '/js/focus-visible.min.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( 'tkd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+
+	/**
+	 * Default Navigation
+	 */
+	// wp_enqueue_script( 'tkd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+
+	
+	/**
+	 * Minda Navigation -> Refractor
+	 */
+	wp_enqueue_script( 'tkd-navigation', get_template_directory_uri() . '/js/navigation-minda.js', array('jquery'), _S_VERSION, true );
+	wp_localize_script( 'tkd-navigation', 'tkdScreenReaderText', array(
+		'expand' => __( 'Open menu', 'tkd'),
+		'collapse' => __( 'Close menu', 'tkd'),
+	));
+
+
 
 	// Load Background Video script
 	wp_enqueue_script( 'tkd-background-video', get_template_directory_uri() . '/js/background-video.js', array( 'jquery' ), '20201103', true );
@@ -272,3 +323,9 @@ require get_template_directory() . '/inc/disable-block-editor.php';
  * Load SVG icon functions.
  */
 require get_template_directory() . '/inc/icon-functions.php';
+
+
+/**
+ * Navigation Description Component.
+ */
+// require get_template_directory() . '/inc/navigation-description.php';
